@@ -43,9 +43,21 @@
       object-fit: cover;
       box-shadow: 0 4px 20px rgba(200, 51, 112, 0.2);
       border: 3px solid var(--accent);
+      display: block;
     }
 
-    .bow { width: 48px; height: 36px; color: var(--accent); margin: 0 auto 16px auto; display: block; }
+    /* Laço encaixado no topo da logo */
+    .bow-on-logo { 
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 46px; 
+      height: 34px; 
+      color: var(--accent); 
+      z-index: 10;
+      filter: drop-shadow(0px 2px 4px rgba(200, 51, 112, 0.2));
+    }
 
     .link-tree-container {
       max-width: 480px;
@@ -150,12 +162,12 @@
 
   <div style="padding: 48px 0; width: 100%;">
     <header style="padding: 0 24px; margin-bottom: 32px;">
-      <svg class="bow" viewBox="0 0 70 50" fill="none">
-        <path d="M30 19C19 7 7 5 5 16c-2 10 7 15 24 11M40 19C51 7 63 5 65 16c2 10-7 15-24 11" fill="#f7a5c3" stroke="currentColor" stroke-width="3"></path>
-        <path d="M29 17c4-3 9-3 12 0 4 4 4 11 0 15-3 3-9 3-12 0-4-4-4-11 0-15Z" fill="#c83370" stroke="currentColor" stroke-width="2"></path>
-      </svg>
       
       <div class="portrait-wrap" style="margin-bottom: 24px;">
+        <svg class="bow-on-logo" viewBox="0 0 70 50" fill="none">
+          <path d="M30 19C19 7 7 5 5 16c-2 10 7 15 24 11M40 19C51 7 63 5 65 16c2 10-7 15-24 11" fill="#f7a5c3" stroke="currentColor" stroke-width="3"></path>
+          <path d="M29 17c4-3 9-3 12 0 4 4 4 11 0 15-3 3-9 3-12 0-4-4-4-11 0-15Z" fill="#c83370" stroke="currentColor" stroke-width="2"></path>
+        </svg>
         <img src="logo.png" alt="Logo L&amp;M Shop">
       </div>
 
