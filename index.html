@@ -40,8 +40,8 @@
       --badge-bg: #401d30;
       --footer-bg: #220e1a;
       --modal-overlay: rgba(15, 5, 12, 0.8);
-      --controls-bg: #ffffff; /* Fundo do menu fica branco no modo escuro */
-      --lang-btn-color: #c83370; /* Texto do idioma destacado */
+      --controls-bg: #ffffff;
+      --lang-btn-color: #c83370;
     }
 
     * { box-sizing: border-box; }
@@ -277,10 +277,10 @@
 <body>
 
   <!-- Botão de Modo Escuro (Canto Superior Esquerdo) -->
-  <button class="theme-toggle-btn" id="themeBtn" onclick="toggleTheme()" title="Alternar Modo Escuro">🌙</button>
+  <button class="theme-toggle-btn notranslate" id="themeBtn" onclick="toggleTheme()" title="Alternar Modo Escuro">🌙</button>
 
-  <!-- Menu Flutuante de Idiomas (Canto Superior Direito) -->
-  <div class="lang-switch-container">
+  <!-- Menu Flutuante de Idiomas (Canto Superior Direito)[cite: 1] -->
+  <div class="lang-switch-container notranslate">
     <button class="lang-btn" onclick="changeLanguage('pt')" title="Português">BR</button>
     <button class="lang-btn" onclick="changeLanguage('en')" title="English">US</button>
     <button class="lang-btn" onclick="changeLanguage('es')" title="Español">ES</button>
@@ -378,7 +378,7 @@
         <p><strong>. Pagamentos:</strong> Envie o comprovante após realizar o pagamento corretamente. Comprovantes falsos ou qualquer tentativa de fraude resultarão em banimento.</p>
         <p><strong>. Reembolsos:</strong> Reembolsos serão analisados individualmente pela equipe. Erros causados pelo cliente, como informações incorretas, não serão responsabilidade da loja.<br><span style="font-size: 12px; font-weight: 600; color: var(--accent);">OBS: Após entrega do pedido não fazemos reembolso.</span></p>
         <p><strong>. Estoque e valores:</strong> Os preços e a disponibilidade dos itens podem sofrer alterações sem aviso prévio. Sempre confira o estoque atualizado antes de comprar. ⁠꒰・estoque・mm2・؛ଓ</p>
-        <p><strong>. Flood ou Spam:</strong> Não envie mensagens em excesso ou marque a equipe repetidamente no ticket. O bot já tem a função de marcar os atendentes, aguarde o atendimento. Caso não haja resposta após 30 minutos, será permitido marcar.</p>
+        <p><strong>. Flood ou Spam:</strong> Não envie mensagens em excesso ou marque a equipe repetidamente no ticket. O bot já tem a função de marcar os atendentes, aguarde o atendimento. Canal sem resposta após 30 minutos, será permitido marcar.</p>
         <p><strong>. Avaliações:</strong> Após receber seu pedido, pedimos que deixe uma avaliação sobre o atendimento e sua experiência com a loja. Clientes que não realizarão a avaliação receberão o cargo @avaliação pendente e ficarão impossibilitados de realizar novas compras na loja até que a avaliação seja feita.</p>
         
         <p style="font-size: 12px; text-align: center; font-weight: 600; color: var(--accent); margin-top: 16px;">
@@ -403,9 +403,9 @@
       body.classList.toggle('dark-mode');
       
       if (body.classList.contains('dark-mode')) {
-        themeBtn.textContent = '☀️';
-      } else {
         themeBtn.textContent = '🌙';
+      } else {
+        themeBtn.textContent = '☀️';
       }
     }
 
