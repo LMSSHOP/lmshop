@@ -1,11 +1,11 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>L&amp;M Shop — Links &amp; Murder Mystery 2</title>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Fraunces:opsz,wght@9..144,400;500;600&amp;display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com/3.4.17" type="text/javascript"></script>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
   <style>
     :root {
       --ink: #513344;
@@ -81,7 +81,7 @@
       color: var(--accent);
     }
 
-    /* Modal / Pop-up de Políticas */
+    /* Modal / Pop-up */
     .modal {
       display: none;
       position: fixed;
@@ -137,15 +137,66 @@
     }
 
     a:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; border-radius: 9999px; }
-
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      .link-card { transition: none; }
-    }
   </style>
 </head>
 <body class="w-full min-h-screen flex flex-col justify-between">
 
   <div class="site-shell w-full py-12">
     <header class="text-center px-6 mb-8">
-      <svg class="bow mb-4" viewBox="0 0 7
+      <svg class="bow mb-4" viewBox="0 0 70 50" fill="none" aria-hidden="true">
+        <path d="M30 19C19 7 7 5 5 16c-2 10 7 15 24 11M40 19C51 7 63 5 65 16c2 10-7 15-24 11" fill="#f7a5c3" stroke="currentColor" stroke-width="3"></path>
+        <path d="M29 17c4-3 9-3 12 0 4 4 4 11 0 15-3 3-9 3-12 0-4-4-4-11 0-15Z" fill="#c83370" stroke="currentColor" stroke-width="2"></path>
+      </svg>
+      
+      <div class="portrait-wrap mb-6">
+        <img src="logo.png" alt="Logo L&amp;M Shop">
+      </div>
+
+      <p class="eyebrow mb-3" style="color: var(--accent);">Murder Mystery 2 · Roblox</p>
+      <p class="text-sm max-w-xs mx-auto" style="color: var(--muted);">
+        Seu inventário merece os melhores itens: Godlys, Sets, Armas e Pets com entrega rápida!
+      </p>
+    </header>
+
+    <main class="link-tree-container">
+      
+      <!-- Link Discord -->
+      <a href="https://discord.gg/lmshopmm2" target="_blank" rel="noopener noreferrer" class="link-card">
+        <span>💬 Servidor no Discord</span>
+        <span class="badge">Oficial</span>
+      </a>
+
+      <!-- Link TikTok -->
+      <a href="https://www.tiktok.com/@lm.shopp__" target="_blank" rel="noopener noreferrer" class="link-card">
+        <span>🎵 TikTok da Loja</span>
+        <span>↗</span>
+      </a>
+
+      <!-- Botão Políticas e Diretrizes -->
+      <a href="#politicas-modal" class="link-card">
+        <span>📜 Políticas e Diretrizes</span>
+        <span class="badge">Ler</span>
+      </a>
+
+    </main>
+  </div>
+
+  <!-- Janela Pop-up (Modal) - Políticas e Diretrizes -->
+  <div id="politicas-modal" class="modal">
+    <div class="modal-content text-left">
+      <a href="#" class="modal-close">✕</a>
+      
+      <h2 class="display text-2xl font-bold mb-6 text-center" style="color: var(--accent);">Políticas e Diretrizes</h2>
+
+      <!-- Bloco 1: Regras da Shop -->
+      <section class="space-y-3 text-sm">
+        <h3 class="font-bold text-base text-center pb-2 border-b" style="color: var(--accent);">୨୧・Regras SHOP</h3>
+        
+        <p><strong>. Respeito:</strong> Trate os atendentes com respeito. Ofensas, provocações ou atitudes desrespeitosas não serão toleradas.</p>
+        <p><strong>. Compras:</strong> Antes de realizar o pagamento, confira o valor e o nome que está no PIX. Após o pagamento, aguarde o prazo de entrega informado pela equipe.</p>
+        <p><strong>. Tickets:</strong> Abra um ticket somente quando realmente tiver certeza que irá comprar. Evite abrir vários tickets para o mesmo assunto ou deixar tickets sem resposta.</p>
+        <p><strong>. Pagamentos:</strong> Envie o comprovante após realizar o pagamento corretamente. Comprovantes falsos ou qualquer tentativa de fraude resultarão em banimento.</p>
+        <p><strong>. Reembolsos:</strong> Reembolsos serão analisados individualmente pela equipe. Erros causados pelo cliente, como informações incorretas, não serão responsabilidade da loja.<br><span class="text-xs font-semibold" style="color: var(--accent);">OBS: Após entrega do pedido não fazemos reembolso.</span></p>
+        <p><strong>. Estoque e valores:</strong> Os preços e a disponibilidade dos itens podem sofrer alterações sem aviso prévio. Sempre confira o estoque atualizado antes de comprar.</p>
+        <p><strong>. Flood ou Spam:</strong> Não envie mensagens em excesso ou marque a equipe repetidamente no ticket. O bot já tem a função de marcar os atendentes, aguarde o atendimento. Caso não haja resposta após 30 minutos, será permitido marcar.</p>
+        <p><strong>. Avaliações:</strong> Após receber seu pedido, pedimos
