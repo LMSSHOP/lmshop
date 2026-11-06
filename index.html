@@ -21,12 +21,43 @@
       min-height: 100vh;
       color: var(--ink); 
       font-family: 'DM Sans', sans-serif; 
-      background-color: #fff7fa; 
+      background-color: #fff0f5;
+      /* Fundo decorado com padrão de corações e brilhos */
+      background-image: 
+        radial-gradient(#f9c5d1 1.5px, transparent 1.5px), 
+        radial-gradient(#f4aab9 1.5px, #fff0f5 1.5px);
+      background-size: 60px 60px;
+      background-position: 0 0, 30px 30px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       text-align: center;
+      position: relative;
+      overflow-x: hidden;
     }
+
+    /* Detalhes de Flores e Corações flutuantes no fundo */
+    body::before, body::after {
+      position: fixed;
+      font-size: 24px;
+      opacity: 0.4;
+      pointer-events: none;
+      z-index: 1;
+    }
+    /* Canto Superior Esquerdo e Direito */
+    body::before {
+      content: "🌸  💖  ✨  🌸";
+      top: 20px;
+      left: 20px;
+      letter-spacing: 15px;
+    }
+    body::after {
+      content: "🌸  ✨  💖  🌸";
+      top: 20px;
+      right: 20px;
+      letter-spacing: 15px;
+    }
+
     .display { font-family: 'Fraunces', serif; }
     .eyebrow { letter-spacing: .22em; text-transform: uppercase; font-size: 11px; font-weight: 700; color: var(--accent); }
     
@@ -35,18 +66,19 @@
       width: 180px; 
       height: 180px; 
       margin: 0 auto; 
+      z-index: 2;
     }
     .portrait-wrap img {
       width: 100%;
       height: 100%;
       border-radius: 50%;
       object-fit: cover;
-      box-shadow: 0 4px 20px rgba(200, 51, 112, 0.2);
-      border: 3px solid var(--accent);
+      box-shadow: 0 6px 25px rgba(200, 51, 112, 0.25);
+      border: 4px solid #ffffff;
+      outline: 2px solid var(--accent);
       display: block;
     }
 
-    /* Laço pequeno e alinhado ao lado do texto */
     .bow-inline { 
       width: 22px; 
       height: 16px; 
@@ -61,6 +93,8 @@
       margin: 0 auto;
       padding: 0 16px;
       width: 100%;
+      position: relative;
+      z-index: 2;
     }
     .link-card {
       display: flex;
@@ -76,7 +110,7 @@
       font-weight: 600;
       font-size: 15px;
       text-decoration: none;
-      box-shadow: 0 4px 12px rgba(200, 51, 112, 0.05);
+      box-shadow: 0 4px 15px rgba(200, 51, 112, 0.08);
       transition: all 0.25s ease;
     }
     .link-card:hover {
@@ -152,12 +186,12 @@
     }
     
     .space-y p { margin-bottom: 12px; font-size: 14px; line-height: 1.5; }
-    footer { padding: 24px; border-top: 1px solid var(--line); background: #fbd4e3; }
+    footer { padding: 24px; border-top: 1px solid var(--line); background: #fbd4e3; z-index: 2; position: relative; }
   </style>
 </head>
 <body>
 
-  <div style="padding: 48px 0; width: 100%;">
+  <div style="padding: 48px 0; width: 100%; position: relative; z-index: 2;">
     <header style="padding: 0 24px; margin-bottom: 32px;">
       
       <div class="portrait-wrap" style="margin-bottom: 24px;">
@@ -165,7 +199,7 @@
       </div>
 
       <p class="eyebrow" style="margin-bottom: 12px;">
-        Murder Mystery 2 · Roblox
+        🌸 Murder Mystery 2 · Roblox 🌸
         <svg class="bow-inline" viewBox="0 0 70 50" fill="none">
           <path d="M30 19C19 7 7 5 5 16c-2 10 7 15 24 11M40 19C51 7 63 5 65 16c2 10-7 15-24 11" fill="#f7a5c3" stroke="currentColor" stroke-width="3"></path>
           <path d="M29 17c4-3 9-3 12 0 4 4 4 11 0 15-3 3-9 3-12 0-4-4-4-11 0-15Z" fill="#c83370" stroke="currentColor" stroke-width="2"></path>
@@ -173,7 +207,7 @@
       </p>
 
       <p style="font-size: 14px; max-width: 320px; margin: 0 auto; color: var(--muted);">
-        Seu inventário merece os melhores itens: Godlys, Sets, Armas e Pets com entrega rápida!
+        ✨ Seu inventário merece os melhores itens: Godlys, Sets, Armas e Pets com entrega rápida! ✨
       </p>
     </header>
 
@@ -211,7 +245,7 @@
     <div class="modal-content">
       <a href="#" class="modal-close">✕</a>
       
-      <h2 class="display" style="font-size: 20px; font-weight: bold; margin-bottom: 16px; text-align: center; color: var(--accent);"> ୨୧ ꒰ REGRAS DO SERVER ꒱ ୨୧ </h2>
+      <h2 class="display" style="font-size: 20px; font-weight: bold; margin-bottom: 16px; text-align: center; color: var(--accent);">╭୨୧ ┈┈ ꒰ REGRAS DO SERVER ꒱ ┈┈ ୨୧╮</h2>
       
       <p style="font-size: 12px; margin-bottom: 16px; text-align: center; color: var(--muted);">
         As regras existem para manter o servidor organizado, seguro e agradável para todos. O descumprimento resultará em punições. Pedimos que leia com atenção.
@@ -259,7 +293,7 @@
   </div>
 
   <footer>
-    <p style="font-size: 12px; font-weight: 500; color: #684558; margin: 0;">L&amp;M Shop</p>
+    <p style="font-size: 12px; font-weight: 500; color: #684558; margin: 0;">🌸 L&amp;M Shop 🌸</p>
   </footer>
 
 </body>
