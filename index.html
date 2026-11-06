@@ -81,6 +81,55 @@
       color: var(--accent);
     }
 
+    /* Modal / Popup de Regras */
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(81, 51, 68, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 50;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+    }
+    .modal:target {
+      display: flex;
+    }
+    .modal-content {
+      background: #ffffff;
+      border: 2px solid var(--line);
+      border-radius: 24px;
+      width: 100%;
+      max-width: 500px;
+      max-height: 85vh;
+      overflow-y: auto;
+      padding: 24px;
+      position: relative;
+      box-shadow: 0 10px 30px rgba(200, 51, 112, 0.2);
+    }
+    .modal-close {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: #ffe8f0;
+      color: var(--accent);
+      border: none;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      font-weight: bold;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+    }
+    .modal-close:hover {
+      background: var(--accent);
+      color: #ffffff;
+    }
+
     a:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; border-radius: 9999px; }
 
     @media (prefers-reduced-motion: reduce) {
@@ -110,21 +159,56 @@
 
     <main class="link-tree-container">
       
+      <!-- Link Discord -->
       <a href="https://discord.gg/lmshopmm2" target="_blank" rel="noopener noreferrer" class="link-card">
         <span>💬 Servidor no Discord</span>
         <span class="badge">Oficial</span>
       </a>
 
+      <!-- Link TikTok -->
       <a href="https://www.tiktok.com/@lm.shopp__" target="_blank" rel="noopener noreferrer" class="link-card">
         <span>🎵 TikTok da Loja</span>
         <span>↗</span>
       </a>
 
+      <!-- Botão Regras do Server -->
+      <a href="#regras-modal" class="link-card">
+        <span>📜 Regras do Servidor</span>
+        <span class="badge">Ler</span>
+      </a>
+
     </main>
   </div>
 
+  <!-- Janela Pop-up (Modal) com as Regras -->
+  <div id="regras-modal" class="modal">
+    <div class="modal-content">
+      <a href="#" class="modal-close">✕</a>
+      <h2 class="display text-xl font-bold mb-4 text-center" style="color: var(--accent);">╭୨୧ ꒰ REGRAS DO SERVER ꒱ ୨୧╮</h2>
+      
+      <p class="text-xs mb-4 text-center" style="color: var(--muted);">
+        As regras existem para manter o servidor organizado, seguro e agradável para todos. O descumprimento resultará em punições. Pedimos que leia com atenção.
+      </p>
+
+      <div class="space-y-3 text-sm" style="color: var(--ink);">
+        <p><strong>→ Spam/Flood:</strong> Evite enviar mensagens em excesso ou repetir conteúdos no chat. Isso prejudica a organização da conversa e a experiência dos demais membros.</p>
+        <p><strong>→ Pings:</strong> Evite mencionar a equipe (Staff) sem necessidade. Utilize apenas em casos de descumprimento das regras.</p>
+        <p><strong>→ Conteúdo +18:</strong> Não é permitido conteúdo +18 ou impróprio. Prezamos por um ambiente seguro, leve e adequado para todos.</p>
+        <p><strong>→ Preconceito:</strong> Não é tolerado nenhum tipo de preconceito, incluindo gordofobia, racismo, transfobia, misoginia, entre outros.</p>
+        <p><strong>→ Privacidade e segurança:</strong> Não compartilhe informações pessoais, suas ou de terceiros.</p>
+        <p><strong>→ Convivência:</strong> Evite discussões e linguagem ofensiva. Vamos manter um ambiente tranquilo e respeitoso para todos.</p>
+        <p><strong>→ Organização:</strong> Utilize os canais corretos para cada assunto e ajude a manter o servidor organizado.</p>
+        <p><strong>→ Links:</strong> Evite enviar links para a segurança de todos. Não são permitidos links de outros servidores. Também não compartilhe conteúdos inadequados, como links suspeitos, imagens impróprias ou assuntos sensíveis.</p>
+        <p><strong>→ Punição:</strong> O descumprimento das regras resultará em punições. Em caso de contestação de punições aplicadas pela equipe, a decisão será mantida. Siga as regras, respeite as orientações e assuma a responsabilidade por eventuais infrações.</p>
+        <p><strong>→ Vendas:</strong> Vendas são proibidas dentro do servidor. Caso alguém realize vendas, será aplicado 1 aviso (warn). Caso se repita, o usuário será banido.</p>
+        <p><strong>→ Plágio:</strong> É proibido qualquer tipo de cópia/plágio dos conteúdos do L&amp;M SHOP. Só temos 3 contas no tiktok que são: @wlelebunny, @lm.shop36, @maarcsz8, @.lele.mm2</p>
+        <p><strong>→ Divulgação:</strong> Divulgação de outras lojas, servidores ou contas (como TikTok) não é permitida dentro do servidor. Caso ocorra, será aplicado 1 warn (aviso) e caso obtenha 3 warns resultará em mute.</p>
+      </div>
+    </div>
+  </div>
+
   <footer class="w-full py-6 text-center border-t fine-rule" style="background: #fbd4e3;">
-    <p class="text-xs font-medium" style="color: #684558;">L&amp;M Shop · MM2 com carinho ♡</p>
+    <p class="text-xs font-medium" style="color: #684558;">L&amp;M Shop</p>
   </footer>
 
 </body>
