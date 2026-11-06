@@ -81,7 +81,7 @@
       color: var(--accent);
     }
 
-    /* Modal / Pop-up */
+    /* Modais / Pop-ups */
     .modal {
       display: none;
       position: fixed;
@@ -131,11 +131,6 @@
       color: #ffffff;
     }
 
-    .section-divider {
-      border-top: 2px dashed var(--line);
-      margin: 24px 0;
-    }
-
     a:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; border-radius: 9999px; }
   </style>
 </head>
@@ -172,31 +167,37 @@
         <span>↗</span>
       </a>
 
-      <!-- Botão Políticas e Diretrizes -->
-      <a href="#politicas-modal" class="link-card">
-        <span>📜 Políticas e Diretrizes</span>
+      <!-- Botão Regras do Server -->
+      <a href="#regras-modal" class="link-card">
+        <span>📜 Regras do Servidor</span>
+        <span class="badge">Ler</span>
+      </a>
+
+      <!-- Botão Políticas e Diretrizes (Shop) -->
+      <a href="#shop-modal" class="link-card">
+        <span>🛍️ Políticas e Diretrizes</span>
         <span class="badge">Ler</span>
       </a>
 
     </main>
   </div>
 
-  <!-- Janela Pop-up (Modal) - Políticas e Diretrizes -->
-  <div id="politicas-modal" class="modal">
+  <!-- Pop-up 1: Regras do Servidor -->
+  <div id="regras-modal" class="modal">
     <div class="modal-content text-left">
       <a href="#" class="modal-close">✕</a>
       
-      <h2 class="display text-2xl font-bold mb-6 text-center" style="color: var(--accent);">Políticas e Diretrizes</h2>
+      <h2 class="display text-xl font-bold mb-4 text-center" style="color: var(--accent);">╭୨୧ ꒰ REGRAS DO SERVER ꒱ ୨୧╮</h2>
+      
+      <p class="text-xs mb-4 text-center" style="color: var(--muted);">
+        As regras existem para manter o servidor organizado, seguro e agradável para todos. O descumprimento resultará em punições. Pedimos que leia com atenção.
+      </p>
 
-      <!-- Bloco 1: Regras da Shop -->
-      <section class="space-y-3 text-sm">
-        <h3 class="font-bold text-base text-center pb-2 border-b" style="color: var(--accent);">୨୧・Regras SHOP</h3>
-        
-        <p><strong>. Respeito:</strong> Trate os atendentes com respeito. Ofensas, provocações ou atitudes desrespeitosas não serão toleradas.</p>
-        <p><strong>. Compras:</strong> Antes de realizar o pagamento, confira o valor e o nome que está no PIX. Após o pagamento, aguarde o prazo de entrega informado pela equipe.</p>
-        <p><strong>. Tickets:</strong> Abra um ticket somente quando realmente tiver certeza que irá comprar. Evite abrir vários tickets para o mesmo assunto ou deixar tickets sem resposta.</p>
-        <p><strong>. Pagamentos:</strong> Envie o comprovante após realizar o pagamento corretamente. Comprovantes falsos ou qualquer tentativa de fraude resultarão em banimento.</p>
-        <p><strong>. Reembolsos:</strong> Reembolsos serão analisados individualmente pela equipe. Erros causados pelo cliente, como informações incorretas, não serão responsabilidade da loja.<br><span class="text-xs font-semibold" style="color: var(--accent);">OBS: Após entrega do pedido não fazemos reembolso.</span></p>
-        <p><strong>. Estoque e valores:</strong> Os preços e a disponibilidade dos itens podem sofrer alterações sem aviso prévio. Sempre confira o estoque atualizado antes de comprar.</p>
-        <p><strong>. Flood ou Spam:</strong> Não envie mensagens em excesso ou marque a equipe repetidamente no ticket. O bot já tem a função de marcar os atendentes, aguarde o atendimento. Caso não haja resposta após 30 minutos, será permitido marcar.</p>
-        <p><strong>. Avaliações:</strong> Após receber seu pedido, pedimos
+      <div class="space-y-3 text-sm">
+        <p><strong>→ Spam/Flood:</strong> Evite enviar mensagens em excesso ou repetir conteúdos no chat. Isso prejudica a organização da conversa e a experiência dos demais membros.</p>
+        <p><strong>→ Pings:</strong> Evite mencionar a equipe (Staff) sem necessidade. Utilize apenas em casos de descumprimento das regras.</p>
+        <p><strong>→ Conteúdo +18:</strong> Não é permitido conteúdo +18 ou impróprio. Prezamos por um ambiente seguro, leve e adequado para todos.</p>
+        <p><strong>→ Preconceito:</strong> Não é tolerado nenhum tipo de preconceito, incluindo gordofobia, racismo, transfobia, misoginia, entre outros.</p>
+        <p><strong>→ Privacidade e segurança:</strong> Não compartilhe informações pessoais, suas ou de terceiros.</p>
+        <p><strong>→ Convivência:</strong> Evite discussões e linguagem ofensiva. Vamos manter um ambiente tranquilo e respeitoso para todos.</p>
+        <p><strong>
