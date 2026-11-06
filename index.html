@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>L&amp;M Shop — Links &amp; Murder Mystery 2</title>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Fraunces:opsz,wght@9..144,400;500;600&amp;display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
   <style>
     :root {
       --ink: #513344;
@@ -13,22 +14,17 @@
       --line: #eec6d7;
       --bg-card: #ffffff;
     }
-    * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body { 
       margin: 0; 
       width: 100%; 
-      min-height: 100vh;
       color: var(--ink); 
       font-family: 'DM Sans', sans-serif; 
       background-color: #fff7fa; 
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      text-align: center;
     }
     .display { font-family: 'Fraunces', serif; }
-    .eyebrow { letter-spacing: .22em; text-transform: uppercase; font-size: 11px; font-weight: 700; color: var(--accent); }
+    .fine-rule { border-color: var(--line); }
+    .eyebrow { letter-spacing: .22em; text-transform: uppercase; font-size: 11px; font-weight: 700; }
     
     .portrait-wrap { position: relative; width: 100%; max-width: 320px; margin: 0 auto; }
     .portrait-wrap img {
@@ -40,13 +36,12 @@
       border: 2px solid var(--line);
     }
 
-    .bow { width: 48px; height: 36px; color: var(--accent); margin: 0 auto 16px auto; display: block; }
+    .bow { width: 48px; height: 36px; color: var(--accent); margin: 0 auto; }
 
     .link-tree-container {
       max-width: 480px;
       margin: 0 auto;
       padding: 0 16px;
-      width: 100%;
     }
     .link-card {
       display: flex;
@@ -63,7 +58,7 @@
       font-size: 15px;
       text-decoration: none;
       box-shadow: 0 4px 12px rgba(200, 51, 112, 0.05);
-      transition: all 0.25s ease;
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
     }
     .link-card:hover {
       background-color: var(--accent);
@@ -76,4 +71,172 @@
       font-size: 11px;
       background: #ffe8f0;
       color: var(--accent);
-      padding: 2
+      padding: 2px 10px;
+      border-radius: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    .link-card:hover .badge {
+      background: #ffffff;
+      color: var(--accent);
+    }
+
+    /* Pop-ups / Modais */
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(81, 51, 68, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 50;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+    }
+    .modal:target {
+      display: flex;
+    }
+    .modal-content {
+      background: #ffffff;
+      border: 2px solid var(--line);
+      border-radius: 24px;
+      width: 100%;
+      max-width: 520px;
+      max-height: 85vh;
+      overflow-y: auto;
+      padding: 24px;
+      position: relative;
+      box-shadow: 0 10px 30px rgba(200, 51, 112, 0.2);
+    }
+    .modal-close {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: #ffe8f0;
+      color: var(--accent);
+      border: none;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      font-weight: bold;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .modal-close:hover {
+      background: var(--accent);
+      color: #ffffff;
+    }
+
+    a:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; border-radius: 9999px; }
+  </style>
+</head>
+<body class="w-full min-h-screen flex flex-col justify-between">
+
+  <div class="site-shell w-full py-12">
+    <header class="text-center px-6 mb-8">
+      <svg class="bow mb-4" viewBox="0 0 70 50" fill="none" aria-hidden="true">
+        <path d="M30 19C19 7 7 5 5 16c-2 10 7 15 24 11M40 19C51 7 63 5 65 16c2 10-7 15-24 11" fill="#f7a5c3" stroke="currentColor" stroke-width="3"></path>
+        <path d="M29 17c4-3 9-3 12 0 4 4 4 11 0 15-3 3-9 3-12 0-4-4-4-11 0-15Z" fill="#c83370" stroke="currentColor" stroke-width="2"></path>
+      </svg>
+      
+      <div class="portrait-wrap mb-6">
+        <img src="logo.png" alt="Logo L&amp;M Shop">
+      </div>
+
+      <p class="eyebrow mb-3" style="color: var(--accent);">Murder Mystery 2 · Roblox</p>
+      <p class="text-sm max-w-xs mx-auto" style="color: var(--muted);">
+        Seu inventário merece os melhores itens: Godlys, Sets, Armas e Pets com entrega rápida!
+      </p>
+    </header>
+
+    <main class="link-tree-container">
+      
+      <!-- Link Discord -->
+      <a href="https://discord.gg/lmshopmm2" target="_blank" rel="noopener noreferrer" class="link-card">
+        <span>💬 Servidor no Discord</span>
+        <span class="badge">Oficial</span>
+      </a>
+
+      <!-- Link TikTok -->
+      <a href="https://www.tiktok.com/@lm.shopp__" target="_blank" rel="noopener noreferrer" class="link-card">
+        <span>🎵 TikTok da Loja</span>
+        <span>↗</span>
+      </a>
+
+      <!-- Botão Diretrizes do Server -->
+      <a href="#diretrizes-modal" class="link-card">
+        <span>📜 Diretrizes do Servidor</span>
+        <span class="badge">Ler</span>
+      </a>
+
+      <!-- Botão Regras SHOP -->
+      <a href="#shop-modal" class="link-card">
+        <span>🛍️ Regras SHOP</span>
+        <span class="badge">Ler</span>
+      </a>
+
+    </main>
+  </div>
+
+  <!-- Pop-up 1: Diretrizes do Servidor -->
+  <div id="diretrizes-modal" class="modal">
+    <div class="modal-content text-left">
+      <a href="#" class="modal-close">✕</a>
+      
+      <h2 class="display text-xl font-bold mb-4 text-center" style="color: var(--accent);">╭୨୧ ┈┈ ꒰ REGRAS DO SERVER ꒱ ┈┈ ୨୧╮</h2>
+      
+      <p class="text-xs mb-4 text-center" style="color: var(--muted);">
+        As regras existem para manter o servidor organizado, seguro e agradável para todos. O descumprimento resultará em punições. Pedimos que leia com atenção.
+      </p>
+
+      <div class="space-y-3 text-sm">
+        <p><strong>→ Spam/Flood:</strong> Evite enviar mensagens em excesso ou repetir conteúdos no chat. Isso prejudica a organização da conversa e a experiência dos demais membros.</p>
+        <p><strong>→ Pings:</strong> Evite mencionar a equipe (Staff) sem necessidade. Utilize apenas em casos de descumprimento das regras.</p>
+        <p><strong>→ Conteúdo +18:</strong> Não é permitido conteúdo +18 ou impróprio. Prezamos por um ambiente seguro, leve e adequado para todos.</p>
+        <p><strong>→ Preconceito:</strong> Não é tolerado nenhum tipo de preconceito, incluindo gordofobia, racismo, transfobia, misoginia, entre outros.</p>
+        <p><strong>→ Privacidade e segurança:</strong> Não compartilhe informações pessoais, suas ou de terceiros.</p>
+        <p><strong>→ Convivência:</strong> Evite discussões e linguagem ofensiva. Vamos manter um ambiente tranquilo e respeitoso para todos.</p>
+        <p><strong>→ Organização:</strong> Utilize os canais corretos para cada assunto e ajude a manter o servidor organizado.</p>
+        <p><strong>→ Links:</strong> Evite enviar links para a segurança de todos. Não são permitidos links de outros servidores. Também não compartilhe conteúdos inadequados, como links suspeitos, imagens impróprias ou assuntos sensíveis.</p>
+        <p><strong>→ Punição:</strong> O descumprimento das regras resultará em punições. Em caso de contestação de punições aplicadas pela equipe, a decisão será mantida. Siga as regras, respeite as orientações e assuma a responsabilidade por eventuais infrações.</p>
+        <p><strong>→ Vendas:</strong> Vendas são proibidas dentro do servidor. Caso alguém realize vendas, será aplicado 1 aviso (warn). Caso se repita, o usuário será banido.</p>
+        <p><strong>→ Plágio:</strong> É proibido qualquer tipo de cópia/plágio dos conteúdos do L&amp;M SHOP. Só temos 4 contas no TikTok que são: @wlelebunny, @lm.shop36, @maarcsz8 e @.lele.mm2.</p>
+        <p><strong>→ Divulgação:</strong> Divulgação de outras lojas, servidores ou contas (como TikTok) não é permitida dentro do servidor. Caso ocorra, será aplicado 1 warn (aviso) e caso obtenha 3 warns resultará em mute.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pop-up 2: Regras SHOP -->
+  <div id="shop-modal" class="modal">
+    <div class="modal-content text-left">
+      <a href="#" class="modal-close">✕</a>
+      
+      <h2 class="display text-xl font-bold mb-4 text-center" style="color: var(--accent);">୨୧・Regras SHOP</h2>
+      
+      <div class="space-y-3 text-sm">
+        <p><strong>. Respeito:</strong> Trate os atendentes com respeito. Ofensas, provocações ou atitudes desrespeitosas não serão toleradas.</p>
+        <p><strong>. Compras:</strong> Antes de realizar o pagamento, confira o valor e o nome que está no PIX. Após o pagamento, aguarde o prazo de entrega informado pela equipe.</p>
+        <p><strong>. Tickets:</strong> Abra um ticket somente quando realmente tiver certeza que irá comprar. Evite abrir vários tickets para o mesmo assunto ou deixar tickets sem resposta.</p>
+        <p><strong>. Pagamentos:</strong> Envie o comprovante após realizar o pagamento corretamente. Comprovantes falsos ou qualquer tentativa de fraude resultarão em banimento.</p>
+        <p><strong>. Reembolsos:</strong> Reembolsos serão analisados individualmente pela equipe. Erros causados pelo cliente, como informações incorretas, não serão responsabilidade da loja.<br><span class="text-xs font-semibold" style="color: var(--accent);">OBS: Após entrega do pedido não fazemos reembolso.</span></p>
+        <p><strong>. Estoque e valores:</strong> Os preços e a disponibilidade dos itens podem sofrer alterações sem aviso prévio. Sempre confira o estoque atualizado antes de comprar. ⁠꒰・estoque・mm2・؛ଓ</p>
+        <p><strong>. Flood ou Spam:</strong> Não envie mensagens em excesso ou marque a equipe repetidamente no ticket. O bot já tem a função de marcar os atendentes, aguarde o atendimento. Caso não haja resposta após 30 minutos, será permitido marcar.</p>
+        <p><strong>. Avaliações:</strong> Após receber seu pedido, pedimos que deixe uma avaliação sobre o atendimento e sua experiência com a loja. Clientes que não realizarem a avaliação receberão o cargo @avaliação pendente e ficarão impossibilitados de realizar novas compras na loja até que a avaliação seja feita.</p>
+        
+        <p class="text-xs text-center pt-3 font-semibold" style="color: var(--accent);">
+          Ao realizar uma compra na L&amp;M Shop, você declara estar de acordo com nossas regras.<br>Agradecemos pela compreensão e boas compras! ᧔ෆ᧓
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <footer class="w-full py-6 text-center border-t fine-rule" style="background: #fbd4e3;">
+    <p class="text-xs font-medium" style="color: #684558;">L&amp;M Shop</p>
+  </footer>
+
+</body>
+</html>
