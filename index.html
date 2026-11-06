@@ -11,12 +11,35 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Fraunces:opsz,wght@9..144,400;500;600&amp;display=swap" rel="stylesheet">
   <style>
     :root {
+      /* Tema Claro (Padrão) */
       --ink: #513344;
       --muted: #795d6c;
       --accent: #c83370;
       --line: #eec6d7;
       --bg-card: #ffffff;
+      --bg-main: #fff0f5;
+      --bg-dot-1: #f9c5d1;
+      --bg-dot-2: #f4aab9;
+      --badge-bg: #ffe8f0;
+      --footer-bg: #fbd4e3;
+      --modal-overlay: rgba(81, 51, 68, 0.6);
     }
+
+    /* Tema Escuro (Inverso) */
+    body.dark-mode {
+      --ink: #ffdae9;
+      --muted: #d4a5bc;
+      --accent: #ff66a3;
+      --line: #522b40;
+      --bg-card: #2a1522;
+      --bg-main: #180a13;
+      --bg-dot-1: #3d1c2e;
+      --bg-dot-2: #4a2137;
+      --badge-bg: #401d30;
+      --footer-bg: #220e1a;
+      --modal-overlay: rgba(15, 5, 12, 0.8);
+    }
+
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body { 
@@ -25,10 +48,10 @@
       min-height: 100vh;
       color: var(--ink); 
       font-family: 'DM Sans', sans-serif; 
-      background-color: #fff0f5;
+      background-color: var(--bg-main);
       background-image: 
-        radial-gradient(#f9c5d1 1.5px, transparent 1.5px), 
-        radial-gradient(#f4aab9 1.5px, #fff0f5 1.5px);
+        radial-gradient(var(--bg-dot-1) 1.5px, transparent 1.5px), 
+        radial-gradient(var(--bg-dot-2) 1.5px, var(--bg-main) 1.5px);
       background-size: 60px 60px;
       background-position: 0 0, 30px 30px;
       display: flex;
@@ -38,12 +61,39 @@
       position: relative;
       overflow-x: hidden;
       top: 0 !important;
+      transition: background-color 0.3s ease, color 0.3s ease;
     }
 
     /* Esconde a barra superior do Google Tradutor */
     .goog-te-banner-frame { display: none !important; }
     .skiptranslate { display: none !important; }
     body { top: 0px !important; }
+
+    /* Botão de Modo Escuro no Canto Superior Esquerdo */
+    .theme-toggle-btn {
+      position: fixed;
+      top: 16px;
+      left: 16px;
+      background: rgba(255, 255, 255, 0.9);
+      border: 2px solid var(--line);
+      border-radius: 9999px;
+      padding: 6px 12px;
+      font-size: 16px;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(200, 51, 112, 0.15);
+      z-index: 100;
+      backdrop-filter: blur(4px);
+      transition: transform 0.2s ease, background 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    body.dark-mode .theme-toggle-btn {
+      background: rgba(42, 21, 34, 0.9);
+    }
+    .theme-toggle-btn:hover {
+      transform: scale(1.1);
+    }
 
     /* Botões de Idioma Fixos no Canto Superior Direito */
     .lang-switch-container {
@@ -59,6 +109,10 @@
       box-shadow: 0 4px 12px rgba(200, 51, 112, 0.15);
       z-index: 100;
       backdrop-filter: blur(4px);
+      transition: background 0.3s ease;
+    }
+    body.dark-mode .lang-switch-container {
+      background: rgba(42, 21, 34, 0.9);
     }
     .lang-btn {
       background: none;
@@ -84,7 +138,7 @@
     body::before {
       content: "🌸  💖  ✨  🌸";
       top: 20px;
-      left: 20px;
+      left: 70px;
       letter-spacing: 15px;
     }
     body::after {
@@ -110,9 +164,10 @@
       border-radius: 50%;
       object-fit: cover;
       box-shadow: 0 6px 25px rgba(200, 51, 112, 0.25);
-      border: 4px solid #ffffff;
+      border: 4px solid var(--bg-card);
       outline: 2px solid var(--accent);
       display: block;
+      transition: border-color 0.3s ease;
     }
 
     .link-tree-container {
@@ -137,7 +192,7 @@
       font-weight: 600;
       font-size: 15px;
       text-decoration: none;
-      box-shadow: 0 4px 15px rgba(200, 51, 112, 0.08);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
       transition: all 0.25s ease;
     }
     .link-card:hover {
@@ -149,12 +204,13 @@
     }
     .link-card .badge {
       font-size: 11px;
-      background: #ffe8f0;
+      background: var(--badge-bg);
       color: var(--accent);
       padding: 2px 10px;
       border-radius: 12px;
       font-weight: 700;
       text-transform: uppercase;
+      transition: background 0.3s ease;
     }
     .link-card:hover .badge {
       background: #ffffff;
@@ -166,7 +222,7 @@
       display: none;
       position: fixed;
       top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(81, 51, 68, 0.6);
+      background: var(--modal-overlay);
       backdrop-filter: blur(4px);
       z-index: 50;
       align-items: center;
@@ -177,7 +233,7 @@
       display: flex;
     }
     .modal-content {
-      background: #ffffff;
+      background: var(--bg-card);
       border: 2px solid var(--line);
       border-radius: 24px;
       width: 100%;
@@ -186,14 +242,15 @@
       overflow-y: auto;
       padding: 24px;
       position: relative;
-      box-shadow: 0 10px 30px rgba(200, 51, 112, 0.2);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
       text-align: left;
+      color: var(--ink);
     }
     .modal-close {
       position: absolute;
       top: 16px;
       right: 16px;
-      background: #ffe8f0;
+      background: var(--badge-bg);
       color: var(--accent);
       border: none;
       width: 32px;
@@ -213,10 +270,13 @@
     }
     
     .space-y p { margin-bottom: 12px; font-size: 14px; line-height: 1.5; }
-    footer { padding: 24px; border-top: 1px solid var(--line); background: #fbd4e3; z-index: 2; position: relative; }
+    footer { padding: 24px; border-top: 1px solid var(--line); background: var(--footer-bg); z-index: 2; position: relative; transition: background 0.3s ease; }
   </style>
 </head>
 <body>
+
+  <!-- Botão de Modo Escuro (Canto Superior Esquerdo) -->
+  <button class="theme-toggle-btn" id="themeBtn" onclick="toggleTheme()" title="Alternar Modo Escuro">🌙</button>
 
   <!-- Menu Flutuante de Idiomas (Canto Superior Direito) -->
   <div class="lang-switch-container">
@@ -328,13 +388,27 @@
   </div>
 
   <footer>
-    <p style="font-size: 12px; font-weight: 500; color: #684558; margin: 0;">🌸 L&amp;M Shop 🌸</p>
+    <p style="font-size: 12px; font-weight: 500; color: var(--muted); margin: 0;">🌸 L&amp;M Shop 🌸</p>
   </footer>
 
   <!-- Elemento invisível do Google Tradutor -->
   <div id="google_translate_element" style="display:none;"></div>
 
   <script type="text/javascript">
+    /* Função de Alternar Modo Escuro */
+    function toggleTheme() {
+      const body = document.body;
+      const themeBtn = document.getElementById('themeBtn');
+      body.classList.toggle('dark-mode');
+      
+      if (body.classList.contains('dark-mode')) {
+        themeBtn.textContent = '☀️';
+      } else {
+        themeBtn.textContent = '🌙';
+      }
+    }
+
+    /* Funções do Tradutor */
     function googleTranslateElementInit() {
       new google.translate.TranslateElement({
         pageLanguage: 'pt',
