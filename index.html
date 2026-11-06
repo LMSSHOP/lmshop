@@ -23,6 +23,8 @@
       --badge-bg: #ffe8f0;
       --footer-bg: #fbd4e3;
       --modal-overlay: rgba(81, 51, 68, 0.6);
+      --controls-bg: #ffffff;
+      --lang-btn-color: #513344;
     }
 
     /* Tema Escuro (Inverso) */
@@ -38,6 +40,8 @@
       --badge-bg: #401d30;
       --footer-bg: #220e1a;
       --modal-overlay: rgba(15, 5, 12, 0.8);
+      --controls-bg: #ffffff; /* Fundo do menu fica branco no modo escuro */
+      --lang-btn-color: #c83370; /* Texto do idioma destacado */
     }
 
     * { box-sizing: border-box; }
@@ -74,22 +78,19 @@
       position: fixed;
       top: 16px;
       left: 16px;
-      background: rgba(255, 255, 255, 0.9);
-      border: 2px solid var(--line);
+      background: var(--controls-bg);
+      border: 2px solid var(--accent);
       border-radius: 9999px;
       padding: 6px 12px;
       font-size: 16px;
       cursor: pointer;
-      box-shadow: 0 4px 12px rgba(200, 51, 112, 0.15);
+      box-shadow: 0 4px 12px rgba(200, 51, 112, 0.2);
       z-index: 100;
       backdrop-filter: blur(4px);
       transition: transform 0.2s ease, background 0.3s ease;
       display: flex;
       align-items: center;
       justify-content: center;
-    }
-    body.dark-mode .theme-toggle-btn {
-      background: rgba(42, 21, 34, 0.9);
     }
     .theme-toggle-btn:hover {
       transform: scale(1.1);
@@ -101,31 +102,31 @@
       top: 16px;
       right: 16px;
       display: flex;
-      gap: 5px;
-      background: rgba(255, 255, 255, 0.9);
-      padding: 6px 10px;
+      gap: 6px;
+      background: var(--controls-bg);
+      padding: 6px 12px;
       border-radius: 9999px;
-      border: 2px solid var(--line);
-      box-shadow: 0 4px 12px rgba(200, 51, 112, 0.15);
+      border: 2px solid var(--accent);
+      box-shadow: 0 4px 12px rgba(200, 51, 112, 0.2);
       z-index: 100;
       backdrop-filter: blur(4px);
       transition: background 0.3s ease;
     }
-    body.dark-mode .lang-switch-container {
-      background: rgba(42, 21, 34, 0.9);
-    }
     .lang-btn {
       background: none;
       border: none;
-      font-size: 17px;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--lang-btn-color);
       cursor: pointer;
-      padding: 2px;
-      border-radius: 50%;
-      transition: transform 0.2s ease;
+      padding: 2px 4px;
+      border-radius: 4px;
+      transition: transform 0.2s ease, color 0.2s ease;
       line-height: 1;
     }
     .lang-btn:hover {
-      transform: scale(1.25);
+      transform: scale(1.2);
+      color: var(--accent);
     }
 
     body::before, body::after {
@@ -144,7 +145,7 @@
     body::after {
       content: "🌸  ✨  💖  🌸";
       top: 20px;
-      right: 220px;
+      right: 300px;
       letter-spacing: 15px;
     }
 
@@ -280,13 +281,13 @@
 
   <!-- Menu Flutuante de Idiomas (Canto Superior Direito) -->
   <div class="lang-switch-container">
-    <button class="lang-btn" onclick="changeLanguage('pt')" title="Português">🇧🇷</button>
-    <button class="lang-btn" onclick="changeLanguage('en')" title="English">🇺🇸</button>
-    <button class="lang-btn" onclick="changeLanguage('es')" title="Español">🇪🇸</button>
-    <button class="lang-btn" onclick="changeLanguage('fr')" title="Français">🇫🇷</button>
-    <button class="lang-btn" onclick="changeLanguage('ja')" title="日本語">🇯🇵</button>
-    <button class="lang-btn" onclick="changeLanguage('zh-CN')" title="中文">🇨🇳</button>
-    <button class="lang-btn" onclick="changeLanguage('ko')" title="한국어">🇰🇷</button>
+    <button class="lang-btn" onclick="changeLanguage('pt')" title="Português">BR</button>
+    <button class="lang-btn" onclick="changeLanguage('en')" title="English">US</button>
+    <button class="lang-btn" onclick="changeLanguage('es')" title="Español">ES</button>
+    <button class="lang-btn" onclick="changeLanguage('fr')" title="Français">FR</button>
+    <button class="lang-btn" onclick="changeLanguage('ja')" title="日本語">JP</button>
+    <button class="lang-btn" onclick="changeLanguage('zh-CN')" title="中文">CN</button>
+    <button class="lang-btn" onclick="changeLanguage('ko')" title="한국어">KR</button>
   </div>
 
   <div style="padding: 48px 0; width: 100%; position: relative; z-index: 2;">
@@ -402,9 +403,9 @@
       body.classList.toggle('dark-mode');
       
       if (body.classList.contains('dark-mode')) {
-        themeBtn.textContent = '🌙';
-      } else {
         themeBtn.textContent = '☀️';
+      } else {
+        themeBtn.textContent = '🌙';
       }
     }
 
