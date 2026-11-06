@@ -269,6 +269,35 @@
       background: var(--accent);
       color: #ffffff;
     }
+
+    /* Caixa de PIX estilizada */
+    .pix-box {
+      background: var(--badge-bg);
+      border: 2px dashed var(--accent);
+      border-radius: 16px;
+      padding: 12px;
+      text-align: center;
+      margin: 16px 0;
+      word-break: break-all;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .copy-btn {
+      background: var(--accent);
+      color: #ffffff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 9999px;
+      font-weight: 700;
+      cursor: pointer;
+      width: 100%;
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+    .copy-btn:hover {
+      transform: scale(1.02);
+      opacity: 0.9;
+    }
     
     .space-y p { margin-bottom: 12px; font-size: 14px; line-height: 1.5; }
     footer { padding: 24px; border-top: 1px solid var(--line); background: var(--footer-bg); z-index: 2; position: relative; transition: background 0.3s ease; }
@@ -279,7 +308,7 @@
   <!-- Botão de Modo Escuro (Canto Superior Esquerdo) -->
   <button class="theme-toggle-btn notranslate" id="themeBtn" onclick="toggleTheme()" title="Alternar Modo Escuro">🌙</button>
 
-  <!-- Menu Flutuante de Idiomas (Canto Superior Direito)[cite: 1] -->
+  <!-- Menu Flutuante de Idiomas (Canto Superior Direito) -->
   <div class="lang-switch-container notranslate">
     <button class="lang-btn" onclick="changeLanguage('pt')" title="Português">BR</button>
     <button class="lang-btn" onclick="changeLanguage('en')" title="English">US</button>
@@ -333,6 +362,12 @@
         <span class="badge">Ler</span>
       </a>
 
+      <!-- Botão Doações -->
+      <a href="#pix-modal" class="link-card">
+        <span>💖 Apoiar / Doações</span>
+        <span class="badge">PIX</span>
+      </a>
+
     </main>
   </div>
 
@@ -359,7 +394,7 @@
         <p><strong>→ Punição:</strong> O descumprimento das regras resultará em punições. Em caso de contestação de punições aplicadas pela equipe, a decisão será mantida. Siga as regras, respeite as orientações e assuma a responsabilidade por eventuais infrações.</p>
         <p><strong>→ Vendas:</strong> Vendas são proibidas dentro do servidor. Caso alguém realize vendas, será aplicado 1 aviso (warn). Caso se repita, o usuário será banido.</p>
         <p><strong>→ Plágio:</strong> É proibido qualquer tipo de cópia/plágio dos conteúdos do L&amp;M SHOP. Só temos 4 contas no TikTok que são: @wlelebunny, @lm.shop36, @maarcsz8 e @.lele.mm2.</p>
-        <p><strong>→ Divulgação:</strong> Divulgação de outras lojas, servidores ou contas (como TikTok) não é permitida dentro do servidor. Caso ocorra, será aplicado 1 warn (aviso) e caso obtenha 3 warns resultará em mute.</p>
+        <p><strong>→ Divulgação:</strong> Divulgação de outras lojas, servidores ou contas (como TikTok) não é permitida dentro do servidor. Caso ocorra, será applied 1 warn (aviso) e caso obtenha 3 warns resultará em mute.</p>
       </div>
     </div>
   </div>
@@ -388,6 +423,32 @@
     </div>
   </div>
 
+  <!-- Pop-up 3: Doações / PIX -->
+  <div id="pix-modal" class="modal">
+    <div class="modal-content" style="text-align: center;">
+      <a href="#" class="modal-close">✕</a>
+      
+      <h2 class="display" style="font-size: 20px; font-weight: bold; margin-bottom: 12px; color: var(--accent);">💖 Apoie a L&amp;M Shop 💖</h2>
+      
+      <p style="font-size: 13px; color: var(--muted); margin-bottom: 16px;">
+        Gosta da nossa loja? Se quiser nos apoiar com qualquer valor via PIX, agradecemos imensamente! 🌸
+      </p>
+
+      <!-- Imagem do QR Code -->
+      <div style="margin: 0 auto 16px; max-width: 200px; background: #ffffff; padding: 12px; border-radius: 16px; border: 2px solid var(--line);">
+        <img src="QR CODE.webp" alt="QR Code PIX L&amp;M Shop" style="width: 100%; height: auto; display: block; border-radius: 8px;">
+      </div>
+
+      <!-- Chave PIX -->
+      <div class="pix-box notranslate" id="pixKey">
+        lmshop2006@gmail.com
+      </div>
+
+      <!-- Botão Copiar -->
+      <button class="copy-btn" onclick="copyPixKey()">📋 Copiar Chave PIX</button>
+    </div>
+  </div>
+
   <footer>
     <p style="font-size: 12px; font-weight: 500; color: var(--muted); margin: 0;">🌸 L&amp;M Shop 🌸</p>
   </footer>
@@ -396,6 +457,16 @@
   <div id="google_translate_element" style="display:none;"></div>
 
   <script type="text/javascript">
+    /* Função de Copiar Chave PIX */
+    function copyPixKey() {
+      const pixKey = "lmshop2006@gmail.com";
+      navigator.clipboard.writeText(pixKey).then(() => {
+        alert("Chave PIX copiada com sucesso! 💖");
+      }).catch(err => {
+        console.error("Erro ao copiar: ", err);
+      });
+    }
+
     /* Função de Alternar Modo Escuro */
     function toggleTheme() {
       const body = document.body;
@@ -403,9 +474,9 @@
       body.classList.toggle('dark-mode');
       
       if (body.classList.contains('dark-mode')) {
-        themeBtn.textContent = '🌙';
-      } else {
         themeBtn.textContent = '☀️';
+      } else {
+        themeBtn.textContent = '🌙';
       }
     }
 
