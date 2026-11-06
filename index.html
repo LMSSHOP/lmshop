@@ -46,17 +46,14 @@
       display: block;
     }
 
-    /* Laço encaixado no topo da logo */
-    .bow-on-logo { 
-      position: absolute;
-      top: -14px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 46px; 
-      height: 34px; 
+    /* Laço posicionado em cima do Roblox */
+    .bow { 
+      width: 44px; 
+      height: 32px; 
       color: var(--accent); 
-      z-index: 10;
-      filter: drop-shadow(0px 2px 4px rgba(200, 51, 112, 0.2));
+      margin: 0 auto 8px auto; 
+      display: block; 
+      filter: drop-shadow(0px 2px 4px rgba(200, 51, 112, 0.15));
     }
 
     .link-tree-container {
@@ -164,14 +161,16 @@
     <header style="padding: 0 24px; margin-bottom: 32px;">
       
       <div class="portrait-wrap" style="margin-bottom: 24px;">
-        <svg class="bow-on-logo" viewBox="0 0 70 50" fill="none">
-          <path d="M30 19C19 7 7 5 5 16c-2 10 7 15 24 11M40 19C51 7 63 5 65 16c2 10-7 15-24 11" fill="#f7a5c3" stroke="currentColor" stroke-width="3"></path>
-          <path d="M29 17c4-3 9-3 12 0 4 4 4 11 0 15-3 3-9 3-12 0-4-4-4-11 0-15Z" fill="#c83370" stroke="currentColor" stroke-width="2"></path>
-        </svg>
         <img src="logo.png" alt="Logo L&amp;M Shop">
       </div>
 
-      <p class="eyebrow" style="margin-top: 16px; margin-bottom: 12px;">Murder Mystery 2 · Roblox</p>
+      <!-- Laço posicionado antes de Murder Mystery 2 -->
+      <svg class="bow" viewBox="0 0 70 50" fill="none">
+        <path d="M30 19C19 7 7 5 5 16c-2 10 7 15 24 11M40 19C51 7 63 5 65 16c2 10-7 15-24 11" fill="#f7a5c3" stroke="currentColor" stroke-width="3"></path>
+        <path d="M29 17c4-3 9-3 12 0 4 4 4 11 0 15-3 3-9 3-12 0-4-4-4-11 0-15Z" fill="#c83370" stroke="currentColor" stroke-width="2"></path>
+      </svg>
+
+      <p class="eyebrow" style="margin-bottom: 12px;">Murder Mystery 2 · Roblox</p>
       <p style="font-size: 14px; max-width: 320px; margin: 0 auto; color: var(--muted);">
         Seu inventário merece os melhores itens: Godlys, Sets, Armas e Pets com entrega rápida!
       </p>
@@ -249,7 +248,7 @@
         <p><strong>. Reembolsos:</strong> Reembolsos serão analisados individualmente pela equipe. Erros causados pelo cliente, como informações incorretas, não serão responsabilidade da loja.<br><span style="font-size: 12px; font-weight: 600; color: var(--accent);">OBS: Após entrega do pedido não fazemos reembolso.</span></p>
         <p><strong>. Estoque e valores:</strong> Os preços e a disponibilidade dos itens podem sofrer alterações sem aviso prévio. Sempre confira o estoque atualizado antes de comprar. ⁠꒰・estoque・mm2・؛ଓ</p>
         <p><strong>. Flood ou Spam:</strong> Não envie mensagens em excesso ou marque a equipe repetidamente no ticket. O bot já tem a função de marcar os atendentes, aguarde o atendimento. Caso não haja resposta após 30 minutos, será permitido marcar.</p>
-        <p><strong>. Avaliações:</strong> Após receber seu pedido, pedimos que deixe uma avaliação sobre o atendimento e sua experiência com a loja. Clientes que não realizarem a avaliação receberão o cargo @avaliação pendente e ficarão impossibilitados de realizar novas compras na loja até que a avaliação seja feita.</p>
+        <p><strong>. Avaliações:</strong> Após receber seu pedido, pedimos que deixe uma avaliação sobre o atendimento e sua experiência com a loja. Clientes que não realizarão a avaliação receberão o cargo @avaliação pendente e ficarão impossibilitados de realizar novas compras na loja até que a avaliação seja feita.</p>
         
         <p style="font-size: 12px; text-align: center; font-weight: 600; color: var(--accent); margin-top: 16px;">
           Ao realizar uma compra na L&amp;M Shop, você declara estar de acordo com nossas regras.<br>Agradecemos pela compreensão e boas compras! ᧔ෆ᧓
