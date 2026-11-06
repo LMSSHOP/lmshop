@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>L&amp;M Shop — Links &amp; Murder Mystery 2</title>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Fraunces:opsz,wght@9..144,400;500;600&amp;display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
   <style>
     :root {
       --ink: #513344;
@@ -14,17 +13,22 @@
       --line: #eec6d7;
       --bg-card: #ffffff;
     }
+    * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body { 
       margin: 0; 
       width: 100%; 
+      min-height: 100vh;
       color: var(--ink); 
       font-family: 'DM Sans', sans-serif; 
       background-color: #fff7fa; 
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      text-align: center;
     }
     .display { font-family: 'Fraunces', serif; }
-    .fine-rule { border-color: var(--line); }
-    .eyebrow { letter-spacing: .22em; text-transform: uppercase; font-size: 11px; font-weight: 700; }
+    .eyebrow { letter-spacing: .22em; text-transform: uppercase; font-size: 11px; font-weight: 700; color: var(--accent); }
     
     .portrait-wrap { position: relative; width: 100%; max-width: 320px; margin: 0 auto; }
     .portrait-wrap img {
@@ -36,12 +40,13 @@
       border: 2px solid var(--line);
     }
 
-    .bow { width: 48px; height: 36px; color: var(--accent); margin: 0 auto; }
+    .bow { width: 48px; height: 36px; color: var(--accent); margin: 0 auto 16px auto; display: block; }
 
     .link-tree-container {
       max-width: 480px;
       margin: 0 auto;
       padding: 0 16px;
+      width: 100%;
     }
     .link-card {
       display: flex;
@@ -58,7 +63,7 @@
       font-size: 15px;
       text-decoration: none;
       box-shadow: 0 4px 12px rgba(200, 51, 112, 0.05);
-      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: all 0.25s ease;
     }
     .link-card:hover {
       background-color: var(--accent);
@@ -71,72 +76,4 @@
       font-size: 11px;
       background: #ffe8f0;
       color: var(--accent);
-      padding: 2px 10px;
-      border-radius: 12px;
-      font-weight: 700;
-      text-transform: uppercase;
-    }
-    .link-card:hover .badge {
-      background: #ffffff;
-      color: var(--accent);
-    }
-
-    /* Pop-ups / Modais */
-    .modal {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(81, 51, 68, 0.6);
-      backdrop-filter: blur(4px);
-      z-index: 50;
-      align-items: center;
-      justify-content: center;
-      padding: 16px;
-    }
-    .modal:target {
-      display: flex;
-    }
-    .modal-content {
-      background: #ffffff;
-      border: 2px solid var(--line);
-      border-radius: 24px;
-      width: 100%;
-      max-width: 520px;
-      max-height: 85vh;
-      overflow-y: auto;
-      padding: 24px;
-      position: relative;
-      box-shadow: 0 10px 30px rgba(200, 51, 112, 0.2);
-    }
-    .modal-close {
-      position: absolute;
-      top: 16px;
-      right: 16px;
-      background: #ffe8f0;
-      color: var(--accent);
-      border: none;
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      font-weight: bold;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-decoration: none;
-      transition: background 0.2s;
-    }
-    .modal-close:hover {
-      background: var(--accent);
-      color: #ffffff;
-    }
-
-    a:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; border-radius: 9999px; }
-  </style>
-</head>
-<body class="w-full min-h-screen flex flex-col justify-between">
-
-  <div class="site-shell w-full py-12">
-    <header class="text-center px-6 mb-8">
-      <svg class="bow mb-4" viewBox="0 0 70 50" fill="none" aria-hidden="true">
-        <path d="M30 19C19 7 7 5 5 16c-2 10 7 15 24
+      padding: 2
