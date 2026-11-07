@@ -152,6 +152,7 @@
     .display { font-family: 'Fraunces', serif; }
     .eyebrow { letter-spacing: .22em; text-transform: uppercase; font-size: 11px; font-weight: 700; color: var(--accent); }
     
+    /* Foto principal — REDONDA */
     .portrait-wrap { 
       position: relative; 
       width: 180px; 
@@ -169,6 +170,20 @@
       outline: 2px solid var(--accent);
       display: block;
       transition: border-color 0.3s ease;
+    }
+
+    /* === FOTO DA DETOUR — QUADRADA E COMPLETA === */
+    .partner-banner {
+      border-radius: 0 !important;
+      overflow: visible;
+    }
+    .partner-banner img {
+      border-radius: 0 !important;
+      object-fit: contain !important;
+      background-color: #fff0f5;
+      padding: 8px;
+      width: 100%;
+      height: 100%;
     }
 
     .link-tree-container {
@@ -293,6 +308,9 @@
       cursor: pointer;
       width: 100%;
       transition: background 0.2s ease, transform 0.2s ease;
+      text-decoration: none;
+      display: block;
+      text-align: center;
     }
     .copy-btn:hover {
       transform: scale(1.02);
@@ -322,7 +340,7 @@
   <div style="padding: 48px 0; width: 100%; position: relative; z-index: 2;">
     <header style="padding: 0 24px; margin-bottom: 32px;">
       
-      <!-- Foto da loja redonda -->
+      <!-- Foto da loja — REDONDA (igual antes) -->
       <div class="portrait-wrap" style="margin-bottom: 24px;">
         <img src="logo.png" alt="Logo L&amp;M Shop">
       </div>
@@ -414,121 +432,4 @@
       
       <div class="space-y">
         <p><strong>. Respeito:</strong> Trate os atendentes com respeito. Ofensas, provocações ou atitudes desrespeitosas não serão toleradas.</p>
-        <p><strong>. Compras:</strong> Antes de realizar o pagamento, confira o valor e o nome que está no PIX. Após o pagamento, aguarde o prazo de entrega informado pela equipe.</p>
-        <p><strong>. Tickets:</strong> Abra um ticket somente quando realmente tiver certeza que irá comprar. Evite abrir vários tickets para o mesmo assunto ou deixar tickets sem resposta.</p>
-        <p><strong>. Pagamentos:</strong> Envie o comprovante após realizar o pagamento corretamente. Comprovantes falsos ou qualquer tentativa de fraude resultarão em banimento.</p>
-        <p><strong>. Reembolsos:</strong> Reembolsos serão analisados individualmente pela equipe. Erros causados pelo cliente, como informações incorretas, não serão responsabilidade da loja.<br><span style="font-size: 12px; font-weight: 600; color: var(--accent);">OBS: Após entrega do pedido não fazemos reembolso.</span></p>
-        <p><strong>. Estoque e valores:</strong> Os preços e a disponibilidade dos itens podem sofrer alterações sem aviso prévio. Sempre confira o estoque atualizado antes de comprar. ⁠꒰・estoque・mm2・؛ଓ</p>
-        <p><strong>. Flood ou Spam:</strong> Não envie mensagens em excesso ou marque a equipe repetidamente no ticket. O bot já tem a função de marcar os atendentes, aguarde o atendimento. Canal sem resposta após 30 minutos, será permitido marcar.</p>
-        <p><strong>. Avaliações:</strong> Após receber seu pedido, pedimos que deixe uma avaliação sobre o atendimento e sua experiência com a loja. Clientes que não realizarão a avaliação receberão o cargo @avaliação pendente e ficarão impossibilitados de realizar novas compras na loja até que a avaliação seja feita.</p>
-        
-        <p style="font-size: 12px; text-align: center; font-weight: 600; color: var(--accent); margin-top: 16px;">
-          Ao realizar uma compra na L&amp;M Shop, você declara estar de acordo com nossas regras.<br>Agradecemos pela compreensão e boas compras! ᧔ෆ᧓
-        </p>
-      </div>
-    </div>
-  </div>
-
-  <!-- Pop-up 3: Doações / PIX -->
-  <div id="pix-modal" class="modal">
-    <div class="modal-content" style="text-align: center;">
-      <a href="#" class="modal-close">✕</a>
-      
-      <h2 class="display" style="font-size: 20px; font-weight: bold; margin-bottom: 12px; color: var(--accent);">❤︎ Apoie a L&amp;M Shop ❤︎</h2>
-      
-      <p style="font-size: 13px; color: var(--muted); margin-bottom: 16px;">
-        Gosta da nossa loja? Se quiser nos apoiar com qualquer valor via PIX, agradecemos imensamente! ✿⁠
-      </p>
-
-      <!-- Imagem do QR Code -->
-      <div style="margin: 0 auto 16px; max-width: 200px; background: #ffffff; padding: 12px; border-radius: 16px; border: 2px solid var(--line);">
-        <img src="QR CODE.webp" alt="QR Code PIX L&amp;M Shop" style="width: 100%; height: auto; display: block; border-radius: 8px;">
-      </div>
-
-      <!-- Chave PIX -->
-      <div class="pix-box notranslate" id="pixKey">
-        lmshop2006@gmail.com
-      </div>
-
-      <!-- Botão Copiar -->
-      <button class="copy-btn" onclick="copyPixKey()">📋 Copiar Chave PIX</button>
-    </div>
-  </div>
-
-  <!-- Pop-up 4: Loja Parceira -->
-  <div id="parceira-modal" class="modal">
-    <div class="modal-content" style="text-align: center;">
-      <a href="#" class="modal-close">✕</a>
-      
-      <h2 class="display" style="font-size: 20px; font-weight: bold; margin-bottom: 12px; color: var(--accent);">🤝 Detour Store 🤝</h2>
-
-      <!-- Bolinha com a Foto/Banner da Loja Parceira -->
-      <div class="portrait-wrap" style="width: 130px; height: 130px; margin-bottom: 16px;">
-        <img src="detour_store_banner.jpg" alt="Logo Detour Store">
-      </div>
-      
-      <p style="font-size: 13px; color: var(--muted); margin-bottom: 16px;">
-        Conheça a nossa loja parceira oficial! Clique nos botões abaixo para acessar o Discord e o TikTok recomendado:
-      </p>
-
-      <div class="space-y" style="margin-bottom: 20px;">
-        <p><strong>🌸 Detour Store</strong></p>
-        <p style="font-size: 12px;">Qualidade e confiança garantidas pela equipe L&amp;M Shop! 𖹭.ᐟ</p>
-      </div>
-
-      <a href="https://discord.gg/aGSDnmpuw" target="_blank" rel="noopener noreferrer" class="copy-btn" style="display: block; text-decoration: none; margin-bottom: 10px;">✉ Servidor no Discord</a>
-      <a href="https://www.tiktok.com/@detour_store" target="_blank" rel="noopener noreferrer" class="copy-btn" style="display: block; text-decoration: none; background: #000000;">♫ TikTok Detour Store</a>
-    </div>
-  </div>
-
-  <footer>
-    <p style="font-size: 12px; font-weight: 500; color: var(--muted); margin: 0;">🌸 L&amp;M Shop 🌸</p>
-  </footer>
-
-  <!-- Elemento invisível do Google Tradutor -->
-  <div id="google_translate_element" style="display:none;"></div>
-
-  <script type="text/javascript">
-    /* Função de Copiar Chave PIX */
-    function copyPixKey() {
-      const pixKey = "lmshop2006@gmail.com";
-      navigator.clipboard.writeText(pixKey).then(() => {
-        alert("Chave PIX copiada com sucesso 𖹭.ᐟ");
-      }).catch(err => {
-        console.error("Erro ao copiar: ", err);
-      });
-    }
-
-    /* Função de Alternar Modo Escuro */
-    function toggleTheme() {
-      const body = document.body;
-      const themeBtn = document.getElementById('themeBtn');
-      body.classList.toggle('dark-mode');
-      
-      if (body.classList.contains('dark-mode')) {
-        themeBtn.textContent = '🌙';
-      } else {
-        themeBtn.textContent = '☀️';
-      }
-    }
-
-    /* Funções do Tradutor */
-    function googleTranslateElementInit() {
-      new google.translate.TranslateElement({
-        pageLanguage: 'pt',
-        autoDisplay: false
-      }, 'google_translate_element');
-    }
-
-    function changeLanguage(langCode) {
-      var select = document.querySelector('.goog-te-combo');
-      if (select) {
-        select.value = langCode;
-        select.dispatchEvent(new Event('change'));
-      }
-    }
-  </script>
-  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
-</body>
-</html>
+        <p><strong>. Compras:</strong> Antes de realizar o pagamento, confira o valor e o nome que está no PIX. Após o pagamento, aguarde o prazo de entrega informado pela equipe
