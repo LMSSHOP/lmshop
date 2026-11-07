@@ -76,10 +76,10 @@
     /* Grupo de Botões Controles no Canto Superior Esquerdo */
     .left-controls-container {
       position: fixed;
-      top: 16px;
-      left: 16px;
+      top: 12px;
+      left: 12px;
       display: flex;
-      gap: 8px;
+      gap: 6px;
       z-index: 100;
     }
 
@@ -87,8 +87,8 @@
       background: var(--controls-bg);
       border: 2px solid var(--accent);
       border-radius: 9999px;
-      padding: 6px 12px;
-      font-size: 16px;
+      padding: 5px 10px;
+      font-size: 14px;
       cursor: pointer;
       box-shadow: 0 4px 12px rgba(200, 51, 112, 0.2);
       backdrop-filter: blur(4px);
@@ -104,12 +104,12 @@
     /* Botões de Idioma Fixos no Canto Superior Direito */
     .lang-switch-container {
       position: fixed;
-      top: 16px;
-      right: 16px;
+      top: 12px;
+      right: 12px;
       display: flex;
-      gap: 6px;
+      gap: 4px;
       background: var(--controls-bg);
-      padding: 6px 12px;
+      padding: 4px 8px;
       border-radius: 9999px;
       border: 2px solid var(--accent);
       box-shadow: 0 4px 12px rgba(200, 51, 112, 0.2);
@@ -120,11 +120,11 @@
     .lang-btn {
       background: none;
       border: none;
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 700;
       color: var(--lang-btn-color);
       cursor: pointer;
-      padding: 2px 4px;
+      padding: 2px 3px;
       border-radius: 4px;
       transition: transform 0.2s ease, color 0.2s ease;
       line-height: 1;
@@ -154,13 +154,39 @@
       letter-spacing: 15px;
     }
 
+    /* Ajustes Exclusivos para Celulares */
+    @media (max-width: 600px) {
+      body::before, body::after {
+        display: none; /* Esconde símbolos de fundo no celular para não poluir a tela */
+      }
+      .lang-btn {
+        font-size: 10px;
+        padding: 1px 2px;
+      }
+      .left-controls-container {
+        top: 10px;
+        left: 10px;
+      }
+      .lang-switch-container {
+        top: 10px;
+        right: 10px;
+      }
+      .portrait-wrap {
+        width: 140px;
+        height: 140px;
+      }
+      .main-wrapper {
+        padding-top: 64px !important; /* Evita que o topo da página fique colado nos botões */
+      }
+    }
+
     .display { font-family: 'Fraunces', serif; }
     .eyebrow { letter-spacing: .22em; text-transform: uppercase; font-size: 11px; font-weight: 700; color: var(--accent); }
     
     .portrait-wrap { 
       position: relative; 
-      width: 180px; 
-      height: 180px; 
+      width: 170px; 
+      height: 170px; 
       margin: 0 auto; 
       z-index: 2;
     }
@@ -310,7 +336,7 @@
 </head>
 <body>
 
-  <!-- Elemento de Áudio corrigido para L&M SHOP.mp3 -->
+  <!-- Elemento de Áudio em Fundo -->
   <audio id="bgMusic" loop preload="auto">
     <source src="L&amp;M SHOP.mp3" type="audio/mpeg">
   </audio>
@@ -332,7 +358,7 @@
     <button class="lang-btn" onclick="changeLanguage('ko')" title="한국어">KR</button>
   </div>
 
-  <div style="padding: 48px 0; width: 100%; position: relative; z-index: 2;">
+  <div class="main-wrapper" style="padding: 48px 0; width: 100%; position: relative; z-index: 2;">
     <header style="padding: 0 24px; margin-bottom: 32px;">
       
       <!-- Foto da loja redonda -->
@@ -468,7 +494,7 @@
     </div>
   </div>
 
-  <!-- Pop-up 4: Loja Parceira (Sem bolinha/logo) -->
+  <!-- Pop-up 4: Loja Parceira -->
   <div id="parceira-modal" class="modal">
     <div class="modal-content" style="text-align: center;">
       <a href="#" class="modal-close">✕</a>
@@ -572,4 +598,5 @@
   <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 </body>
-                                         </html>
+    </html>
+
