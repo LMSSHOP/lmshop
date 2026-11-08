@@ -8,7 +8,7 @@
   <!-- Ícone da aba do navegador (Favicon) -->
   <link rel="icon" type="image/png" href="logo.png">
   
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Fraunces:opsz,wght@9..144,400;500;600&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Fraunces:ital,opsz,wght@1,9..144,400;500;600&amp;display=swap" rel="stylesheet">
   <style>
     :root {
       /* Tema Claro (Padrão) */
@@ -157,7 +157,7 @@
     /* Ajustes Exclusivos para Celulares */
     @media (max-width: 600px) {
       body::before, body::after {
-        display: none; /* Esconde símbolos de fundo no celular para não poluir a tela */
+        display: none;
       }
       .lang-btn {
         font-size: 10px;
@@ -176,7 +176,7 @@
         height: 140px;
       }
       .main-wrapper {
-        padding-top: 64px !important; /* Evita que o topo da página fique colado nos botões */
+        padding-top: 64px !important;
       }
     }
 
@@ -331,7 +331,28 @@
     }
     
     .space-y p { margin-bottom: 12px; font-size: 14px; line-height: 1.5; }
-    footer { padding: 24px; border-top: 1px solid var(--line); background: var(--footer-bg); z-index: 2; position: relative; transition: background 0.3s ease; }
+
+    /* Footer Ajustado com a Assinatura no Canto Esquerdo */
+    footer { 
+      padding: 18px 24px; 
+      border-top: 1px solid var(--line); 
+      background: var(--footer-bg); 
+      z-index: 2; 
+      position: relative; 
+      transition: background 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .signature-text {
+      font-family: 'Fraunces', serif;
+      font-style: italic;
+      font-size: 13px;
+      color: var(--accent);
+      opacity: 0.85;
+      letter-spacing: 0.05em;
+    }
   </style>
 </head>
 <body>
@@ -499,7 +520,7 @@
     <div class="modal-content" style="text-align: center;">
       <a href="#" class="modal-close">✕</a>
       
-      <h2 class="display" style="font-size: 20px; font-weight: bold; margin-bottom: 12px; color: var(--accent);"> Detour Store </h2>
+      <h2 class="display" style="font-size: 20px; font-weight: bold; margin-bottom: 12px; color: var(--accent);">🤝 Detour Store 🤝</h2>
       
       <p style="font-size: 13px; color: var(--muted); margin-bottom: 16px;">
         Conheça a nossa loja parceira oficial! Clique nos botões abaixo para acessar o Discord e o TikTok recomendado:
@@ -515,7 +536,9 @@
     </div>
   </div>
 
+  <!-- Rodapé com Assinatura no Lado Esquerdo -->
   <footer>
+    <span class="signature-text notranslate">✦ Ay sousz</span>
     <p style="font-size: 12px; font-weight: 500; color: var(--muted); margin: 0;">🌸 L&amp;M Shop 🌸</p>
   </footer>
 
@@ -598,5 +621,4 @@
   <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 </body>
-    </html>
-
+</html>
