@@ -26,10 +26,10 @@
       --controls-bg: #ffffff;
       --lang-btn-color: #513344;
       
-      /* Cores das Janelinhas: Rosa Claro (Topo) e Rosa Escuro (Base) Juntos */
-      --modal-pink-light: #fff0f5;
-      --modal-pink-dark: #f7a3c7;
-      --modal-border: #e64980;
+      /* Cores das Janelinhas: Rosa Claro e Rosa Escuro Juntos e Marcantes */
+      --modal-pink-light: #ffffff;
+      --modal-pink-dark: #fca1c9;
+      --modal-border: #c83370;
     }
 
     /* Tema Escuro (Inverso) */
@@ -49,8 +49,8 @@
       --lang-btn-color: #c83370;
 
       /* Cores para o Modo Escuro */
-      --modal-pink-light: #361c2c;
-      --modal-pink-dark: #66183e;
+      --modal-pink-light: #2a1522;
+      --modal-pink-dark: #6e2247;
       --modal-border: #ff66a3;
     }
 
@@ -321,7 +321,7 @@
       transform: scale(1.08);
     }
 
-    /* Modais / Pop-ups com efeito de descer de cima para baixo e mistura de Rosa Claro + Rosa Escuro */
+    /* Modais / Pop-ups com efeito de descer e mistura marcante de Rosa Claro + Rosa Escuro */
     .modal {
       display: none;
       position: fixed;
@@ -340,7 +340,7 @@
       opacity: 1;
     }
     .modal-content {
-      background: linear-gradient(160deg, var(--modal-pink-light) 0%, #ffffff 40%, var(--modal-pink-dark) 100%);
+      background: linear-gradient(135deg, var(--modal-pink-light) 0%, var(--modal-pink-dark) 100%);
       border: 3px solid var(--modal-border);
       border-radius: 28px;
       width: 100%;
@@ -349,7 +349,7 @@
       overflow-y: auto;
       padding: 28px;
       position: relative;
-      box-shadow: 0 15px 35px rgba(200, 51, 112, 0.3);
+      box-shadow: 0 15px 35px rgba(200, 51, 112, 0.35);
       text-align: left;
       color: var(--ink);
       animation: modalSlideDown 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
