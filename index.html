@@ -80,21 +80,16 @@
       }
     }
 
-    @keyframes modalPop {
+    /* Animação do balão descendo de cima para baixo */
+    @keyframes modalSlideDown {
       from {
         opacity: 0;
-        transform: scale(0.9) translateY(10px);
+        transform: translateY(-60px) scale(0.95);
       }
       to {
         opacity: 1;
-        transform: scale(1) translateY(0);
+        transform: translateY(0) scale(1);
       }
-    }
-
-    @keyframes pulseSoft {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.03); }
-      100% { transform: scale(1); }
     }
 
     /* Esconde a barra superior do Google Tradutor */
@@ -316,7 +311,7 @@
       transform: scale(1.08);
     }
 
-    /* Modais / Pop-ups com Animação Pop In */
+    /* Modais / Pop-ups com efeito de descer de cima para baixo */
     .modal {
       display: none;
       position: fixed;
@@ -347,7 +342,7 @@
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
       text-align: left;
       color: var(--ink);
-      animation: modalPop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+      animation: modalSlideDown 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     }
     .modal-close {
       position: absolute;
@@ -531,7 +526,7 @@
     <div class="modal-content">
       <a href="#" class="modal-close">✕</a>
       
-      <h2 class="display" style="font-size: 20px; font-weight: bold; margin-bottom: 16px; text-align: center; color: var(--accent);">╭୨୧ ┈┈ ꒰ REGRAS DO SERVER ꒱ ┈┈ ୨୧╮</h2>
+      <h2 class="display" style="font-size: 20px; font-weight: bold; margin-bottom: 16px; text-align: center; color: var(--accent);">╭୨enum ┈┈ ꒰ REGRAS DO SERVER ꒱ ┈┈ ୨enum╮</h2>
       
       <p style="font-size: 12px; margin-bottom: 16px; text-align: center; color: var(--muted);">
         As regras existem para manter o servidor organizado, seguro e agradável para todos. O descumprimento resultará em punições. Pedimos que leia com atenção.
@@ -547,9 +542,9 @@
         <p><strong>→ Organização:</strong> Utilize os canais corretos para cada assunto e ajude a manter o servidor organizado.</p>
         <p><strong>→ Links:</strong> Evite enviar links para a segurança de todos. Não são permitidos links de outros servidores. Também não compartilhe conteúdos inadequados, como links suspeitos, imagens impróprias ou assuntos sensíveis.</p>
         <p><strong>→ Punição:</strong> O descumprimento das regras resultará em punições. Em caso de contestação de punições aplicadas pela equipe, a decisão será mantida. Siga as regras, respeite as orientações e assuma a responsabilidade por eventuais infrações.</p>
-        <p><strong>→ Vendas:</strong> Vendas são proibidas dentro do servidor. Caso alguém realize vendas, será applied 1 aviso (warn). Caso se repita, o usuário será banido.</p>
+        <p><strong>→ Vendas:</strong> Vendas são proibidas dentro do servidor. Caso alguém realize vendas, será aplicado 1 aviso (warn). Caso se repita, o usuário será banido.</p>
         <p><strong>→ Plágio:</strong> É proibido qualquer tipo de cópia/plágio dos conteúdos do L&amp;M SHOP. Só temos 4 contas no TikTok que são: @wlelebunny, @lm.shop36, @maarcsz8 e @.lele.mm2.</p>
-        <p><strong>→ Divulgação:</strong> Divulgação de outras lojas, servidores ou contas (como TikTok) não é permitida dentro do servidor. Caso ocorra, será applied 1 warn (aviso) e caso obtenha 3 warns resultará em mute.</p>
+        <p><strong>→ Divulgação:</strong> Divulgação de outras lojas, servidores ou contas (como TikTok) não é permitida dentro do servidor. Caso ocorra, será aplicado 1 warn (aviso) e caso obtenha 3 warns resultará em mute.</p>
       </div>
     </div>
   </div>
