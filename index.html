@@ -25,6 +25,11 @@
       --modal-overlay: rgba(81, 51, 68, 0.6);
       --controls-bg: #ffffff;
       --lang-btn-color: #513344;
+      
+      /* Cores Temáticas para as Janelinhas (Modais) */
+      --modal-bg-1: #ffffff;
+      --modal-bg-2: #fff5f8;
+      --modal-border: #ffb6c1;
     }
 
     /* Tema Escuro (Inverso) */
@@ -42,6 +47,11 @@
       --modal-overlay: rgba(15, 5, 12, 0.8);
       --controls-bg: #ffffff;
       --lang-btn-color: #c83370;
+
+      /* Cores Temáticas para as Janelinhas no Modo Escuro */
+      --modal-bg-1: #2a1522;
+      --modal-bg-2: #361c2c;
+      --modal-border: #c83370;
     }
 
     * { box-sizing: border-box; }
@@ -311,7 +321,7 @@
       transform: scale(1.08);
     }
 
-    /* Modais / Pop-ups com efeito de descer de cima para baixo */
+    /* Modais / Pop-ups com efeito de descer de cima para baixo e tema Rosa Claro/Escuro */
     .modal {
       display: none;
       position: fixed;
@@ -330,16 +340,16 @@
       opacity: 1;
     }
     .modal-content {
-      background: var(--bg-card);
-      border: 2px solid var(--line);
-      border-radius: 24px;
+      background: linear-gradient(145deg, var(--modal-bg-1), var(--modal-bg-2));
+      border: 3px solid var(--modal-border);
+      border-radius: 28px;
       width: 100%;
       max-width: 520px;
       max-height: 85vh;
       overflow-y: auto;
-      padding: 24px;
+      padding: 28px;
       position: relative;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 15px 35px rgba(200, 51, 112, 0.25);
       text-align: left;
       color: var(--ink);
       animation: modalSlideDown 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
@@ -350,7 +360,7 @@
       right: 16px;
       background: var(--badge-bg);
       color: var(--accent);
-      border: none;
+      border: 2px solid var(--modal-border);
       width: 32px;
       height: 32px;
       border-radius: 50%;
@@ -526,7 +536,7 @@
     <div class="modal-content">
       <a href="#" class="modal-close">✕</a>
       
-      <h2 class="display" style="font-size: 20px; font-weight: bold; margin-bottom: 16px; text-align: center; color: var(--accent);">╭୨enum ┈┈ ꒰ REGRAS DO SERVER ꒱ ┈┈ ୨enum╮</h2>
+      <h2 class="display" style="font-size: 20px; font-weight: bold; margin-bottom: 16px; text-align: center; color: var(--accent);">╭୨୧ ┈┈ ꒰ REGRAS DO SERVER ꒱ ┈┈ ୨୧╮</h2>
       
       <p style="font-size: 12px; margin-bottom: 16px; text-align: center; color: var(--muted);">
         As regras existem para manter o servidor organizado, seguro e agradável para todos. O descumprimento resultará em punições. Pedimos que leia com atenção.
