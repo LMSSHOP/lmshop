@@ -11,30 +11,27 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Fraunces:ital,opsz,wght@1,9..144,400;500;600&amp;display=swap" rel="stylesheet">
   <style>
     :root {
-      /* Tema Claro */
-      --ink: #ffffff;
-      --muted: #f4c2d7;
-      --accent: #ff75a0;
-      --line: rgba(255, 255, 255, 0.2);
-      --bg-card: rgba(30, 20, 28, 0.75);
-      
-      /* Overlay escuro em cima da imagem (Igual a Casinha do Ayzin) */
-      --bg-overlay: rgba(24, 15, 22, 0.75);
-      
-      --badge-bg: #ff66a3;
-      --footer-bg: rgba(20, 10, 18, 0.85);
-      --modal-overlay: rgba(10, 5, 8, 0.85);
-      --controls-bg: rgba(255, 255, 255, 0.9);
+      /* Tema Claro (Usa a foto L&M.jpg com camada clarinha por cima) */
+      --ink: #513344;
+      --muted: #795d6c;
+      --accent: #c83370;
+      --line: #eec6d7;
+      --bg-card: #ffffff;
+      --bg-overlay: rgba(255, 235, 242, 0.75); /* Camada CLARA sobre a foto */
+      --badge-bg: #ffe8f0;
+      --footer-bg: rgba(255, 220, 233, 0.9);
+      --modal-overlay: rgba(81, 51, 68, 0.5);
+      --controls-bg: #ffffff;
       --lang-btn-color: #513344;
       
-      /* Cores dos Balões de Link */
-      --pink-light: rgba(45, 25, 37, 0.85);
-      --pink-dark: rgba(90, 30, 60, 0.9);
-      --pink-border: #ff75a0;
-      --modal-bg: linear-gradient(135deg, rgba(35, 18, 28, 0.95) 0%, rgba(80, 25, 52, 0.95) 100%);
+      /* Balões no Modo Claro */
+      --pink-light: rgba(255, 255, 255, 0.95);
+      --pink-dark: rgba(255, 133, 179, 0.95);
+      --pink-border: #a31551;
+      --modal-bg: linear-gradient(135deg, rgba(255, 255, 255, 0.96) 0%, rgba(255, 133, 179, 0.96) 100%);
     }
 
-    /* Tema Escuro */
+    /* Tema Escuro do Sistema (Usa a MESMA foto L&M.jpg, mas com camada escura por cima) */
     @media (prefers-color-scheme: dark) {
       :root {
         --ink: #ffffff;
@@ -42,12 +39,14 @@
         --accent: #ff75a0;
         --line: rgba(255, 255, 255, 0.15);
         --bg-card: rgba(20, 12, 18, 0.85);
-        --bg-overlay: rgba(14, 8, 12, 0.82);
+        --bg-overlay: rgba(18, 10, 16, 0.85); /* Camada ESCURA sobre a foto */
         --badge-bg: #ff66a3;
         --footer-bg: rgba(15, 8, 14, 0.92);
-        --modal-overlay: rgba(5, 2, 4, 0.9);
+        --modal-overlay: rgba(5, 2, 4, 0.85);
         --controls-bg: rgba(255, 255, 255, 0.9);
         --lang-btn-color: #c83370;
+        
+        /* Balões no Modo Escuro */
         --pink-light: rgba(35, 18, 28, 0.9);
         --pink-dark: rgba(75, 20, 48, 0.92);
         --pink-border: #ff75a0;
@@ -55,16 +54,17 @@
       }
     }
 
+    /* Forçado Manualmente para Modo Escuro */
     body.dark-mode {
       --ink: #ffffff;
       --muted: #f4c2d7;
       --accent: #ff75a0;
       --line: rgba(255, 255, 255, 0.15);
       --bg-card: rgba(20, 12, 18, 0.85);
-      --bg-overlay: rgba(14, 8, 12, 0.82);
+      --bg-overlay: rgba(18, 10, 16, 0.85);
       --badge-bg: #ff66a3;
       --footer-bg: rgba(15, 8, 14, 0.92);
-      --modal-overlay: rgba(5, 2, 4, 0.9);
+      --modal-overlay: rgba(5, 2, 4, 0.85);
       --controls-bg: rgba(255, 255, 255, 0.9);
       --lang-btn-color: #c83370;
       --pink-light: rgba(35, 18, 28, 0.9);
@@ -73,28 +73,29 @@
       --modal-bg: linear-gradient(135deg, rgba(25, 12, 20, 0.96) 0%, rgba(65, 18, 42, 0.96) 100%);
     }
 
+    /* Forçado Manualmente para Modo Claro */
     body.light-mode {
-      --ink: #ffffff;
-      --muted: #f4c2d7;
-      --accent: #ff75a0;
-      --line: rgba(255, 255, 255, 0.2);
-      --bg-card: rgba(30, 20, 28, 0.75);
-      --bg-overlay: rgba(24, 15, 22, 0.75);
-      --badge-bg: #ff66a3;
-      --footer-bg: rgba(20, 10, 18, 0.85);
-      --modal-overlay: rgba(10, 5, 8, 0.85);
-      --controls-bg: rgba(255, 255, 255, 0.9);
+      --ink: #513344;
+      --muted: #795d6c;
+      --accent: #c83370;
+      --line: #eec6d7;
+      --bg-card: #ffffff;
+      --bg-overlay: rgba(255, 235, 242, 0.75);
+      --badge-bg: #ffe8f0;
+      --footer-bg: rgba(255, 220, 233, 0.9);
+      --modal-overlay: rgba(81, 51, 68, 0.5);
+      --controls-bg: #ffffff;
       --lang-btn-color: #513344;
-      --pink-light: rgba(45, 25, 37, 0.85);
-      --pink-dark: rgba(90, 30, 60, 0.9);
-      --pink-border: #ff75a0;
-      --modal-bg: linear-gradient(135deg, rgba(35, 18, 28, 0.95) 0%, rgba(80, 25, 52, 0.95) 100%);
+      --pink-light: rgba(255, 255, 255, 0.95);
+      --pink-dark: rgba(255, 133, 179, 0.95);
+      --pink-border: #a31551;
+      --modal-bg: linear-gradient(135deg, rgba(255, 255, 255, 0.96) 0%, rgba(255, 133, 179, 0.96) 100%);
     }
 
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     
-    /* Fundo com efeito igual da Casinha do Ayzin */
+    /* A foto L&M.jpg é usada SEMPRE no fundo em ambos os modos */
     body { 
       margin: 0; 
       width: 100%; 
@@ -139,7 +140,6 @@
       }
     }
 
-    /* Esconde a barra superior do Google Tradutor */
     .goog-te-banner-frame { display: none !important; }
     .skiptranslate { display: none !important; }
     body { top: 0px !important; }
@@ -162,7 +162,7 @@
       padding: 5px 10px;
       font-size: 14px;
       cursor: pointer;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 4px 12px rgba(200, 51, 112, 0.2);
       backdrop-filter: blur(4px);
       transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), background 0.3s ease, box-shadow 0.2s ease;
       display: flex;
@@ -171,7 +171,7 @@
     }
     .control-btn:hover {
       transform: scale(1.15) rotate(5deg);
-      box-shadow: 0 6px 16px rgba(255, 117, 160, 0.4);
+      box-shadow: 0 6px 16px rgba(200, 51, 112, 0.35);
     }
     .control-btn:active {
       transform: scale(0.95);
@@ -188,7 +188,7 @@
       padding: 4px 8px;
       border-radius: 9999px;
       border: 2px solid var(--accent);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 4px 12px rgba(200, 51, 112, 0.2);
       z-index: 100;
       backdrop-filter: blur(4px);
       transition: background 0.3s ease;
@@ -217,7 +217,7 @@
     body::before, body::after {
       position: fixed;
       font-size: 24px;
-      opacity: 0.3;
+      opacity: 0.4;
       pointer-events: none;
       z-index: 1;
     }
@@ -282,14 +282,14 @@
       height: 100%;
       border-radius: 50%;
       object-fit: cover;
-      box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
-      border: 4px solid var(--pink-border);
+      box-shadow: 0 6px 25px rgba(200, 51, 112, 0.25);
+      border: 4px solid var(--bg-card);
       outline: 2px solid var(--accent);
       display: block;
       transition: border-color 0.3s ease, box-shadow 0.3s ease;
     }
     .portrait-wrap:hover img {
-      box-shadow: 0 10px 30px rgba(255, 117, 160, 0.4);
+      box-shadow: 0 10px 30px rgba(200, 51, 112, 0.4);
     }
 
     .link-tree-container {
@@ -301,7 +301,7 @@
       z-index: 2;
     }
 
-    /* Cartões de Link com efeito Glassmorphism escuro */
+    /* Cartões de Link */
     .link-card {
       display: flex;
       align-items: center;
@@ -310,14 +310,14 @@
       padding: 16px 24px;
       margin-bottom: 14px;
       background: linear-gradient(135deg, var(--pink-light) 0%, var(--pink-dark) 100%);
-      backdrop-filter: blur(8px);
+      backdrop-filter: blur(6px);
       border: 2px solid var(--pink-border);
       border-radius: 9999px;
-      color: #ffffff;
+      color: var(--ink);
       font-weight: 600;
       font-size: 15px;
       text-decoration: none;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 4px 15px rgba(200, 51, 112, 0.15);
       transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), background 0.3s ease, border-color 0.25s ease, box-shadow 0.25s ease;
       opacity: 0;
       animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
@@ -331,11 +331,11 @@
     .link-card:nth-child(6) { animation-delay: 0.65s; }
 
     .link-card:hover {
-      background: linear-gradient(135deg, var(--accent) 0%, #c83370 100%);
+      background: linear-gradient(135deg, var(--pink-dark) 0%, var(--accent) 100%);
       color: #ffffff;
-      border-color: #ffffff;
+      border-color: var(--accent);
       transform: translateY(-4px) scale(1.02);
-      box-shadow: 0 10px 22px rgba(255, 117, 160, 0.4);
+      box-shadow: 0 10px 22px rgba(200, 51, 112, 0.35);
     }
     .link-card:active {
       transform: translateY(-1px) scale(0.98);
@@ -349,12 +349,12 @@
       border-radius: 12px;
       font-weight: 700;
       text-transform: uppercase;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
       transition: background 0.3s ease, transform 0.2s ease, color 0.2s ease;
     }
     .link-card:hover .badge {
       background: #ffffff;
-      color: #c83370;
+      color: var(--accent);
       transform: scale(1.08);
     }
 
@@ -364,7 +364,7 @@
       position: fixed;
       top: 0; left: 0; right: 0; bottom: 0;
       background: var(--modal-overlay);
-      backdrop-filter: blur(6px);
+      backdrop-filter: blur(4px);
       z-index: 50;
       align-items: center;
       justify-content: center;
@@ -378,7 +378,7 @@
     }
     .modal-content {
       background: var(--modal-bg);
-      backdrop-filter: blur(12px);
+      backdrop-filter: blur(10px);
       border: 3px solid var(--pink-border);
       border-radius: 28px;
       width: 100%;
@@ -387,9 +387,9 @@
       overflow-y: auto;
       padding: 28px;
       position: relative;
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+      box-shadow: 0 15px 35px rgba(200, 51, 112, 0.4);
       text-align: left;
-      color: #ffffff;
+      color: var(--ink);
       animation: modalSlideDown 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     }
     .modal-close {
@@ -421,7 +421,7 @@
 
     /* Caixa de PIX estilizada */
     .pix-box {
-      background: rgba(255, 255, 255, 0.15);
+      background: rgba(255, 255, 255, 0.85);
       border: 2px dashed var(--accent);
       border-radius: 16px;
       padding: 12px;
@@ -429,9 +429,9 @@
       margin: 16px 0;
       word-break: break-all;
       font-weight: 700;
-      color: #ffffff;
+      color: var(--accent);
       transition: transform 0.2s ease;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
     }
     .pix-box:hover {
       transform: scale(1.01);
@@ -450,21 +450,21 @@
     }
     .copy-btn:hover {
       transform: scale(1.03);
-      box-shadow: 0 6px 18px rgba(255, 117, 160, 0.4);
+      box-shadow: 0 6px 18px rgba(200, 51, 112, 0.35);
       opacity: 0.95;
     }
     .copy-btn:active {
       transform: scale(0.97);
     }
     
-    .space-y p { margin-bottom: 12px; font-size: 14px; line-height: 1.5; color: rgba(255, 255, 255, 0.9); }
+    .space-y p { margin-bottom: 12px; font-size: 14px; line-height: 1.5; }
 
     /* Footer Ajustado */
     footer { 
       padding: 18px 24px; 
       border-top: 1px solid var(--line); 
       background: var(--footer-bg); 
-      backdrop-filter: blur(8px);
+      backdrop-filter: blur(6px);
       z-index: 2; 
       position: relative; 
       transition: background 0.3s ease;
@@ -479,7 +479,7 @@
       font-style: italic;
       font-size: 13px;
       color: var(--accent);
-      opacity: 0.9;
+      opacity: 0.85;
       letter-spacing: 0.05em;
       transition: transform 0.3s ease, opacity 0.3s ease;
     }
