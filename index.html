@@ -26,10 +26,11 @@
       --controls-bg: #ffffff;
       --lang-btn-color: #513344;
       
-      /* Cores dos Balões e Janelinhas: Rosa Claro + Rosa Forte Juntos */
+      /* Cores dos Balões e Janelinhas */
       --pink-light: #ffffff;
       --pink-dark: #ff85b3;
       --pink-border: #a31551;
+      --modal-overlay-bg: rgba(255, 240, 245, 0.85);
     }
 
     /* Tema Escuro do Dispositivo (Automático via Sistema) */
@@ -51,6 +52,7 @@
         --pink-light: #2a1522;
         --pink-dark: #801a4d;
         --pink-border: #ff66a3;
+        --modal-overlay-bg: rgba(26, 10, 19, 0.88);
       }
     }
 
@@ -72,6 +74,7 @@
       --pink-light: #2a1522;
       --pink-dark: #801a4d;
       --pink-border: #ff66a3;
+      --modal-overlay-bg: rgba(26, 10, 19, 0.88);
     }
 
     body.light-mode {
@@ -91,6 +94,7 @@
       --pink-light: #ffffff;
       --pink-dark: #ff85b3;
       --pink-border: #a31551;
+      --modal-overlay-bg: rgba(255, 240, 245, 0.85);
     }
 
     * { box-sizing: border-box; }
@@ -361,7 +365,7 @@
       transform: scale(1.08);
     }
 
-    /* Modais / Pop-ups */
+    /* Modais com a imagem L&M.jpg no fundo */
     .modal {
       display: none;
       position: fixed;
@@ -380,7 +384,10 @@
       opacity: 1;
     }
     .modal-content {
-      background: linear-gradient(135deg, var(--pink-light) 0%, var(--pink-dark) 100%);
+      background-image: linear-gradient(var(--modal-overlay-bg), var(--modal-overlay-bg)), url('L&M.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
       border: 3px solid var(--pink-border);
       border-radius: 28px;
       width: 100%;
@@ -595,7 +602,7 @@
         <p><strong>→ Punição:</strong> O descumprimento das regras resultará em punições. Em caso de contestação de punições aplicadas pela equipe, a decisão será mantida. Siga as regras, respeite as orientações e assuma a responsabilidade por eventuais infrações.</p>
         <p><strong>→ Vendas:</strong> Vendas são proibidas dentro do servidor. Caso alguém realize vendas, será aplicado 1 aviso (warn). Caso se repita, o usuário será banido.</p>
         <p><strong>→ Plágio:</strong> É proibido qualquer tipo de cópia/plágio dos conteúdos do L&amp;M SHOP. Só temos 4 contas no TikTok que são: @wlelebunny, @lm.shop36, @maarcsz8 e @.lele.mm2.</p>
-        <p><strong>→ Divulgação:</strong> Divulgação de outras lojas, servidores ou contas (como TikTok) não é permitida dentro do servidor. Caso ocorra, será applied 1 warn (aviso) e caso obtenha 3 warns resultará em mute.</p>
+        <p><strong>→ Divulgação:</strong> Divulgação de outras lojas, servidores ou contas (como TikTok) não é permitida dentro do servidor. Caso ocorra, será aplicado 1 warn (aviso) e caso obtenha 3 warns resultará em mute.</p>
       </div>
     </div>
   </div>
