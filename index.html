@@ -11,106 +11,101 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Fraunces:ital,opsz,wght@1,9..144,400;500;600&amp;display=swap" rel="stylesheet">
   <style>
     :root {
-      /* Tema Claro (Padrão) */
-      --ink: #513344;
-      --muted: #795d6c;
-      --accent: #c83370;
-      --line: #eec6d7;
-      --bg-card: #ffffff;
-      --bg-main: #fff0f5;
-      --bg-dot-1: #f9c5d1;
-      --bg-dot-2: #f4aab9;
-      --badge-bg: #ffe8f0;
-      --footer-bg: #fbd4e3;
-      --modal-overlay: rgba(81, 51, 68, 0.6);
-      --controls-bg: #ffffff;
+      /* Tema Claro */
+      --ink: #ffffff;
+      --muted: #f4c2d7;
+      --accent: #ff75a0;
+      --line: rgba(255, 255, 255, 0.2);
+      --bg-card: rgba(30, 20, 28, 0.75);
+      
+      /* Overlay escuro em cima da imagem (Igual a Casinha do Ayzin) */
+      --bg-overlay: rgba(24, 15, 22, 0.75);
+      
+      --badge-bg: #ff66a3;
+      --footer-bg: rgba(20, 10, 18, 0.85);
+      --modal-overlay: rgba(10, 5, 8, 0.85);
+      --controls-bg: rgba(255, 255, 255, 0.9);
       --lang-btn-color: #513344;
       
-      /* Cores dos Balões e Janelinhas */
-      --pink-light: #ffffff;
-      --pink-dark: #ff85b3;
-      --pink-border: #a31551;
-      --modal-overlay-bg: rgba(255, 240, 245, 0.85);
+      /* Cores dos Balões de Link */
+      --pink-light: rgba(45, 25, 37, 0.85);
+      --pink-dark: rgba(90, 30, 60, 0.9);
+      --pink-border: #ff75a0;
+      --modal-bg: linear-gradient(135deg, rgba(35, 18, 28, 0.95) 0%, rgba(80, 25, 52, 0.95) 100%);
     }
 
-    /* Tema Escuro do Dispositivo (Automático via Sistema) */
+    /* Tema Escuro */
     @media (prefers-color-scheme: dark) {
       :root {
-        --ink: #ffdae9;
-        --muted: #d4a5bc;
-        --accent: #ff66a3;
-        --line: #522b40;
-        --bg-card: #2a1522;
-        --bg-main: #180a13;
-        --bg-dot-1: #3d1c2e;
-        --bg-dot-2: #4a2137;
-        --badge-bg: #401d30;
-        --footer-bg: #220e1a;
-        --modal-overlay: rgba(15, 5, 12, 0.8);
-        --controls-bg: #ffffff;
+        --ink: #ffffff;
+        --muted: #f4c2d7;
+        --accent: #ff75a0;
+        --line: rgba(255, 255, 255, 0.15);
+        --bg-card: rgba(20, 12, 18, 0.85);
+        --bg-overlay: rgba(14, 8, 12, 0.82);
+        --badge-bg: #ff66a3;
+        --footer-bg: rgba(15, 8, 14, 0.92);
+        --modal-overlay: rgba(5, 2, 4, 0.9);
+        --controls-bg: rgba(255, 255, 255, 0.9);
         --lang-btn-color: #c83370;
-        --pink-light: #2a1522;
-        --pink-dark: #801a4d;
-        --pink-border: #ff66a3;
-        --modal-overlay-bg: rgba(26, 10, 19, 0.88);
+        --pink-light: rgba(35, 18, 28, 0.9);
+        --pink-dark: rgba(75, 20, 48, 0.92);
+        --pink-border: #ff75a0;
+        --modal-bg: linear-gradient(135deg, rgba(25, 12, 20, 0.96) 0%, rgba(65, 18, 42, 0.96) 100%);
       }
     }
 
-    /* Override manual caso o usuário force pelo botão */
     body.dark-mode {
-      --ink: #ffdae9;
-      --muted: #d4a5bc;
-      --accent: #ff66a3;
-      --line: #522b40;
-      --bg-card: #2a1522;
-      --bg-main: #180a13;
-      --bg-dot-1: #3d1c2e;
-      --bg-dot-2: #4a2137;
-      --badge-bg: #401d30;
-      --footer-bg: #220e1a;
-      --modal-overlay: rgba(15, 5, 12, 0.8);
-      --controls-bg: #ffffff;
+      --ink: #ffffff;
+      --muted: #f4c2d7;
+      --accent: #ff75a0;
+      --line: rgba(255, 255, 255, 0.15);
+      --bg-card: rgba(20, 12, 18, 0.85);
+      --bg-overlay: rgba(14, 8, 12, 0.82);
+      --badge-bg: #ff66a3;
+      --footer-bg: rgba(15, 8, 14, 0.92);
+      --modal-overlay: rgba(5, 2, 4, 0.9);
+      --controls-bg: rgba(255, 255, 255, 0.9);
       --lang-btn-color: #c83370;
-      --pink-light: #2a1522;
-      --pink-dark: #801a4d;
-      --pink-border: #ff66a3;
-      --modal-overlay-bg: rgba(26, 10, 19, 0.88);
+      --pink-light: rgba(35, 18, 28, 0.9);
+      --pink-dark: rgba(75, 20, 48, 0.92);
+      --pink-border: #ff75a0;
+      --modal-bg: linear-gradient(135deg, rgba(25, 12, 20, 0.96) 0%, rgba(65, 18, 42, 0.96) 100%);
     }
 
     body.light-mode {
-      --ink: #513344;
-      --muted: #795d6c;
-      --accent: #c83370;
-      --line: #eec6d7;
-      --bg-card: #ffffff;
-      --bg-main: #fff0f5;
-      --bg-dot-1: #f9c5d1;
-      --bg-dot-2: #f4aab9;
-      --badge-bg: #ffe8f0;
-      --footer-bg: #fbd4e3;
-      --modal-overlay: rgba(81, 51, 68, 0.6);
-      --controls-bg: #ffffff;
+      --ink: #ffffff;
+      --muted: #f4c2d7;
+      --accent: #ff75a0;
+      --line: rgba(255, 255, 255, 0.2);
+      --bg-card: rgba(30, 20, 28, 0.75);
+      --bg-overlay: rgba(24, 15, 22, 0.75);
+      --badge-bg: #ff66a3;
+      --footer-bg: rgba(20, 10, 18, 0.85);
+      --modal-overlay: rgba(10, 5, 8, 0.85);
+      --controls-bg: rgba(255, 255, 255, 0.9);
       --lang-btn-color: #513344;
-      --pink-light: #ffffff;
-      --pink-dark: #ff85b3;
-      --pink-border: #a31551;
-      --modal-overlay-bg: rgba(255, 240, 245, 0.85);
+      --pink-light: rgba(45, 25, 37, 0.85);
+      --pink-dark: rgba(90, 30, 60, 0.9);
+      --pink-border: #ff75a0;
+      --modal-bg: linear-gradient(135deg, rgba(35, 18, 28, 0.95) 0%, rgba(80, 25, 52, 0.95) 100%);
     }
 
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
+    
+    /* Fundo com efeito igual da Casinha do Ayzin */
     body { 
       margin: 0; 
       width: 100%; 
       min-height: 100vh;
       color: var(--ink); 
       font-family: 'DM Sans', sans-serif; 
-      background-color: var(--bg-main);
-      background-image: 
-        radial-gradient(var(--bg-dot-1) 1.5px, transparent 1.5px), 
-        radial-gradient(var(--bg-dot-2) 1.5px, var(--bg-main) 1.5px);
-      background-size: 60px 60px;
-      background-position: 0 0, 30px 30px;
+      background-image: linear-gradient(var(--bg-overlay), var(--bg-overlay)), url('L&M.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -118,7 +113,7 @@
       position: relative;
       overflow-x: hidden;
       top: 0 !important;
-      transition: background-color 0.3s ease, color 0.3s ease;
+      transition: background 0.3s ease, color 0.3s ease;
     }
 
     /* Keyframes de Animações */
@@ -133,7 +128,6 @@
       }
     }
 
-    /* Animação do balão descendo de cima para baixo */
     @keyframes modalSlideDown {
       from {
         opacity: 0;
@@ -168,7 +162,7 @@
       padding: 5px 10px;
       font-size: 14px;
       cursor: pointer;
-      box-shadow: 0 4px 12px rgba(200, 51, 112, 0.2);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
       backdrop-filter: blur(4px);
       transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), background 0.3s ease, box-shadow 0.2s ease;
       display: flex;
@@ -177,7 +171,7 @@
     }
     .control-btn:hover {
       transform: scale(1.15) rotate(5deg);
-      box-shadow: 0 6px 16px rgba(200, 51, 112, 0.35);
+      box-shadow: 0 6px 16px rgba(255, 117, 160, 0.4);
     }
     .control-btn:active {
       transform: scale(0.95);
@@ -194,7 +188,7 @@
       padding: 4px 8px;
       border-radius: 9999px;
       border: 2px solid var(--accent);
-      box-shadow: 0 4px 12px rgba(200, 51, 112, 0.2);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
       z-index: 100;
       backdrop-filter: blur(4px);
       transition: background 0.3s ease;
@@ -223,7 +217,7 @@
     body::before, body::after {
       position: fixed;
       font-size: 24px;
-      opacity: 0.4;
+      opacity: 0.3;
       pointer-events: none;
       z-index: 1;
     }
@@ -240,7 +234,6 @@
       letter-spacing: 15px;
     }
 
-    /* Ajustes Exclusivos para Celulares */
     @media (max-width: 600px) {
       body::before, body::after {
         display: none;
@@ -289,14 +282,14 @@
       height: 100%;
       border-radius: 50%;
       object-fit: cover;
-      box-shadow: 0 6px 25px rgba(200, 51, 112, 0.25);
-      border: 4px solid var(--bg-card);
+      box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
+      border: 4px solid var(--pink-border);
       outline: 2px solid var(--accent);
       display: block;
       transition: border-color 0.3s ease, box-shadow 0.3s ease;
     }
     .portrait-wrap:hover img {
-      box-shadow: 0 10px 30px rgba(200, 51, 112, 0.4);
+      box-shadow: 0 10px 30px rgba(255, 117, 160, 0.4);
     }
 
     .link-tree-container {
@@ -308,7 +301,7 @@
       z-index: 2;
     }
 
-    /* Cartões de Link com as duas cores de rosa juntas em degradê */
+    /* Cartões de Link com efeito Glassmorphism escuro */
     .link-card {
       display: flex;
       align-items: center;
@@ -317,19 +310,19 @@
       padding: 16px 24px;
       margin-bottom: 14px;
       background: linear-gradient(135deg, var(--pink-light) 0%, var(--pink-dark) 100%);
+      backdrop-filter: blur(8px);
       border: 2px solid var(--pink-border);
       border-radius: 9999px;
-      color: var(--ink);
+      color: #ffffff;
       font-weight: 600;
       font-size: 15px;
       text-decoration: none;
-      box-shadow: 0 4px 15px rgba(200, 51, 112, 0.15);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
       transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), background 0.3s ease, border-color 0.25s ease, box-shadow 0.25s ease;
       opacity: 0;
       animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     }
 
-    /* Delays individuais para surgirem sequencialmente */
     .link-card:nth-child(1) { animation-delay: 0.15s; }
     .link-card:nth-child(2) { animation-delay: 0.25s; }
     .link-card:nth-child(3) { animation-delay: 0.35s; }
@@ -338,11 +331,11 @@
     .link-card:nth-child(6) { animation-delay: 0.65s; }
 
     .link-card:hover {
-      background: linear-gradient(135deg, var(--pink-dark) 0%, var(--accent) 100%);
+      background: linear-gradient(135deg, var(--accent) 0%, #c83370 100%);
       color: #ffffff;
-      border-color: var(--accent);
+      border-color: #ffffff;
       transform: translateY(-4px) scale(1.02);
-      box-shadow: 0 10px 22px rgba(200, 51, 112, 0.35);
+      box-shadow: 0 10px 22px rgba(255, 117, 160, 0.4);
     }
     .link-card:active {
       transform: translateY(-1px) scale(0.98);
@@ -356,22 +349,22 @@
       border-radius: 12px;
       font-weight: 700;
       text-transform: uppercase;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
       transition: background 0.3s ease, transform 0.2s ease, color 0.2s ease;
     }
     .link-card:hover .badge {
       background: #ffffff;
-      color: var(--accent);
+      color: #c83370;
       transform: scale(1.08);
     }
 
-    /* Modais com a imagem L&M.jpg no fundo */
+    /* Modais / Pop-ups */
     .modal {
       display: none;
       position: fixed;
       top: 0; left: 0; right: 0; bottom: 0;
       background: var(--modal-overlay);
-      backdrop-filter: blur(4px);
+      backdrop-filter: blur(6px);
       z-index: 50;
       align-items: center;
       justify-content: center;
@@ -384,10 +377,8 @@
       opacity: 1;
     }
     .modal-content {
-      background-image: linear-gradient(var(--modal-overlay-bg), var(--modal-overlay-bg)), url('L&M.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
+      background: var(--modal-bg);
+      backdrop-filter: blur(12px);
       border: 3px solid var(--pink-border);
       border-radius: 28px;
       width: 100%;
@@ -396,9 +387,9 @@
       overflow-y: auto;
       padding: 28px;
       position: relative;
-      box-shadow: 0 15px 35px rgba(200, 51, 112, 0.4);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
       text-align: left;
-      color: var(--ink);
+      color: #ffffff;
       animation: modalSlideDown 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     }
     .modal-close {
@@ -430,7 +421,7 @@
 
     /* Caixa de PIX estilizada */
     .pix-box {
-      background: rgba(255, 255, 255, 0.85);
+      background: rgba(255, 255, 255, 0.15);
       border: 2px dashed var(--accent);
       border-radius: 16px;
       padding: 12px;
@@ -438,9 +429,9 @@
       margin: 16px 0;
       word-break: break-all;
       font-weight: 700;
-      color: var(--accent);
+      color: #ffffff;
       transition: transform 0.2s ease;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     }
     .pix-box:hover {
       transform: scale(1.01);
@@ -459,20 +450,21 @@
     }
     .copy-btn:hover {
       transform: scale(1.03);
-      box-shadow: 0 6px 18px rgba(200, 51, 112, 0.35);
+      box-shadow: 0 6px 18px rgba(255, 117, 160, 0.4);
       opacity: 0.95;
     }
     .copy-btn:active {
       transform: scale(0.97);
     }
     
-    .space-y p { margin-bottom: 12px; font-size: 14px; line-height: 1.5; }
+    .space-y p { margin-bottom: 12px; font-size: 14px; line-height: 1.5; color: rgba(255, 255, 255, 0.9); }
 
     /* Footer Ajustado */
     footer { 
       padding: 18px 24px; 
       border-top: 1px solid var(--line); 
       background: var(--footer-bg); 
+      backdrop-filter: blur(8px);
       z-index: 2; 
       position: relative; 
       transition: background 0.3s ease;
@@ -487,7 +479,7 @@
       font-style: italic;
       font-size: 13px;
       color: var(--accent);
-      opacity: 0.85;
+      opacity: 0.9;
       letter-spacing: 0.05em;
       transition: transform 0.3s ease, opacity 0.3s ease;
     }
@@ -679,7 +671,7 @@
     </div>
   </div>
 
-  <!-- Rodapé com Assinatura no Lado Esquerdo -->
+  <!-- Rodapé -->
   <footer>
     <span class="signature-text notranslate">✦ Ay sousz</span>
     <p style="font-size: 12px; font-weight: 500; color: var(--muted); margin: 0;">🌸 L&amp;M Shop 🌸</p>
@@ -689,7 +681,6 @@
   <div id="google_translate_element" style="display:none;"></div>
 
   <script type="text/javascript">
-    /* Lógica da Música de Fundo */
     const audio = document.getElementById('bgMusic');
     const musicBtn = document.getElementById('musicBtn');
     let hasInteracted = false;
@@ -702,7 +693,6 @@
       });
     }
 
-    /* Ao clicar em qualquer parte da página, inicia a música no primeiro clique */
     document.addEventListener('click', function() {
       if (!hasInteracted) {
         hasInteracted = true;
@@ -710,7 +700,6 @@
       }
     }, { once: true });
 
-    /* Alterna som ligado/desligado com emojis */
     function toggleMusic() {
       hasInteracted = true;
       if (audio.paused) {
@@ -722,7 +711,6 @@
       }
     }
 
-    /* Função de Copiar Chave PIX */
     function copyPixKey() {
       const pixKey = "lmshop2006@gmail.com";
       navigator.clipboard.writeText(pixKey).then(() => {
@@ -732,11 +720,9 @@
       });
     }
 
-    /* Função de Alternar Modo Escuro/Claro Manualmente */
     function toggleTheme() {
       const body = document.body;
       const themeBtn = document.getElementById('themeBtn');
-      
       const isSystemDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
 
       if (body.classList.contains('dark-mode')) {
@@ -758,7 +744,6 @@
       }
     }
 
-    /* Ajusta ícone inicial conforme o tema do dispositivo */
     window.addEventListener('DOMContentLoaded', () => {
       const themeBtn = document.getElementById('themeBtn');
       if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
@@ -768,7 +753,6 @@
       }
     });
 
-    /* Funções do Tradutor */
     function googleTranslateElementInit() {
       new google.translate.TranslateElement({
         pageLanguage: 'pt',
