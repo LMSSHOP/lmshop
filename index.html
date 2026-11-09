@@ -32,7 +32,29 @@
       --pink-border: #a31551;
     }
 
-    /* Tema Escuro (Inverso) */
+    /* Tema Escuro do Dispositivo (Automático via Sistema) */
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --ink: #ffdae9;
+        --muted: #d4a5bc;
+        --accent: #ff66a3;
+        --line: #522b40;
+        --bg-card: #2a1522;
+        --bg-main: #180a13;
+        --bg-dot-1: #3d1c2e;
+        --bg-dot-2: #4a2137;
+        --badge-bg: #401d30;
+        --footer-bg: #220e1a;
+        --modal-overlay: rgba(15, 5, 12, 0.8);
+        --controls-bg: #ffffff;
+        --lang-btn-color: #c83370;
+        --pink-light: #2a1522;
+        --pink-dark: #801a4d;
+        --pink-border: #ff66a3;
+      }
+    }
+
+    /* Override manual caso o usuário force pelo botão */
     body.dark-mode {
       --ink: #ffdae9;
       --muted: #d4a5bc;
@@ -47,11 +69,28 @@
       --modal-overlay: rgba(15, 5, 12, 0.8);
       --controls-bg: #ffffff;
       --lang-btn-color: #c83370;
-
-      /* Cores para o Modo Escuro */
       --pink-light: #2a1522;
       --pink-dark: #801a4d;
       --pink-border: #ff66a3;
+    }
+
+    body.light-mode {
+      --ink: #513344;
+      --muted: #795d6c;
+      --accent: #c83370;
+      --line: #eec6d7;
+      --bg-card: #ffffff;
+      --bg-main: #fff0f5;
+      --bg-dot-1: #f9c5d1;
+      --bg-dot-2: #f4aab9;
+      --badge-bg: #ffe8f0;
+      --footer-bg: #fbd4e3;
+      --modal-overlay: rgba(81, 51, 68, 0.6);
+      --controls-bg: #ffffff;
+      --lang-btn-color: #513344;
+      --pink-light: #ffffff;
+      --pink-dark: #ff85b3;
+      --pink-border: #a31551;
     }
 
     * { box-sizing: border-box; }
@@ -322,7 +361,7 @@
       transform: scale(1.08);
     }
 
-    /* Modais / Pop-ups com efeito de descer e mistura marcante de Rosa Claro + Rosa Escuro */
+    /* Modais / Pop-ups */
     .modal {
       display: none;
       position: fixed;
@@ -538,7 +577,7 @@
     <div class="modal-content">
       <a href="#" class="modal-close">✕</a>
       
-      <h2 class="display" style="font-size: 20px; font-weight: bold; margin-bottom: 16px; text-align: center; color: var(--accent);">╭୨enum ┈┈ ꒰ REGRAS DO SERVER ꒱ ┈┈ ୨enum╮</h2>
+      <h2 class="display" style="font-size: 20px; font-weight: bold; margin-bottom: 16px; text-align: center; color: var(--accent);">╭୨୧ ┈┈ ꒰ REGRAS DO SERVER ꒱ ┈┈ ୨୧╮</h2>
       
       <p style="font-size: 12px; margin-bottom: 16px; text-align: center; color: var(--muted);">
         As regras existem para manter o servidor organizado, seguro e agradável para todos. O descumprimento resultará em punições. Pedimos que leia com atenção.
@@ -556,7 +595,7 @@
         <p><strong>→ Punição:</strong> O descumprimento das regras resultará em punições. Em caso de contestação de punições aplicadas pela equipe, a decisão será mantida. Siga as regras, respeite as orientações e assuma a responsabilidade por eventuais infrações.</p>
         <p><strong>→ Vendas:</strong> Vendas são proibidas dentro do servidor. Caso alguém realize vendas, será aplicado 1 aviso (warn). Caso se repita, o usuário será banido.</p>
         <p><strong>→ Plágio:</strong> É proibido qualquer tipo de cópia/plágio dos conteúdos do L&amp;M SHOP. Só temos 4 contas no TikTok que são: @wlelebunny, @lm.shop36, @maarcsz8 e @.lele.mm2.</p>
-        <p><strong>→ Divulgação:</strong> Divulgação de outras lojas, servidores ou contas (como TikTok) não é permitida dentro do servidor. Caso ocorra, será aplicado 1 warn (aviso) e caso obtenha 3 warns resultará em mute.</p>
+        <p><strong>→ Divulgação:</strong> Divulgação de outras lojas, servidores ou contas (como TikTok) não é permitida dentro do servidor. Caso ocorra, será applied 1 warn (aviso) e caso obtenha 3 warns resultará em mute.</p>
       </div>
     </div>
   </div>
@@ -616,7 +655,7 @@
     <div class="modal-content" style="text-align: center;">
       <a href="#" class="modal-close">✕</a>
       
-      <h2 class="display" style="font-size: 20px; font-weight: bold; margin-bottom: 12px; color: var(--accent);">Detour Store </h2>
+      <h2 class="display" style="font-size: 20px; font-weight: bold; margin-bottom: 12px; color: var(--accent);">🤝 Detour Store 🤝</h2>
       
       <p style="font-size: 13px; color: var(--muted); margin-bottom: 16px;">
         Conheça a nossa loja parceira oficial! Clique nos botões abaixo para acessar o site, Discord e TikTok recomendado:
@@ -686,18 +725,41 @@
       });
     }
 
-    /* Função de Alternar Modo Escuro */
+    /* Função de Alternar Modo Escuro/Claro Manualmente */
     function toggleTheme() {
       const body = document.body;
       const themeBtn = document.getElementById('themeBtn');
-      body.classList.toggle('dark-mode');
       
+      const isSystemDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+
       if (body.classList.contains('dark-mode')) {
+        body.classList.remove('dark-mode');
+        body.classList.add('light-mode');
+        themeBtn.textContent = '☀️';
+      } else if (body.classList.contains('light-mode')) {
+        body.classList.remove('light-mode');
+        body.classList.add('dark-mode');
+        themeBtn.textContent = '🌙';
+      } else {
+        if (isSystemDark) {
+          body.classList.add('light-mode');
+          themeBtn.textContent = '☀️';
+        } else {
+          body.classList.add('dark-mode');
+          themeBtn.textContent = '🌙';
+        }
+      }
+    }
+
+    /* Ajusta ícone inicial conforme o tema do dispositivo */
+    window.addEventListener('DOMContentLoaded', () => {
+      const themeBtn = document.getElementById('themeBtn');
+      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
         themeBtn.textContent = '🌙';
       } else {
         themeBtn.textContent = '☀️';
       }
-    }
+    });
 
     /* Funções do Tradutor */
     function googleTranslateElementInit() {
