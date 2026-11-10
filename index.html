@@ -242,231 +242,180 @@
         
         <!-- TAB 1: LINKS -->
         <section id="tab-links" class="tab-content block space-y-3">
-        <!-- TAB 2: CATÁLOGO MM2 (INTERATIVO COM FILTRO DE ESTOQUE) -->
-        <section id="tab-catalog" class="tab-content hidden space-y-4">
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-2">
-            <div>
-              <h3 class="font-display font-bold text-lg text-slate-800 dark:text-pink-100">Catálogo &amp; Estoque MM2</h3>
-              <p class="text-xs text-slate-500 dark:text-pink-300/70">Atualizado em tempo real pela equipe 🌸</p>
-            </div>
-
-            <!-- Stock Toggle & Filter Button -->
-            <div class="flex items-center gap-2">
-              <button id="hideOutOfStockBtn" onclick="toggleHideOutOfStock()" class="px-3 py-1.5 rounded-xl bg-pink-100 dark:bg-pink-950/60 border border-pink-300 dark:border-pink-800 text-pink-700 dark:text-pink-300 text-xs font-bold flex items-center gap-2 hover:bg-pink-200 transition-colors shadow-sm">
-                <i class="fa-solid fa-eye-slash text-pink-500"></i>
-                <span id="hideOutOfStockLabel">Ocultar Esgotados</span>
-              </button>
-            </div>
-          </div>
-
-          <!-- Category Pills Filter -->
-          <div class="flex items-center gap-1.5 overflow-x-auto pb-2 no-scrollbar text-xs font-bold">
-            <button onclick="filterCategory('all')" class="cat-btn px-3 py-1 rounded-lg bg-pink-500 text-white shadow-sm" data-cat="all">Todos</button>
-            <button onclick="filterCategory('godly')" class="cat-btn px-3 py-1 rounded-lg bg-white/50 dark:bg-slate-800/50 text-slate-600 dark:text-pink-200 hover:bg-pink-100 dark:hover:bg-pink-900/40" data-cat="godly">Sets Godly</button>
-            <button onclick="filterCategory('ancients')" class="cat-btn px-3 py-1 rounded-lg bg-white/50 dark:bg-slate-800/50 text-slate-600 dark:text-pink-200 hover:bg-pink-100 dark:hover:bg-pink-900/40" data-cat="ancients">Armas Ancients</button>
-            <button onclick="filterCategory('chroma')" class="cat-btn px-3 py-1 rounded-lg bg-white/50 dark:bg-slate-800/50 text-slate-600 dark:text-pink-200 hover:bg-pink-100 dark:hover:bg-pink-900/40" data-cat="chroma">Guns Chroma</button>
-            <button onclick="filterCategory('pets')" class="cat-btn px-3 py-1 rounded-lg bg-white/50 dark:bg-slate-800/50 text-slate-600 dark:text-pink-200 hover:bg-pink-100 dark:hover:bg-pink-900/40" data-cat="pets">Pets</button>
-          </div>
-
-          <!-- Product Grid -->
-          <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            
-            <!-- Item Card 1 (Disponível) -->
-            <div class="product-item p-4 rounded-2xl bg-white/80 dark:bg-slate-800/80 border border-pink-100 dark:border-pink-900/40 shadow-sm hover:shadow-lg hover:shadow-pink-500/10 transition-all group relative overflow-hidden" data-in-stock="true" data-category="godly">
-              <div class="absolute top-2 right-2 px-2 py-0.5 rounded-md bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 text-[10px] font-extrabold uppercase flex items-center gap-1 border border-emerald-500/30">
-                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span> Disponível
-              </div>
-              <div class="flex items-center gap-4">
-                <div class="w-16 h-16 rounded-xl bg-gradient-to-br from-pink-100 to-rose-200 dark:from-pink-950 dark:to-slate-800 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform shadow-inner">
-                  🗡️
-                </div>
-                <div class="flex-1">
-                  <h4 class="font-bold text-slate-800 dark:text-pink-100">Icebreaker Set</h4>
-                  <p class="text-xs text-slate-500 dark:text-pink-300/70">Icebreaker + Icewing</p>
-                  <button onclick="orderItem('Icebreaker Set')" class="mt-2 px-3 py-1 rounded-lg bg-pink-500 hover:bg-pink-600 text-white font-bold text-[11px] shadow-sm flex items-center gap-1 transition-colors">
-                    <i class="fa-solid fa-ticket"></i> Pedir no Ticket
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <!-- Item Card 2 (Disponível) -->
-            <div class="product-item p-4 rounded-2xl bg-white/80 dark:bg-slate-800/80 border border-pink-100 dark:border-pink-900/40 shadow-sm hover:shadow-lg hover:shadow-pink-500/10 transition-all group relative overflow-hidden" data-in-stock="true" data-category="ancients">
-              <div class="absolute top-2 right-2 px-2 py-0.5 rounded-md bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 text-[10px] font-extrabold uppercase flex items-center gap-1 border border-emerald-500/30">
-                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span> Disponível
-              </div>
-              <div class="flex items-center gap-4">
-                <div class="w-16 h-16 rounded-xl bg-gradient-to-br from-pink-100 to-rose-200 dark:from-pink-950 dark:to-slate-800 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform shadow-inner">
-                  🪓
-                </div>
-                <div class="flex-1">
-                  <h4 class="font-bold text-slate-800 dark:text-pink-100">Harvester</h4>
-                  <p class="text-xs text-slate-500 dark:text-pink-300/70">Arma Rara &amp; Exclusiva</p>
-                  <button onclick="orderItem('Harvester')" class="mt-2 px-3 py-1 rounded-lg bg-pink-500 hover:bg-pink-600 text-white font-bold text-[11px] shadow-sm flex items-center gap-1 transition-colors">
-                    <i class="fa-solid fa-ticket"></i> Pedir no Ticket
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <!-- Item Card 3 (Esgotado - Fica visível até ativar o botão "Ocultar Esgotados") -->
-            <div class="product-item p-4 rounded-2xl bg-white/50 dark:bg-slate-800/40 border border-slate-200 dark:border-slate-800 shadow-sm opacity-75 group relative overflow-hidden" data-in-stock="false" data-category="chroma">
-              <div class="absolute top-2 right-2 px-2 py-0.5 rounded-md bg-rose-500/15 text-rose-600 dark:text-rose-400 text-[10px] font-extrabold uppercase flex items-center gap-1 border border-rose-500/30">
-                <span class="w-1.5 h-1.5 rounded-full bg-rose-500"></span> Esgotado
-              </div>
-              <div class="flex items-center gap-4">
-                <div class="w-16 h-16 rounded-xl bg-slate-100 dark:bg-slate-900 flex items-center justify-center text-2xl filter grayscale opacity-60">
-                  🔫
-                </div>
-                <div class="flex-1">
-                  <h4 class="font-bold text-slate-700 dark:text-slate-300 line-through">Icepiercer</h4>
-                  <p class="text-xs text-slate-400">Gun Godly Premium</p>
-                  <span class="inline-block mt-2 px-2.5 py-1 rounded-lg bg-slate-200 dark:bg-slate-800 text-slate-500 text-[10px] font-bold">
-                    Aguardando Reposição 📦
-                  </span>
-                </div>
-              </div>
-            </div>
-
-            <!-- Item Card 4 (Disponível) -->
-            <div class="product-item p-4 rounded-2xl bg-white/80 dark:bg-slate-800/80 border border-pink-100 dark:border-pink-900/40 shadow-sm hover:shadow-lg hover:shadow-pink-500/10 transition-all group relative overflow-hidden" data-in-stock="true" data-category="pets">
-              <div class="absolute top-2 right-2 px-2 py-0.5 rounded-md bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 text-[10px] font-extrabold uppercase flex items-center gap-1 border border-emerald-500/30">
-                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span> Disponível
-              </div>
-              <div class="flex items-center gap-4">
-                <div class="w-16 h-16 rounded-xl bg-gradient-to-br from-pink-100 to-rose-200 dark:from-pink-950 dark:to-slate-800 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform shadow-inner">
-                  🐾
-                </div>
-                <div class="flex-1">
-                  <h4 class="font-bold text-slate-800 dark:text-pink-100">Godly Pets Combo</h4>
-                  <p class="text-xs text-slate-500 dark:text-pink-300/70">Combo com 3 Pets Godly</p>
-                  <button onclick="orderItem('Godly Pets Combo')" class="mt-2 px-3 py-1 rounded-lg bg-pink-500 hover:bg-pink-600 text-white font-bold text-[11px] shadow-sm flex items-center gap-1 transition-colors">
-                    <i class="fa-solid fa-ticket"></i> Pedir no Ticket
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <!-- Item Card 5 (Esgotado) -->
-            <div class="product-item p-4 rounded-2xl bg-white/50 dark:bg-slate-800/40 border border-slate-200 dark:border-slate-800 shadow-sm opacity-75 group relative overflow-hidden" data-in-stock="false" data-category="godly">
-              <div class="absolute top-2 right-2 px-2 py-0.5 rounded-md bg-rose-500/15 text-rose-600 dark:text-rose-400 text-[10px] font-extrabold uppercase flex items-center gap-1 border border-rose-500/30">
-                <span class="w-1.5 h-1.5 rounded-full bg-rose-500"></span> Esgotado
-              </div>
-              <div class="flex items-center gap-4">
-                <div class="w-16 h-16 rounded-xl bg-slate-100 dark:bg-slate-900 flex items-center justify-center text-2xl filter grayscale opacity-60">
-                  ⚔️
-                </div>
-                <div class="flex-1">
-                  <h4 class="font-bold text-slate-700 dark:text-slate-300 line-through">Candycane Set</h4>
-                  <p class="text-xs text-slate-400">Candy Knife + Sugar Gun</p>
-                  <span class="inline-block mt-2 px-2.5 py-1 rounded-lg bg-slate-200 dark:bg-slate-800 text-slate-500 text-[10px] font-bold">
-                    Aguardando Reposição 📦
-                  </span>
-                </div>
-              </div>
-            </div>
-
-          </div>
-
-          <button onclick="switchTab('rules')" class="w-full text-left group flex items-center justify-between p-4 rounded-2xl bg-gradient-to-r from-pink-50 to-white dark:from-slate-800 dark:to-slate-800/70 border border-pink-200/80 dark:border-pink-800/50 shadow-sm hover:shadow-xl hover:shadow-pink-500/10 hover:-translate-y-1 transition-all duration-300">
+          
+          <!-- Discord Link -->
+          <a href="https://discord.gg/aGSDnmpuw" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-between p-4 rounded-2xl bg-white/80 dark:bg-slate-800/80 border border-pink-100 dark:border-pink-900/40 shadow-sm hover:shadow-xl hover:shadow-pink-500/10 hover:-translate-y-1 transition-all duration-300">
             <div class="flex items-center gap-4">
-              <div class="w-12 h-12 rounded-xl bg-pink-500/10 text-pink-500 flex items-center justify-center text-xl group-hover:scale-110 transition-transform">
-                <i class="fa-solid fa-shield-cat"></i>
+              <div class="w-12 h-12 rounded-xl bg-indigo-500/10 text-indigo-500 flex items-center justify-center text-xl group-hover:scale-110 transition-transform">
+                <i class="fa-brands fa-discord"></i>
               </div>
               <div>
-                <h3 class="font-bold text-slate-800 dark:text-pink-100 text-sm sm:text-base group-hover:text-pink-500 transition-colors">Diretrizes do Servidor &amp; Shop</h3>
-                <p class="text-xs text-slate-500 dark:text-pink-300/70">Consulte as regras de boa convivência e compras seguras.</p>
+                <h3 class="font-bold text-slate-800 dark:text-pink-100 text-sm sm:text-base group-hover:text-pink-500 transition-colors">Servidor no Discord</h3>
+                <p class="text-xs text-slate-500 dark:text-pink-300/70">Comunidade oficial, suporte e compras via tickets</p>
               </div>
             </div>
-            <span class="px-3 py-1 rounded-full bg-pink-100 dark:bg-pink-900/60 text-pink-600 dark:text-pink-300 text-[10px] font-bold uppercase tracking-wider">Ler Regras</span>
-          </button>
+            <span class="px-3 py-1 rounded-full bg-indigo-100 dark:bg-indigo-900/60 text-indigo-600 dark:text-indigo-300 text-[10px] font-bold uppercase tracking-wider">Oficial</span>
+          </a>
+
+          <!-- TikTok Link -->
+          <a href="https://www.tiktok.com/@lm.shopp__" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-between p-4 rounded-2xl bg-white/80 dark:bg-slate-800/80 border border-pink-100 dark:border-pink-900/40 shadow-sm hover:shadow-xl hover:shadow-pink-500/10 hover:-translate-y-1 transition-all duration-300">
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 rounded-xl bg-pink-500/10 text-pink-500 flex items-center justify-center text-xl group-hover:scale-110 transition-transform">
+                <i class="fa-brands fa-tiktok"></i>
+              </div>
+              <div>
+                <h3 class="font-bold text-slate-800 dark:text-pink-100 text-sm sm:text-base group-hover:text-pink-500 transition-colors">TikTok da Loja</h3>
+                <p class="text-xs text-slate-500 dark:text-pink-300/70">Acompanhe novidades, entregas e conteúdos de MM2</p>
+              </div>
+            </div>
+            <span class="px-3 py-1 rounded-full bg-pink-100 dark:bg-pink-900/60 text-pink-600 dark:text-pink-300 text-[10px] font-bold uppercase tracking-wider">Oficial</span>
+          </a>
 
         </section>
 
         <!-- TAB 2: REGRAS & DIRETRIZES -->
         <section id="tab-rules" class="tab-content hidden space-y-4">
           
-          <div class="p-4 rounded-2xl bg-white/80 dark:bg-slate-800/80 border border-pink-100 dark:border-pink-900/40 space-y-3 text-xs sm:text-sm text-slate-600 dark:text-pink-200/90">
-            <h3 class="font-display font-bold text-base text-pink-600 dark:text-pink-300 flex items-center gap-2">
-              <i class="fa-solid fa-circle-exclamation"></i> Regras do Servidor &amp; Loja
+          <!-- Lista 1: Regras do Server -->
+          <div class="p-5 rounded-2xl bg-white/80 dark:bg-slate-800/80 border border-pink-100 dark:border-pink-900/40 space-y-3 text-xs sm:text-sm text-slate-600 dark:text-pink-200/90 shadow-sm">
+            <h3 class="font-display font-bold text-base text-pink-600 dark:text-pink-300 flex items-center gap-2 border-b border-pink-100 dark:border-pink-900/40 pb-2">
+              <i class="fa-solid fa-comments text-pink-500"></i> ╭୨୧ ┈┈ ꒰ REGRAS DO SERVER ꒱ ┈┈ ୨୧╮
             </h3>
+            <p class="text-xs text-slate-500 dark:text-pink-300/70 italic">
+              As regras existem para manter o servidor organizado, seguro e agradável para todos.
+            </p>
             
-            <ul class="space-y-2.5 list-none">
+            <ul class="space-y-2 list-none">
               <li class="flex items-start gap-2">
                 <span class="text-pink-500 font-bold">•</span>
-                <span><strong>Respeito Mútuo:</strong> Trate os atendentes e membros com cortesia. Ofensas resultam em banimento.</span>
+                <span><strong>Spam/Flood:</strong> Evite enviar mensagens em excesso ou repetir conteúdos no chat.</span>
               </li>
               <li class="flex items-start gap-2">
                 <span class="text-pink-500 font-bold">•</span>
-                <span><strong>Abertura de Tickets:</strong> Abra apenas quando tiver certeza de que vai realizar a compra.</span>
+                <span><strong>Pings:</strong> Evite mencionar a equipe (Staff) sem necessidade.</span>
               </li>
               <li class="flex items-start gap-2">
                 <span class="text-pink-500 font-bold">•</span>
-                <span><strong>Comprovantes:</strong> Envie o comprovante via PIX autêntico. Tentativas de fraude serão punidas.</span>
+                <span><strong>Conteúdo +18:</strong> Não é permitido conteúdo +18 ou impróprio. Prezamos por um ambiente seguro.</span>
               </li>
               <li class="flex items-start gap-2">
                 <span class="text-pink-500 font-bold">•</span>
-                <span><strong>Reembolso:</strong> Não realizamos reembolsos após a entrega concluída no Roblox.</span>
+                <span><strong>Preconceito:</strong> Tolerância zero para gordofobia, racismo, transfobia, misoginia ou discriminação.</span>
               </li>
               <li class="flex items-start gap-2">
                 <span class="text-pink-500 font-bold">•</span>
-                <span><strong>Avaliação Final:</strong> Pedimos que avalie seu atendimento para manter seu benefício de compras futuras ativado.</span>
+                <span><strong>Privacidade &amp; Links:</strong> Não compartilhe dados pessoais nem links externos/outros servidores.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-pink-500 font-bold">•</span>
+                <span><strong>Vendas &amp; Divulgação:</strong> Proibido vender ou divulgar outras lojas/contas no server (sujeito a warn/ban).</span>
               </li>
             </ul>
+          </div>
+
+          <!-- Lista 2: Regras SHOP -->
+          <div class="p-5 rounded-2xl bg-white/80 dark:bg-slate-800/80 border border-pink-100 dark:border-pink-900/40 space-y-3 text-xs sm:text-sm text-slate-600 dark:text-pink-200/90 shadow-sm">
+            <h3 class="font-display font-bold text-base text-rose-600 dark:text-rose-400 flex items-center gap-2 border-b border-pink-100 dark:border-pink-900/40 pb-2">
+              <i class="fa-solid fa-store text-rose-500"></i> ୨୧・Regras SHOP
+            </h3>
+            
+            <ul class="space-y-2 list-none">
+              <li class="flex items-start gap-2">
+                <span class="text-rose-500 font-bold">•</span>
+                <span><strong>Respeito:</strong> Trate os atendentes com respeito. Ofensas não serão toleradas.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-rose-500 font-bold">•</span>
+                <span><strong>Compras &amp; Comprovantes:</strong> Confira o valor/nome no PIX antes de pagar. Envie o comprovante real (fraudes geram banimento).</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-rose-500 font-bold">•</span>
+                <span><strong>Tickets:</strong> Abra ticket somente se tiver certeza da compra. Não marque a staff antes de 30min sem resposta.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-rose-500 font-bold">•</span>
+                <span><strong>Reembolsos:</strong> Analisados individualmente. <em>Após a entrega do pedido, não fazemos reembolso.</em></span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-rose-500 font-bold">•</span>
+                <span><strong>Avaliações Mandatórias:</strong> Após receber seu pedido, avalie a compra. Clientes sem avaliação recebem a tag @avaliação pendente e ficam bloqueados para compras futuras.</span>
+              </li>
+            </ul>
+
+            <div class="pt-2 text-center text-xs font-semibold text-pink-600 dark:text-pink-300">
+              Ao realizar uma compra na L&amp;M Shop, você declara estar de acordo com nossas regras! ᧔ෆ᧓
+            </div>
           </div>
 
         </section>
 
         <!-- TAB 4: PIX / APOIO -->
-        <section id="tab-pix" class="tab-content hidden text-center space-y-4">
-          <div class="max-w-md mx-auto p-6 rounded-2xl bg-white/80 dark:bg-slate-800/80 border border-pink-100 dark:border-pink-900/40">
-            <div class="w-12 h-12 rounded-full bg-pink-100 dark:bg-pink-900/50 text-pink-500 flex items-center justify-center text-xl mx-auto mb-3">
+        <section id="tab-pix" class="tab-content hidden">
+          <div class="p-6 rounded-2xl bg-white/80 dark:bg-slate-800/80 border border-pink-100 dark:border-pink-900/40 text-center space-y-4 shadow-sm">
+            <div class="w-12 h-12 rounded-full bg-rose-500/10 text-rose-500 mx-auto flex items-center justify-center text-2xl">
               <i class="fa-solid fa-heart"></i>
             </div>
             
-            <h3 class="font-display font-bold text-lg text-slate-800 dark:text-pink-100">Apoie a L&amp;M Shop</h3>
-            <p class="text-xs text-slate-500 dark:text-pink-300/70 mt-1">
-              Sua contribuição fortalece nosso estoque e sorteios para a comunidade! 🌸
-            </p>
-
-            <!-- QR Code Placeholder / Image -->
-            <div class="my-4 p-3 bg-white rounded-xl border border-pink-100 inline-block shadow-md">
-              <img src="QR CODE.webp" alt="QR Code PIX L&M Shop" class="w-40 h-40 object-contain rounded-lg mx-auto" onerror="this.onerror=null; this.src='https://placehold.co/160x160/ffc6e1/513344?text=QR+Code+PIX';">
+            <div>
+              <h3 class="font-display font-bold text-lg text-slate-800 dark:text-pink-100">Apoie a L&amp;M Shop ❤︎</h3>
+              <p class="text-xs text-slate-500 dark:text-pink-300/70 max-w-sm mx-auto mt-1">
+                Gosta da nossa loja? Se quiser nos apoiar com qualquer valor via PIX, agradecemos imensamente! ✿⁠
+              </p>
             </div>
 
-            <!-- PIX Key Container -->
-            <div class="p-3 rounded-xl bg-pink-50 dark:bg-slate-900 border border-dashed border-pink-300 dark:border-pink-700 font-mono text-xs font-bold text-pink-600 dark:text-pink-300 break-all select-all my-3">
+            <!-- QR Code Card -->
+            <div class="w-44 h-44 mx-auto p-2 bg-white rounded-2xl border border-pink-200 dark:border-pink-800/40 shadow-inner flex items-center justify-center">
+              <img src="QR CODE.webp" alt="QR Code PIX L&M Shop" class="w-full h-full object-contain rounded-xl" onerror="this.onerror=null; this.src='https://placehold.co/200x200/ff99ca/ffffff?text=QR+CODE+PIX';">
+            </div>
+
+            <!-- PIX Box -->
+            <div class="max-w-xs mx-auto p-3 rounded-xl bg-pink-50 dark:bg-pink-950/50 border border-dashed border-pink-400 font-mono text-xs text-pink-600 dark:text-pink-300 font-bold break-all select-all">
               lmshop2006@gmail.com
             </div>
 
-            <!-- Action Copy Button -->
-            <button onclick="copyPixKey()" class="w-full py-3 rounded-xl bg-gradient-to-r from-pink-500 to-rose-500 hover:from-pink-600 hover:to-rose-600 text-white font-bold text-xs uppercase tracking-wider shadow-lg shadow-pink-500/25 active:scale-95 transition-all flex items-center justify-center gap-2">
-              <i class="fa-regular fa-copy"></i> Copiar Chave PIX
+            <button onclick="copyPixKey()" class="w-full max-w-xs py-3 px-6 rounded-full bg-gradient-to-r from-pink-500 to-rose-500 hover:from-pink-600 hover:to-rose-600 text-white font-bold text-xs uppercase tracking-wider shadow-lg shadow-pink-500/30 hover:scale-105 active:scale-95 transition-all duration-300">
+              <i class="fa-solid fa-copy mr-2"></i> Copiar Chave PIX
             </button>
           </div>
         </section>
 
         <!-- TAB 5: LOJA PARCEIRA -->
-        <section id="tab-partner" class="tab-content hidden space-y-4">
-          <div class="p-6 rounded-2xl bg-white/80 dark:bg-slate-800/80 border border-pink-100 dark:border-pink-900/40 text-center space-y-4">
+        <section id="tab-partner" class="tab-content hidden">
+          <div class="p-6 rounded-2xl bg-white/80 dark:bg-slate-800/80 border border-pink-100 dark:border-pink-900/40 space-y-5 shadow-sm text-center">
             
-            <div class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-purple-400 to-pink-500 text-white flex items-center justify-center text-2xl mx-auto shadow-lg shadow-purple-500/30">
-              🤝
-            </div>
-
-            <div>
-              <h3 class="font-display font-bold text-xl text-slate-800 dark:text-pink-100">Detour Store</h3>
-              <p class="text-xs text-slate-500 dark:text-pink-300/70 mt-1 max-w-sm mx-auto">
-                Parceira recomendada e verificada pela equipe L&amp;M Shop! Qualidade e suporte garantidos. 𖹭.ᐟ
+            <!-- Partner Header -->
+            <div class="flex flex-col items-center gap-2">
+              <div class="w-14 h-14 rounded-2xl bg-pink-500/10 text-pink-500 flex items-center justify-center text-2xl shadow-inner">
+                <i class="fa-solid fa-handshake"></i>
+              </div>
+              <h3 class="font-display font-bold text-xl text-slate-800 dark:text-pink-100">🤝 Detour Store 🤝</h3>
+              <p class="text-xs text-slate-500 dark:text-pink-300/80 max-w-md mx-auto">
+                Conheça a nossa loja parceira oficial! Qualidade e confiança garantidas pela equipe L&amp;M Shop 𖹭.ᐟ
               </p>
             </div>
 
-            <div class="flex flex-col sm:flex-row gap-2 max-w-md mx-auto pt-2">
-              <a href="https://detourstore.github.io/DS-/#" target="_blank" class="flex-1 py-2.5 px-4 rounded-xl bg-pink-500 text-white font-bold text-xs hover:bg-pink-600 transition-colors shadow-md">
-                <i class="fa-solid fa-globe"></i> Visitar Site
+            <!-- Presentation Card -->
+            <div class="p-4 rounded-xl bg-pink-50/60 dark:bg-slate-900/50 border border-pink-100 dark:border-pink-900/30 text-xs text-slate-600 dark:text-pink-200/90 leading-relaxed text-left space-y-2">
+              <p class="font-bold text-pink-600 dark:text-pink-300 flex items-center gap-1.5">
+                <i class="fa-solid fa-sparkles"></i> Sobre a Detour Store:
+              </p>
+              <p>
+                A Detour Store é nossa parceira recomendada com atendimento excelente e total segurança para suas transações. Explore o site oficial, entre no Discord ou acompanhe as novidades no TikTok abaixo!
+              </p>
+            </div>
+
+            <!-- Links Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-1">
+              <a href="https://detourstore.github.io/DS-/#" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-pink-500 hover:bg-pink-600 text-white font-bold text-xs shadow-md shadow-pink-500/20 hover:-translate-y-0.5 transition-all">
+                <i class="fa-solid fa-globe"></i> Site Oficial
               </a>
-              <a href="https://discord.gg/aGSDnmpuw" target="_blank" class="flex-1 py-2.5 px-4 rounded-xl bg-indigo-600 text-white font-bold text-xs hover:bg-indigo-700 transition-colors shadow-md">
+              
+              <a href="https://discord.gg/aGSDnmpuw" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs shadow-md shadow-indigo-600/20 hover:-translate-y-0.5 transition-all">
                 <i class="fa-brands fa-discord"></i> Discord Detour
+              </a>
+
+              <a href="https://www.tiktok.com/@detour_store" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-slate-900 hover:bg-black text-white font-bold text-xs shadow-md shadow-slate-900/20 hover:-translate-y-0.5 transition-all">
+                <i class="fa-brands fa-tiktok"></i> TikTok Detour
               </a>
             </div>
 
