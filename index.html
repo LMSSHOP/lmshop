@@ -147,13 +147,13 @@
 
   <!-- Ambient Light Gradients & Background Image Container -->
   <div class="fixed inset-0 bg-cover bg-center bg-no-repeat bg-fixed -z-10 transition-all duration-500" 
-       style="background-image: linear-gradient(to bottom, rgba(255, 235, 243, 0.75), rgba(255, 215, 230, 0.85)), url('L&M.jpg');">
+       style="background-image: linear-gradient(to bottom, rgba(255, 235, 243, 0.45), rgba(255, 215, 230, 0.55)), url('L&M.jpg');">
   </div>
   
   <style>
     /* Dark mode background override for L&M.jpg */
     .dark body .fixed.inset-0 {
-      background-image: linear-gradient(to bottom, rgba(21, 10, 18, 0.88), rgba(28, 14, 24, 0.92)), url('L&M.jpg') !important;
+      background-image: linear-gradient(to bottom, rgba(15, 6, 12, 0.65), rgba(22, 10, 18, 0.75)), url('L&M.jpg') !important;
     }
   </style>
 
@@ -170,34 +170,28 @@
     
     <!-- Left Controls (Theme Toggle) -->
     <div class="flex items-center gap-2 pointer-events-auto">
-      <button id="themeToggleBtn" onclick="toggleTheme()" class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/80 dark:bg-slate-900/80 border border-white/60 dark:border-pink-500/30 shadow-lg shadow-pink-500/10 backdrop-blur-md flex items-center justify-center text-pink-500 hover:scale-110 active:scale-95 transition-all duration-300">
+      <button id="themeToggleBtn" onclick="toggleTheme()" class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/40 dark:bg-black/40 border border-white/60 dark:border-white/20 shadow-lg shadow-pink-500/10 backdrop-blur-md flex items-center justify-center text-pink-500 hover:scale-110 active:scale-95 transition-all duration-300">
         <i class="fa-solid fa-moon text-base sm:text-lg dark:hidden"></i>
         <i class="fa-solid fa-sun text-base sm:text-lg hidden dark:inline-block"></i>
       </button>
     </div>
 
-    <!-- Right Controls (Language Badges) -->
-    <div class="pointer-events-auto flex items-center gap-1 bg-white/80 dark:bg-slate-900/80 p-1 rounded-full border border-white/60 dark:border-pink-500/30 shadow-lg shadow-pink-500/10 backdrop-blur-md text-[10px] sm:text-[11px] font-bold">
-      <button onclick="setLanguage('pt')" class="lang-btn px-2 py-0.5 sm:py-1 rounded-full text-pink-600 dark:text-pink-300 hover:bg-pink-100 dark:hover:bg-pink-900/40 transition-colors">BR</button>
-      <button onclick="setLanguage('en')" class="lang-btn px-2 py-0.5 sm:py-1 rounded-full text-slate-500 hover:text-pink-500 transition-colors">US</button>
-      <button onclick="setLanguage('es')" class="lang-btn px-2 py-0.5 sm:py-1 rounded-full text-slate-500 hover:text-pink-500 transition-colors">ES</button>
-    </div>
   </header>
 
   <!-- Main Content Container -->
   <main class="relative z-10 pt-16 sm:pt-20 pb-8 sm:pb-12 px-3 sm:px-4 w-full max-w-4xl mx-auto flex-1 flex flex-col justify-center">
     
-    <!-- Main App Card -->
-    <div class="glass-panel bg-white/70 dark:bg-slate-900/75 border border-white/80 dark:border-pink-500/20 rounded-2xl sm:rounded-3xl shadow-2xl shadow-pink-500/10 p-4 sm:p-10 transition-all duration-500">
+    <!-- Main App Card (Ultra Transparent Glassmorphism) -->
+    <div class="glass-panel bg-white/25 dark:bg-black/35 border border-white/50 dark:border-white/15 rounded-2xl sm:rounded-3xl shadow-2xl shadow-pink-500/10 p-4 sm:p-10 transition-all duration-500">
       
       <!-- Profile Header Section -->
-      <div class="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 pb-6 sm:pb-8 border-b border-pink-200/50 dark:border-pink-900/40 relative">
+      <div class="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 pb-6 sm:pb-8 border-b border-pink-300/40 dark:border-pink-500/20 relative">
         
         <!-- Profile Avatar with Animated Glow & Status -->
         <div class="relative group flex-shrink-0">
           <div class="absolute -inset-1 bg-gradient-to-r from-pink-400 to-rose-400 rounded-full blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-pulse-glow"></div>
           
-          <div class="relative w-24 h-24 sm:w-32 sm:h-32 rounded-full p-1 bg-white dark:bg-slate-800 shadow-xl overflow-hidden">
+          <div class="relative w-24 h-24 sm:w-32 sm:h-32 rounded-full p-1 bg-white/70 dark:bg-slate-900/70 shadow-xl overflow-hidden backdrop-blur-sm">
             <img src="logo.png" alt="L&M Shop Logo" class="w-full h-full object-cover rounded-full transform transition duration-500 group-hover:scale-105" onerror="this.onerror=null; this.src='https://placehold.co/200x200/ff99ca/ffffff?text=L%26M+Shop';">
           </div>
 
@@ -210,28 +204,28 @@
 
         <!-- Header Info Text -->
         <div class="text-center sm:text-left flex-1 w-full">
-          <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full bg-pink-100/80 dark:bg-pink-900/40 border border-pink-200 dark:border-pink-700/50 text-pink-600 dark:text-pink-300 text-[10px] sm:text-xs font-bold uppercase tracking-wider mb-2">
+          <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full bg-pink-500/20 dark:bg-pink-900/40 border border-pink-300/50 dark:border-pink-700/50 text-pink-700 dark:text-pink-300 text-[10px] sm:text-xs font-bold uppercase tracking-wider mb-2 backdrop-blur-md">
             <span>✿ Murder Mystery 2 · Roblox ✿</span>
           </div>
           
-          <h1 class="font-display text-2xl sm:text-4xl font-bold text-slate-800 dark:text-pink-100 tracking-tight flex items-center justify-center sm:justify-start gap-2">
+          <h1 class="font-display text-2xl sm:text-4xl font-bold text-slate-900 dark:text-pink-100 tracking-tight flex items-center justify-center sm:justify-start gap-2">
             L&amp;M Shop <span class="text-pink-500 text-xl sm:text-2xl animate-bounce">𖹭</span>
           </h1>
           
-          <p class="text-xs sm:text-sm text-slate-600 dark:text-pink-200/80 mt-1 max-w-lg">
+          <p class="text-xs sm:text-sm text-slate-800 dark:text-pink-100/90 font-medium mt-1 max-w-lg">
             Seu inventário merece brilhar com os melhores itens! Godlys, Sets, Armas e Pets exclusivos no MM2 com total garantia, entrega ultra rápida e os preços mais imperdíveis do mercado. 💖✨
           </p>
 
           <!-- Quick Stats Pills -->
-          <div class="flex flex-wrap items-center justify-center sm:justify-start gap-2 sm:gap-3 mt-3 sm:mt-4 text-[11px] sm:text-xs font-semibold text-slate-600 dark:text-pink-200">
-            <span class="flex items-center gap-1 px-2.5 py-1 rounded-lg bg-white/60 dark:bg-slate-800/60 border border-pink-100 dark:border-pink-900/50">
-              <i class="fa-solid fa-bolt text-amber-400"></i> Entrega Rápida
+          <div class="flex flex-wrap items-center justify-center sm:justify-start gap-2 sm:gap-3 mt-3 sm:mt-4 text-[11px] sm:text-xs font-bold text-slate-800 dark:text-pink-100">
+            <span class="flex items-center gap-1 px-2.5 py-1 rounded-lg bg-white/40 dark:bg-black/30 border border-white/50 dark:border-white/10 backdrop-blur-md">
+              <i class="fa-solid fa-bolt text-amber-500"></i> Entrega Rápida
             </span>
-            <span class="flex items-center gap-1 px-2.5 py-1 rounded-lg bg-white/60 dark:bg-slate-800/60 border border-pink-100 dark:border-pink-900/50">
-              <i class="fa-solid fa-shield-halved text-emerald-400"></i> 100% Seguro
+            <span class="flex items-center gap-1 px-2.5 py-1 rounded-lg bg-white/40 dark:bg-black/30 border border-white/50 dark:border-white/10 backdrop-blur-md">
+              <i class="fa-solid fa-shield-halved text-emerald-500"></i> 100% Seguro
             </span>
-            <span class="flex items-center gap-1 px-2.5 py-1 rounded-lg bg-white/60 dark:bg-slate-800/60 border border-pink-100 dark:border-pink-900/50">
-              <i class="fa-solid fa-star text-pink-400"></i> +500 Avaliações
+            <span class="flex items-center gap-1 px-2.5 py-1 rounded-lg bg-white/40 dark:bg-black/30 border border-white/50 dark:border-white/10 backdrop-blur-md">
+              <i class="fa-solid fa-star text-pink-500"></i> +500 Avaliações
             </span>
           </div>
         </div>
@@ -239,20 +233,20 @@
       </div>
 
       <!-- Navigation Tabs Header (Touch Swipable for Mobile) -->
-      <div class="flex items-center gap-2 overflow-x-auto py-4 sm:py-6 no-scrollbar border-b border-pink-100 dark:border-pink-900/30 touch-pan-x active:cursor-grabbing">
+      <div class="flex items-center gap-2 overflow-x-auto py-4 sm:py-6 no-scrollbar border-b border-pink-300/30 dark:border-pink-500/20 touch-pan-x active:cursor-grabbing">
         <button onclick="switchTab('links')" id="tab-btn-links" class="tab-btn flex items-center gap-1.5 sm:gap-2 px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-xl sm:rounded-2xl text-xs sm:text-sm font-bold whitespace-nowrap transition-all duration-300 bg-pink-500 text-white shadow-lg shadow-pink-500/25">
           <i class="fa-solid fa-link"></i> Links Oficiais
         </button>
 
-        <button onclick="switchTab('rules')" id="tab-btn-rules" class="tab-btn flex items-center gap-1.5 sm:gap-2 px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-xl sm:rounded-2xl text-xs sm:text-sm font-bold whitespace-nowrap transition-all duration-300 bg-white/50 dark:bg-slate-800/50 text-slate-600 dark:text-pink-200 hover:bg-pink-100 dark:hover:bg-pink-900/40">
+        <button onclick="switchTab('rules')" id="tab-btn-rules" class="tab-btn flex items-center gap-1.5 sm:gap-2 px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-xl sm:rounded-2xl text-xs sm:text-sm font-bold whitespace-nowrap transition-all duration-300 bg-white/30 dark:bg-black/30 text-slate-800 dark:text-pink-100 hover:bg-pink-500/20 backdrop-blur-md">
           <i class="fa-solid fa-scroll text-pink-500"></i> Diretrizes &amp; Regras
         </button>
 
-        <button onclick="switchTab('pix')" id="tab-btn-pix" class="tab-btn flex items-center gap-1.5 sm:gap-2 px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-xl sm:rounded-2xl text-xs sm:text-sm font-bold whitespace-nowrap transition-all duration-300 bg-white/50 dark:bg-slate-800/50 text-slate-600 dark:text-pink-200 hover:bg-pink-100 dark:hover:bg-pink-900/40">
+        <button onclick="switchTab('pix')" id="tab-btn-pix" class="tab-btn flex items-center gap-1.5 sm:gap-2 px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-xl sm:rounded-2xl text-xs sm:text-sm font-bold whitespace-nowrap transition-all duration-300 bg-white/30 dark:bg-black/30 text-slate-800 dark:text-pink-100 hover:bg-pink-500/20 backdrop-blur-md">
           <i class="fa-solid fa-heart text-rose-500"></i> Apoiar PIX
         </button>
 
-        <button onclick="switchTab('partner')" id="tab-btn-partner" class="tab-btn flex items-center gap-1.5 sm:gap-2 px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-xl sm:rounded-2xl text-xs sm:text-sm font-bold whitespace-nowrap transition-all duration-300 bg-white/50 dark:bg-slate-800/50 text-slate-600 dark:text-pink-200 hover:bg-pink-100 dark:hover:bg-pink-900/40">
+        <button onclick="switchTab('partner')" id="tab-btn-partner" class="tab-btn flex items-center gap-1.5 sm:gap-2 px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-xl sm:rounded-2xl text-xs sm:text-sm font-bold whitespace-nowrap transition-all duration-300 bg-white/30 dark:bg-black/30 text-slate-800 dark:text-pink-100 hover:bg-pink-500/20 backdrop-blur-md">
           <i class="fa-solid fa-handshake text-pink-500"></i> Loja Parceira
         </button>
       </div>
@@ -264,31 +258,31 @@
         <section id="tab-links" class="tab-content block space-y-3">
           
           <!-- Discord Link -->
-          <a href="https://discord.gg/aGSDnmpuw" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-between p-4 rounded-2xl bg-white/80 dark:bg-slate-800/80 border border-pink-100 dark:border-pink-900/40 shadow-sm hover:shadow-xl hover:shadow-pink-500/10 hover:-translate-y-1 transition-all duration-300">
+          <a href="https://discord.gg/aGSDnmpuw" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-between p-4 rounded-2xl bg-white/35 dark:bg-black/40 border border-white/50 dark:border-white/10 shadow-sm hover:shadow-xl hover:shadow-pink-500/10 hover:-translate-y-1 transition-all duration-300 backdrop-blur-md">
             <div class="flex items-center gap-4">
-              <div class="w-12 h-12 rounded-xl bg-indigo-500/10 text-indigo-500 flex items-center justify-center text-xl group-hover:scale-110 transition-transform">
+              <div class="w-12 h-12 rounded-xl bg-indigo-500/20 text-indigo-600 dark:text-indigo-400 flex items-center justify-center text-xl group-hover:scale-110 transition-transform">
                 <i class="fa-brands fa-discord"></i>
               </div>
               <div>
-                <h3 class="font-bold text-slate-800 dark:text-pink-100 text-sm sm:text-base group-hover:text-pink-500 transition-colors">Servidor no Discord</h3>
-                <p class="text-xs text-slate-500 dark:text-pink-300/70">Comunidade oficial, suporte e compras via tickets</p>
+                <h3 class="font-bold text-slate-900 dark:text-pink-100 text-sm sm:text-base group-hover:text-pink-500 transition-colors">Servidor no Discord</h3>
+                <p class="text-xs text-slate-700 dark:text-pink-200/70">Comunidade oficial, suporte e compras via tickets</p>
               </div>
             </div>
-            <span class="px-3 py-1 rounded-full bg-indigo-100 dark:bg-indigo-900/60 text-indigo-600 dark:text-indigo-300 text-[10px] font-bold uppercase tracking-wider">Oficial</span>
+            <span class="px-3 py-1 rounded-full bg-indigo-500/20 text-indigo-700 dark:text-indigo-300 text-[10px] font-bold uppercase tracking-wider backdrop-blur-sm">Oficial</span>
           </a>
 
           <!-- TikTok Link -->
-          <a href="https://www.tiktok.com/@lm.shopp__" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-between p-4 rounded-2xl bg-white/80 dark:bg-slate-800/80 border border-pink-100 dark:border-pink-900/40 shadow-sm hover:shadow-xl hover:shadow-pink-500/10 hover:-translate-y-1 transition-all duration-300">
+          <a href="https://www.tiktok.com/@lm.shopp__" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-between p-4 rounded-2xl bg-white/35 dark:bg-black/40 border border-white/50 dark:border-white/10 shadow-sm hover:shadow-xl hover:shadow-pink-500/10 hover:-translate-y-1 transition-all duration-300 backdrop-blur-md">
             <div class="flex items-center gap-4">
-              <div class="w-12 h-12 rounded-xl bg-pink-500/10 text-pink-500 flex items-center justify-center text-xl group-hover:scale-110 transition-transform">
+              <div class="w-12 h-12 rounded-xl bg-pink-500/20 text-pink-600 dark:text-pink-400 flex items-center justify-center text-xl group-hover:scale-110 transition-transform">
                 <i class="fa-brands fa-tiktok"></i>
               </div>
               <div>
-                <h3 class="font-bold text-slate-800 dark:text-pink-100 text-sm sm:text-base group-hover:text-pink-500 transition-colors">TikTok da Loja</h3>
-                <p class="text-xs text-slate-500 dark:text-pink-300/70">Acompanhe novidades, entregas e conteúdos de MM2</p>
+                <h3 class="font-bold text-slate-900 dark:text-pink-100 text-sm sm:text-base group-hover:text-pink-500 transition-colors">TikTok da Loja</h3>
+                <p class="text-xs text-slate-700 dark:text-pink-200/70">Acompanhe novidades, entregas e conteúdos de MM2</p>
               </div>
             </div>
-            <span class="px-3 py-1 rounded-full bg-pink-100 dark:bg-pink-900/60 text-pink-600 dark:text-pink-300 text-[10px] font-bold uppercase tracking-wider">Oficial</span>
+            <span class="px-3 py-1 rounded-full bg-pink-500/20 text-pink-700 dark:text-pink-300 text-[10px] font-bold uppercase tracking-wider backdrop-blur-sm">Oficial</span>
           </a>
 
         </section>
@@ -297,11 +291,11 @@
         <section id="tab-rules" class="tab-content hidden space-y-4">
           
           <!-- Lista 1: Regras do Server -->
-          <div class="p-5 rounded-2xl bg-white/80 dark:bg-slate-800/80 border border-pink-100 dark:border-pink-900/40 space-y-3 text-xs sm:text-sm text-slate-600 dark:text-pink-200/90 shadow-sm">
-            <h3 class="font-display font-bold text-base text-pink-600 dark:text-pink-300 flex items-center gap-2 border-b border-pink-100 dark:border-pink-900/40 pb-2">
+          <div class="p-5 rounded-2xl bg-white/35 dark:bg-black/40 border border-white/50 dark:border-white/10 space-y-3 text-xs sm:text-sm text-slate-800 dark:text-pink-100 shadow-sm backdrop-blur-md">
+            <h3 class="font-display font-bold text-base text-pink-600 dark:text-pink-300 flex items-center gap-2 border-b border-pink-300/30 dark:border-pink-500/20 pb-2">
               <i class="fa-solid fa-comments text-pink-500"></i> ╭୨୧ ┈┈ ꒰ REGRAS DO SERVER ꒱ ┈┈ ୨୧╮
             </h3>
-            <p class="text-xs text-slate-500 dark:text-pink-300/70 italic">
+            <p class="text-xs text-slate-700 dark:text-pink-200/80 italic">
               As regras existem para manter o servidor organizado, seguro e agradável para todos.
             </p>
             
@@ -334,8 +328,8 @@
           </div>
 
           <!-- Lista 2: Regras SHOP -->
-          <div class="p-5 rounded-2xl bg-white/80 dark:bg-slate-800/80 border border-pink-100 dark:border-pink-900/40 space-y-3 text-xs sm:text-sm text-slate-600 dark:text-pink-200/90 shadow-sm">
-            <h3 class="font-display font-bold text-base text-rose-600 dark:text-rose-400 flex items-center gap-2 border-b border-pink-100 dark:border-pink-900/40 pb-2">
+          <div class="p-5 rounded-2xl bg-white/35 dark:bg-black/40 border border-white/50 dark:border-white/10 space-y-3 text-xs sm:text-sm text-slate-800 dark:text-pink-100 shadow-sm backdrop-blur-md">
+            <h3 class="font-display font-bold text-base text-rose-600 dark:text-rose-400 flex items-center gap-2 border-b border-pink-300/30 dark:border-pink-500/20 pb-2">
               <i class="fa-solid fa-store text-rose-500"></i> ୨୧・Regras SHOP
             </h3>
             
@@ -371,25 +365,25 @@
 
         <!-- TAB 4: PIX / APOIO -->
         <section id="tab-pix" class="tab-content hidden">
-          <div class="p-6 rounded-2xl bg-white/80 dark:bg-slate-800/80 border border-pink-100 dark:border-pink-900/40 text-center space-y-4 shadow-sm">
-            <div class="w-12 h-12 rounded-full bg-rose-500/10 text-rose-500 mx-auto flex items-center justify-center text-2xl">
+          <div class="p-6 rounded-2xl bg-white/35 dark:bg-black/40 border border-white/50 dark:border-white/10 text-center space-y-4 shadow-sm backdrop-blur-md">
+            <div class="w-12 h-12 rounded-full bg-rose-500/20 text-rose-500 mx-auto flex items-center justify-center text-2xl">
               <i class="fa-solid fa-heart"></i>
             </div>
             
             <div>
-              <h3 class="font-display font-bold text-lg text-slate-800 dark:text-pink-100">Apoie a L&amp;M Shop ❤︎</h3>
-              <p class="text-xs text-slate-500 dark:text-pink-300/70 max-w-sm mx-auto mt-1">
+              <h3 class="font-display font-bold text-lg text-slate-900 dark:text-pink-100">Apoie a L&amp;M Shop ❤︎</h3>
+              <p class="text-xs text-slate-700 dark:text-pink-200/80 max-w-sm mx-auto mt-1">
                 Gosta da nossa loja? Se quiser nos apoiar com qualquer valor via PIX, agradecemos imensamente! ✿⁠
               </p>
             </div>
 
             <!-- QR Code Card -->
-            <div class="w-44 h-44 mx-auto p-2 bg-white rounded-2xl border border-pink-200 dark:border-pink-800/40 shadow-inner flex items-center justify-center">
+            <div class="w-44 h-44 mx-auto p-2 bg-white/90 rounded-2xl border border-pink-300/50 dark:border-pink-500/30 shadow-inner flex items-center justify-center">
               <img src="QR CODE.webp" alt="QR Code PIX L&M Shop" class="w-full h-full object-contain rounded-xl" onerror="this.onerror=null; this.src='https://placehold.co/200x200/ff99ca/ffffff?text=QR+CODE+PIX';">
             </div>
 
             <!-- PIX Box -->
-            <div class="max-w-xs mx-auto p-3 rounded-xl bg-pink-50 dark:bg-pink-950/50 border border-dashed border-pink-400 font-mono text-xs text-pink-600 dark:text-pink-300 font-bold break-all select-all">
+            <div class="max-w-xs mx-auto p-3 rounded-xl bg-pink-500/20 border border-dashed border-pink-400 font-mono text-xs text-pink-700 dark:text-pink-300 font-bold break-all select-all backdrop-blur-sm">
               lmshop2006@gmail.com
             </div>
 
@@ -401,21 +395,21 @@
 
         <!-- TAB 5: LOJA PARCEIRA -->
         <section id="tab-partner" class="tab-content hidden">
-          <div class="p-4 sm:p-6 rounded-2xl bg-white/80 dark:bg-slate-800/80 border border-pink-100 dark:border-pink-900/40 space-y-4 sm:space-y-5 shadow-sm text-center">
+          <div class="p-4 sm:p-6 rounded-2xl bg-white/35 dark:bg-black/40 border border-white/50 dark:border-white/10 space-y-4 sm:space-y-5 shadow-sm text-center backdrop-blur-md">
             
             <!-- Partner Header -->
             <div class="flex flex-col items-center gap-2">
-              <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-pink-500/10 text-pink-500 flex items-center justify-center text-xl sm:text-2xl shadow-inner">
+              <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-pink-500/20 text-pink-500 flex items-center justify-center text-xl sm:text-2xl shadow-inner">
                 <i class="fa-solid fa-handshake"></i>
               </div>
-              <h3 class="font-display font-bold text-lg sm:text-xl text-slate-800 dark:text-pink-100">🤝 Detour Store 🤝</h3>
-              <p class="text-xs text-slate-500 dark:text-pink-300/80 max-w-md mx-auto">
+              <h3 class="font-display font-bold text-lg sm:text-xl text-slate-900 dark:text-pink-100">🤝 Detour Store 🤝</h3>
+              <p class="text-xs text-slate-700 dark:text-pink-200/80 max-w-md mx-auto">
                 Conheça a nossa loja parceira oficial! Qualidade e confiança garantidas pela equipe L&amp;M Shop 𖹭.ᐟ
               </p>
             </div>
 
             <!-- Presentation Card -->
-            <div class="p-3 sm:p-4 rounded-xl bg-pink-50/60 dark:bg-slate-900/50 border border-pink-100 dark:border-pink-900/30 text-xs text-slate-600 dark:text-pink-200/90 leading-relaxed text-left space-y-2">
+            <div class="p-3 sm:p-4 rounded-xl bg-white/30 dark:bg-black/30 border border-white/40 dark:border-white/10 text-xs text-slate-800 dark:text-pink-100 leading-relaxed text-left space-y-2 backdrop-blur-sm">
               <p class="font-bold text-pink-600 dark:text-pink-300 flex items-center gap-1.5">
                 <i class="fa-solid fa-sparkles"></i> Sobre a Detour Store:
               </p>
@@ -643,11 +637,6 @@
       requestAnimationFrame(animateParticles);
     }
     animateParticles();
-
-    // Language Placeholder
-    function setLanguage(lang) {
-      showToast(`Idioma alterado para: ${lang.toUpperCase()}`);
-    }
 
     // Automatic Store Status Indicator (Minas Gerais / Horário de Brasília)
     function updateStoreStatus() {
