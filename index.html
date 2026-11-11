@@ -49,7 +49,7 @@
   </div>
 
   <!-- Main Container Glassmorphism Ultra Transparente -->
-  <main class="w-[94%] max-w-2xl my-6 sm:my-10 bg-white/20 dark:bg-black/30 backdrop-blur-md border border-white/40 dark:border-white/10 rounded-3xl p-5 sm:p-8 shadow-2xl relative z-10 transition-all duration-300">
+  <main class="w-[94%] max-w-2xl my-6 sm:my-10 bg-white/20 dark:bg-black/40 backdrop-blur-md border border-white/40 dark:border-white/10 rounded-3xl p-5 sm:p-8 shadow-2xl relative z-10 transition-all duration-300">
     
     <!-- Top Actions -->
     <div class="absolute top-5 right-5 flex items-center gap-2 z-20">
@@ -213,7 +213,41 @@
   </footer>
 
   <script>
-    // --- LÓGICA DE ÁUDIO GLOBAL ---
+    // --- DETECÇÃO DO MODO ESCURO DO SISTEMA ---
+    function initTheme() {
+      const isSystemDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (isSystemDark) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+      updateThemeButton();
+    }
+
+    function toggleTheme() {
+      document.documentElement.classList.toggle('dark');
+      updateThemeButton();
+    }
+
+    function updateThemeButton() {
+      const themeBtn = document.getElementById('themeBtn');
+      const isDark = document.documentElement.classList.contains('dark');
+      themeBtn.textContent = isDark ? '☀️' : '🌙';
+    }
+
+    // Ouvir mudanças de tema no sistema operacional em tempo real
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+      if (e.matches) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+      updateThemeButton();
+    });
+
+    initTheme();
+
+    // --- LÓGICA DE ÁUDIO GLOBAL PARA MOBILE & DESKTOP ---
     const audio = document.getElementById('bgMusic');
     const musicBtn = document.getElementById('musicBtn');
     let hasInteracted = false;
@@ -230,19 +264,20 @@
       }
     }
 
-    // Tocar ao clicar/tocar em QUALQUER lugar do site
-    function handleFirstInteraction() {
+    // Ativa a música no primeiro toque em QUALQUER lugar, botão ou link
+    function handleGlobalTouch() {
       if (!hasInteracted) {
         hasInteracted = true;
         playAudio();
       }
     }
 
-    document.addEventListener('click', handleFirstInteraction);
-    document.addEventListener('touchstart', handleFirstInteraction);
+    // Usar a fase de captura para disparar antes de qualquer outro manipulador
+    window.addEventListener('touchstart', handleGlobalTouch, { capture: true, passive: true });
+    window.addEventListener('click', handleGlobalTouch, { capture: true, passive: true });
 
     function toggleMusic(e) {
-      if (e) e.stopPropagation(); // Impede duplo disparo
+      if (e) e.stopPropagation();
       hasInteracted = true;
       if (audio.paused) {
         playAudio();
@@ -271,14 +306,6 @@
       const target = document.getElementById('tab-' + tabId);
       target.classList.remove('hidden');
       target.classList.add('block');
-    }
-
-    // --- MODO ESCURO ---
-    function toggleTheme() {
-      document.documentElement.classList.toggle('dark');
-      const themeBtn = document.getElementById('themeBtn');
-      const isDark = document.documentElement.classList.contains('dark');
-      themeBtn.textContent = isDark ? '☀️' : '🌙';
     }
 
     // --- COPIAR PIX ---
