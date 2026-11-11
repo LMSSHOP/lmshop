@@ -17,14 +17,6 @@
           fontFamily: {
             sans: ['"Plus Jakarta Sans"', 'sans-serif'],
             display: ['"Space Grotesk"', 'sans-serif'],
-          },
-          colors: {
-            kawaii: {
-              pink: '#ff75ab',
-              darkpink: '#e64386',
-              lightpink: '#ffe5ef',
-              accent: '#ff2a81'
-            }
           }
         }
       }
@@ -36,7 +28,10 @@
     .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
   </style>
 </head>
-<body class="min-h-screen text-slate-800 dark:text-pink-50 font-sans flex flex-col justify-between items-center relative overflow-x-hidden transition-colors duration-300 select-none bg-cover bg-center bg-fixed" style="background-image: url('L&M.jpg');">
+<body class="min-h-screen text-slate-800 dark:text-pink-100 font-sans flex flex-col justify-between items-center relative overflow-x-hidden transition-colors duration-300 select-none bg-cover bg-center bg-fixed" style="background-image: url('L&M.jpg');">
+
+  <!-- Camada extra para escurecer o fundo no Modo Escuro -->
+  <div class="fixed inset-0 bg-black/0 dark:bg-black/50 pointer-events-none transition-colors duration-300 z-0"></div>
 
   <!-- Elemento de Áudio -->
   <audio id="bgMusic" loop preload="auto" playsinline>
@@ -48,15 +43,15 @@
     <span>✨</span> <span id="toast-msg">Mensagem</span>
   </div>
 
-  <!-- Main Container Glassmorphism Ultra Transparente -->
-  <main class="w-[94%] max-w-2xl my-6 sm:my-10 bg-white/20 dark:bg-black/40 backdrop-blur-md border border-white/40 dark:border-white/10 rounded-3xl p-5 sm:p-8 shadow-2xl relative z-10 transition-all duration-300">
+  <!-- Main Container Glassmorphism Ajustado para Dark Mode Forte -->
+  <main class="w-[94%] max-w-2xl my-6 sm:my-10 bg-white/40 dark:bg-slate-950/85 backdrop-blur-md border border-white/60 dark:border-pink-500/20 rounded-3xl p-5 sm:p-8 shadow-2xl relative z-10 transition-all duration-300">
     
     <!-- Top Actions -->
     <div class="absolute top-5 right-5 flex items-center gap-2 z-20">
-      <button onclick="toggleMusic(event)" id="musicBtn" class="w-10 h-10 rounded-full bg-white/30 dark:bg-white/10 border border-white/40 dark:border-white/20 flex items-center justify-center text-lg shadow-md hover:scale-110 active:scale-95 transition-all text-pink-600 dark:text-pink-300 backdrop-blur-sm" title="Alternar Som">
+      <button onclick="toggleMusic(event)" id="musicBtn" class="w-10 h-10 rounded-full bg-white/50 dark:bg-slate-800/80 border border-white/60 dark:border-pink-500/30 flex items-center justify-center text-lg shadow-md hover:scale-110 active:scale-95 transition-all text-pink-600 dark:text-pink-300 backdrop-blur-sm" title="Alternar Som">
         🔊
       </button>
-      <button onclick="toggleTheme()" id="themeBtn" class="w-10 h-10 rounded-full bg-white/30 dark:bg-white/10 border border-white/40 dark:border-white/20 flex items-center justify-center text-lg shadow-md hover:scale-110 active:scale-95 transition-all text-pink-600 dark:text-pink-300 backdrop-blur-sm" title="Alternar Modo Escuro">
+      <button onclick="toggleTheme()" id="themeBtn" class="w-10 h-10 rounded-full bg-white/50 dark:bg-slate-800/80 border border-white/60 dark:border-pink-500/30 flex items-center justify-center text-lg shadow-md hover:scale-110 active:scale-95 transition-all text-pink-600 dark:text-pink-300 backdrop-blur-sm" title="Alternar Modo Escuro">
         🌙
       </button>
     </div>
@@ -93,40 +88,40 @@
       <button onclick="switchTab('links')" class="tab-btn active px-4 py-2 rounded-full text-xs font-bold whitespace-nowrap transition-all border border-pink-400/30 bg-pink-500 text-white shadow-md shadow-pink-500/20">
         🔗 Links Oficiais
       </button>
-      <button onclick="switchTab('regras')" class="tab-btn px-4 py-2 rounded-full text-xs font-bold whitespace-nowrap transition-all border border-white/20 bg-white/20 dark:bg-white/10 text-slate-800 dark:text-pink-100 hover:bg-pink-500/30">
+      <button onclick="switchTab('regras')" class="tab-btn px-4 py-2 rounded-full text-xs font-bold whitespace-nowrap transition-all border border-slate-300/40 dark:border-white/10 bg-white/40 dark:bg-slate-800/60 text-slate-800 dark:text-pink-100 hover:bg-pink-500/30">
         📜 Diretrizes &amp; Regras
       </button>
-      <button onclick="switchTab('apoio')" class="tab-btn px-4 py-2 rounded-full text-xs font-bold whitespace-nowrap transition-all border border-white/20 bg-white/20 dark:bg-white/10 text-slate-800 dark:text-pink-100 hover:bg-pink-500/30">
+      <button onclick="switchTab('apoio')" class="tab-btn px-4 py-2 rounded-full text-xs font-bold whitespace-nowrap transition-all border border-slate-300/40 dark:border-white/10 bg-white/40 dark:bg-slate-800/60 text-slate-800 dark:text-pink-100 hover:bg-pink-500/30">
         💕 Apoiar PIX
       </button>
-      <button onclick="switchTab('parceira')" class="tab-btn px-4 py-2 rounded-full text-xs font-bold whitespace-nowrap transition-all border border-white/20 bg-white/20 dark:bg-white/10 text-slate-800 dark:text-pink-100 hover:bg-pink-500/30">
+      <button onclick="switchTab('parceira')" class="tab-btn px-4 py-2 rounded-full text-xs font-bold whitespace-nowrap transition-all border border-slate-300/40 dark:border-white/10 bg-white/40 dark:bg-slate-800/60 text-slate-800 dark:text-pink-100 hover:bg-pink-500/30">
         🤝 Loja Parceira
       </button>
     </nav>
 
     <!-- Conteúdo 1: Links Oficiais -->
     <section id="tab-links" class="tab-content block space-y-3">
-      <a href="https://discord.gg/aGSDnmpuw" target="_blank" class="group flex items-center justify-between p-4 rounded-2xl bg-white/30 dark:bg-white/10 border border-white/30 dark:border-white/10 hover:border-pink-400/60 hover:bg-white/40 dark:hover:bg-white/20 transition-all shadow-sm hover:shadow-md hover:-translate-y-0.5">
+      <a href="https://discord.gg/aGSDnmpuw" target="_blank" class="group flex items-center justify-between p-4 rounded-2xl bg-white/50 dark:bg-slate-900/80 border border-white/60 dark:border-white/10 hover:border-pink-400/60 hover:bg-white/70 dark:hover:bg-slate-800/90 transition-all shadow-sm hover:shadow-md hover:-translate-y-0.5">
         <div class="flex items-center gap-3.5">
           <div class="w-10 h-10 rounded-xl bg-indigo-500/20 text-indigo-600 dark:text-indigo-300 flex items-center justify-center text-xl font-bold group-hover:scale-110 transition-transform">
             💬
           </div>
           <div>
             <h3 class="font-bold text-sm text-slate-900 dark:text-white">Servidor no Discord</h3>
-            <p class="text-xs text-slate-700 dark:text-pink-100/80">Comunidade oficial, suporte e compras via tickets</p>
+            <p class="text-xs text-slate-700 dark:text-pink-200/80">Comunidade oficial, suporte e compras via tickets</p>
           </div>
         </div>
         <span class="text-[10px] font-extrabold uppercase tracking-wider bg-indigo-500/20 text-indigo-700 dark:text-indigo-300 border border-indigo-400/30 px-2.5 py-1 rounded-full">OFICIAL</span>
       </a>
 
-      <a href="https://www.tiktok.com/@lm.shopp__" target="_blank" class="group flex items-center justify-between p-4 rounded-2xl bg-white/30 dark:bg-white/10 border border-white/30 dark:border-white/10 hover:border-pink-400/60 hover:bg-white/40 dark:hover:bg-white/20 transition-all shadow-sm hover:shadow-md hover:-translate-y-0.5">
+      <a href="https://www.tiktok.com/@lm.shopp__" target="_blank" class="group flex items-center justify-between p-4 rounded-2xl bg-white/50 dark:bg-slate-900/80 border border-white/60 dark:border-white/10 hover:border-pink-400/60 hover:bg-white/70 dark:hover:bg-slate-800/90 transition-all shadow-sm hover:shadow-md hover:-translate-y-0.5">
         <div class="flex items-center gap-3.5">
           <div class="w-10 h-10 rounded-xl bg-pink-500/20 text-pink-600 dark:text-pink-300 flex items-center justify-center text-xl font-bold group-hover:scale-110 transition-transform">
             🎵
           </div>
           <div>
             <h3 class="font-bold text-sm text-slate-900 dark:text-white">TikTok da Loja</h3>
-            <p class="text-xs text-slate-700 dark:text-pink-100/80">Acompanhe novidades, entregas e conteúdos de MM2</p>
+            <p class="text-xs text-slate-700 dark:text-pink-200/80">Acompanhe novidades, entregas e conteúdos de MM2</p>
           </div>
         </div>
         <span class="text-[10px] font-extrabold uppercase tracking-wider bg-pink-500/20 text-pink-700 dark:text-pink-300 border border-pink-400/30 px-2.5 py-1 rounded-full">OFICIAL</span>
@@ -135,8 +130,8 @@
 
     <!-- Conteúdo 2: Regras -->
     <section id="tab-regras" class="tab-content hidden space-y-4">
-      <div class="p-4 rounded-2xl bg-white/30 dark:bg-white/10 border border-white/30 dark:border-white/10 space-y-3">
-        <h3 class="font-display font-bold text-sm text-pink-600 dark:text-pink-300 flex items-center gap-2 border-b border-pink-500/20 pb-2">
+      <div class="p-4 rounded-2xl bg-white/50 dark:bg-slate-900/80 border border-white/60 dark:border-white/10 space-y-3">
+        <h3 class="font-display font-bold text-sm text-pink-600 dark:text-pink-400 flex items-center gap-2 border-b border-pink-500/20 pb-2">
           <span>╭୨୧</span> REGRAS DO SERVER <span>୨୧╮</span>
         </h3>
         <div class="text-xs space-y-2 text-slate-800 dark:text-pink-100/90 leading-relaxed">
@@ -147,8 +142,8 @@
         </div>
       </div>
 
-      <div class="p-4 rounded-2xl bg-white/30 dark:bg-white/10 border border-white/30 dark:border-white/10 space-y-3">
-        <h3 class="font-display font-bold text-sm text-pink-600 dark:text-pink-300 flex items-center gap-2 border-b border-pink-500/20 pb-2">
+      <div class="p-4 rounded-2xl bg-white/50 dark:bg-slate-900/80 border border-white/60 dark:border-white/10 space-y-3">
+        <h3 class="font-display font-bold text-sm text-pink-600 dark:text-pink-400 flex items-center gap-2 border-b border-pink-500/20 pb-2">
           <span>୨୧・</span> REGRAS SHOP
         </h3>
         <div class="text-xs space-y-2 text-slate-800 dark:text-pink-100/90 leading-relaxed">
@@ -161,9 +156,9 @@
     </section>
 
     <!-- Conteúdo 3: Apoiar PIX -->
-    <section id="tab-apoio" class="tab-content hidden text-center p-4 rounded-2xl bg-white/30 dark:bg-white/10 border border-white/30 dark:border-white/10 space-y-4">
+    <section id="tab-apoio" class="tab-content hidden text-center p-4 rounded-2xl bg-white/50 dark:bg-slate-900/80 border border-white/60 dark:border-white/10 space-y-4">
       <h3 class="font-display font-bold text-base text-slate-900 dark:text-white">Apoie a L&amp;M Shop ❤︎</h3>
-      <p class="text-xs text-slate-700 dark:text-pink-100/80 max-w-sm mx-auto">
+      <p class="text-xs text-slate-700 dark:text-pink-200/80 max-w-sm mx-auto">
         Gosta da nossa loja? Você pode nos apoiar enviando qualquer valor via PIX. Agradecemos imensamente! ✿
       </p>
 
@@ -171,7 +166,7 @@
         <img src="QR CODE.webp" onerror="this.src='https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=lmshop2006@gmail.com'" alt="QR Code PIX" class="w-full h-full object-contain rounded-lg">
       </div>
 
-      <div class="bg-white/50 dark:bg-black/40 border border-dashed border-pink-400/60 p-3 rounded-xl text-xs font-mono font-bold text-pink-600 dark:text-pink-300 break-all" id="pixKey">
+      <div class="bg-white/70 dark:bg-slate-950/90 border border-dashed border-pink-400/60 p-3 rounded-xl text-xs font-mono font-bold text-pink-600 dark:text-pink-300 break-all" id="pixKey">
         lmshop2006@gmail.com
       </div>
 
@@ -182,13 +177,13 @@
 
     <!-- Conteúdo 4: Loja Parceira -->
     <section id="tab-parceira" class="tab-content hidden space-y-4">
-      <div class="p-5 rounded-2xl bg-white/30 dark:bg-white/10 border border-white/30 dark:border-white/10 text-center space-y-3">
+      <div class="p-5 rounded-2xl bg-white/50 dark:bg-slate-900/80 border border-white/60 dark:border-white/10 text-center space-y-3">
         <div class="w-16 h-16 rounded-full bg-pink-500/20 text-pink-500 flex items-center justify-center text-3xl mx-auto border border-pink-400/40">
           🤝
         </div>
         <div>
           <h3 class="font-display font-bold text-base text-slate-900 dark:text-white">Detour Store</h3>
-          <p class="text-xs text-slate-700 dark:text-pink-100/80 mt-1">Qualidade e confiança recomendadas e garantidas pela equipe L&amp;M Shop! 𖹭.ᐟ</p>
+          <p class="text-xs text-slate-700 dark:text-pink-200/80 mt-1">Qualidade e confiança recomendadas e garantidas pela equipe L&amp;M Shop! 𖹭.ᐟ</p>
         </div>
 
         <div class="pt-2 space-y-2">
@@ -208,12 +203,12 @@
   </main>
 
   <!-- Rodapé -->
-  <footer class="mb-6 text-center text-xs text-slate-800 dark:text-pink-200/80 font-medium z-10">
+  <footer class="mb-6 text-center text-xs text-slate-800 dark:text-pink-200 font-medium z-10">
     <p>✦ Design assinado por <strong class="text-slate-900 dark:text-white">Ay sousz</strong> · L&amp;M Shop 🌸</p>
   </footer>
 
   <script>
-    // --- DETECÇÃO DO MODO ESCURO DO SISTEMA ---
+    // --- GERENCIAMENTO DE MODO ESCURO / CLARO ---
     function initTheme() {
       const isSystemDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
       if (isSystemDark) {
@@ -235,7 +230,6 @@
       themeBtn.textContent = isDark ? '☀️' : '🌙';
     }
 
-    // Ouvir mudanças de tema no sistema operacional em tempo real
     window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
       if (e.matches) {
         document.documentElement.classList.add('dark');
@@ -247,40 +241,48 @@
 
     initTheme();
 
-    // --- LÓGICA DE ÁUDIO GLOBAL PARA MOBILE & DESKTOP ---
+    // --- LÓGICA DE ÁUDIO REFORÇADA PARA PC E MOBILE ---
     const audio = document.getElementById('bgMusic');
     const musicBtn = document.getElementById('musicBtn');
     let hasInteracted = false;
 
     audio.volume = 0.25;
 
-    function playAudio() {
+    function tryPlayAudio() {
       if (audio.paused) {
-        audio.play().then(() => {
-          musicBtn.textContent = '🔊';
-        }).catch(() => {
-          musicBtn.textContent = '🔇';
-        });
+        const playPromise = audio.play();
+        if (playPromise !== undefined) {
+          playPromise.then(() => {
+            musicBtn.textContent = '🔊';
+            hasInteracted = true;
+          }).catch(() => {
+            musicBtn.textContent = '🔇';
+          });
+        }
       }
     }
 
-    // Ativa a música no primeiro toque em QUALQUER lugar, botão ou link
-    function handleGlobalTouch() {
+    // Tenta tocar no carregamento do PC
+    window.addEventListener('load', () => {
+      tryPlayAudio();
+    });
+
+    // Libera o som no primeiro movimento de rato, clique ou toque no PC/Mobile
+    function handleGlobalUserInteraction() {
       if (!hasInteracted) {
-        hasInteracted = true;
-        playAudio();
+        tryPlayAudio();
       }
     }
 
-    // Usar a fase de captura para disparar antes de qualquer outro manipulador
-    window.addEventListener('touchstart', handleGlobalTouch, { capture: true, passive: true });
-    window.addEventListener('click', handleGlobalTouch, { capture: true, passive: true });
+    ['click', 'touchstart', 'mousemove', 'keydown', 'scroll'].forEach(evt => {
+      window.addEventListener(evt, handleGlobalUserInteraction, { capture: true, passive: true });
+    });
 
     function toggleMusic(e) {
       if (e) e.stopPropagation();
       hasInteracted = true;
       if (audio.paused) {
-        playAudio();
+        tryPlayAudio();
       } else {
         audio.pause();
         musicBtn.textContent = '🔇';
@@ -291,7 +293,7 @@
     function switchTab(tabId) {
       document.querySelectorAll('.tab-btn').forEach(btn => {
         btn.classList.remove('active', 'bg-pink-500', 'text-white', 'shadow-md', 'shadow-pink-500/20');
-        btn.classList.add('bg-white/20', 'dark:bg-white/10', 'text-slate-800', 'dark:text-pink-100');
+        btn.classList.add('bg-white/40', 'dark:bg-slate-800/60', 'text-slate-800', 'dark:text-pink-100');
       });
       
       document.querySelectorAll('.tab-content').forEach(content => {
@@ -301,7 +303,7 @@
 
       const activeBtn = event.currentTarget;
       activeBtn.classList.add('active', 'bg-pink-500', 'text-white', 'shadow-md', 'shadow-pink-500/20');
-      activeBtn.classList.remove('bg-white/20', 'dark:bg-white/10', 'text-slate-800', 'dark:text-pink-100');
+      activeBtn.classList.remove('bg-white/40', 'dark:bg-slate-800/60', 'text-slate-800', 'dark:text-pink-100');
 
       const target = document.getElementById('tab-' + tabId);
       target.classList.remove('hidden');
@@ -332,8 +334,8 @@
       const [hours, minutes] = timeString.split(':').map(Number);
       const totalMinutes = hours * 60 + minutes;
 
-      const openMinutes = 9 * 60 + 30; // 09:30 AM (570 min)
-      const closeMinutes = 24 * 60;    // 00:00 AM (1440 min)
+      const openMinutes = 9 * 60 + 30; // 09:30 AM
+      const closeMinutes = 24 * 60;    // 00:00 AM
 
       const badge = document.getElementById('statusBadge');
       const dot = document.getElementById('statusDot');
