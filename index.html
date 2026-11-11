@@ -1,70 +1,29 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="h-full">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>L&amp;M Shop — Links &amp; Murder Mystery 2</title>
+  <title>L&amp;M Shop — MM2 &amp; Roblox Experience</title>
   
-  <!-- Tailwind CSS CDN -->
+  <link rel="icon" type="image/png" href="logo.png">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   
-  <!-- Font Awesome Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
   <script>
     tailwind.config = {
       darkMode: 'class',
       theme: {
         extend: {
-          colors: {
-            pinkish: {
-              50: '#fff0f6',
-              100: '#ffe3f0',
-              200: '#ffc6e1',
-              300: '#ff99ca',
-              400: '#ff5ea7',
-              500: '#ff3388',
-              600: '#e6196e',
-              700: '#c80f57',
-              800: '#a31149',
-              900: '#871340',
-            },
-            kawaii: {
-              darkBg: '#150a12',
-              darkCard: 'rgba(28, 14, 24, 0.75)',
-              darkBorder: 'rgba(255, 133, 179, 0.25)',
-              lightBg: '#fff2f7',
-              lightCard: 'rgba(255, 255, 255, 0.8)',
-              lightBorder: 'rgba(255, 255, 255, 0.9)',
-            }
-          },
           fontFamily: {
-            sans: ['"Plus Jakarta Sans"', '"DM Sans"', 'sans-serif'],
-            display: ['Fraunces', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            display: ['"Space Grotesk"', 'sans-serif'],
           },
-          animation: {
-            'float': 'float 6s ease-in-out infinite',
-            'pulse-glow': 'pulseGlow 2s infinite',
-            'spin-slow': 'spin 12s linear infinite',
-            'shimmer': 'shimmer 2.5s infinite linear',
-          },
-          keyframes: {
-            float: {
-              '0%, 100%': { transform: 'translateY(0px) rotate(0deg)' },
-              '50%': { transform: 'translateY(-12px) rotate(2deg)' },
-            },
-            pulseGlow: {
-              '0%, 100%': { boxShadow: '0 0 15px rgba(255, 94, 167, 0.4)' },
-              '50%': { boxShadow: '0 0 30px rgba(255, 94, 167, 0.8)' },
-            },
-            shimmer: {
-              '0%': { backgroundPosition: '-200% 0' },
-              '100%': { backgroundPosition: '200% 0' },
+          colors: {
+            kawaii: {
+              pink: '#ff75ab',
+              darkpink: '#e64386',
+              lightpink: '#ffe5ef',
+              accent: '#ff2a81'
             }
           }
         }
@@ -73,605 +32,299 @@
   </script>
 
   <style>
-    /* Custom Scrollbar */
-    ::-webkit-scrollbar {
-      width: 6px;
-      height: 6px;
-    }
-    ::-webkit-scrollbar-track {
-      background: transparent;
-    }
-    ::-webkit-scrollbar-thumb {
-      background: rgba(255, 94, 167, 0.3);
-      border-radius: 999px;
-    }
-    ::-webkit-scrollbar-thumb:hover {
-      background: rgba(255, 94, 167, 0.6);
-    }
-
-    /* Hide scrollbar for smooth tab scrolling on mobile */
-    .no-scrollbar::-webkit-scrollbar {
-      display: none;
-    }
-    .no-scrollbar {
-      -ms-overflow-style: none;
-      scrollbar-width: none;
-    }
-
-    /* Glassmorphic Styles */
-    .glass-panel {
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-    }
-
-    /* Floating particles background */
-    #particle-canvas {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: 1;
-    }
-
-    /* Sound visualizer bars animation */
-    .bar {
-      display: inline-block;
-      width: 3px;
-      height: 12px;
-      border-radius: 99px;
-      background-color: currentColor;
-      animation: soundBar 1.2s ease-in-out infinite alternate;
-    }
-    .bar:nth-child(1) { animation-delay: 0.1s; }
-    .bar:nth-child(2) { animation-delay: 0.3s; }
-    .bar:nth-child(3) { animation-delay: 0.5s; }
-    .bar:nth-child(4) { animation-delay: 0.2s; }
-    
-    .paused .bar {
-      animation-play-state: paused;
-      height: 4px !important;
-    }
-
-    @keyframes soundBar {
-      0% { height: 4px; }
-      100% { height: 16px; }
-    }
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
   </style>
 </head>
-<body class="bg-kawaii-lightBg dark:bg-kawaii-darkBg text-slate-800 dark:text-pink-50 min-h-full flex flex-col justify-between font-sans transition-colors duration-500 relative overflow-x-hidden selection:bg-pink-400 selection:text-white">
+<body class="min-h-screen text-slate-800 dark:text-pink-50 font-sans flex flex-col justify-between items-center relative overflow-x-hidden transition-colors duration-300 select-none bg-cover bg-center bg-fixed" style="background-image: url('L&M.jpg');">
 
-  <!-- Background Particle Canvas -->
-  <canvas id="particle-canvas"></canvas>
-
-  <!-- Ambient Light Gradients & Background Image Container -->
-  <div class="fixed inset-0 bg-cover bg-center bg-no-repeat bg-fixed -z-10 transition-all duration-500" 
-       style="background-image: linear-gradient(to bottom, rgba(255, 235, 243, 0.45), rgba(255, 215, 230, 0.55)), url('L&M.jpg');">
-  </div>
-  
-  <style>
-    /* Dark mode background override for L&M.jpg */
-    .dark body .fixed.inset-0 {
-      background-image: linear-gradient(to bottom, rgba(15, 6, 12, 0.65), rgba(22, 10, 18, 0.75)), url('L&M.jpg') !important;
-    }
-  </style>
-
-  <div class="fixed top-[-10%] left-[-10%] w-[50vw] h-[50vw] rounded-full bg-pink-300/30 dark:bg-pink-900/20 blur-[120px] pointer-events-none z-0"></div>
-  <div class="fixed bottom-[-10%] right-[-10%] w-[50vw] h-[50vw] rounded-full bg-rose-400/20 dark:bg-purple-900/20 blur-[120px] pointer-events-none z-0"></div>
-
-  <!-- Background Audio with Delay Optimization -->
-  <audio id="bgMusic" loop preload="auto">
-    <source src="L&amp;M SHOP.mp3" type="audio/mpeg">
+  <!-- Elemento de Áudio -->
+  <audio id="bgMusic" loop preload="auto" playsinline>
+    <source src="L&M SHOP.mp3" type="audio/mpeg">
   </audio>
 
-  <!-- Top Floating Toolbar -->
-  <header class="fixed top-3 sm:top-4 left-0 right-0 z-40 px-3 sm:px-8 max-w-5xl mx-auto flex justify-between items-center pointer-events-none">
+  <!-- Toast Notification -->
+  <div id="toast" class="fixed bottom-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 bg-pink-600/90 text-white px-6 py-3 rounded-full shadow-lg border border-pink-400/50 backdrop-blur-md text-sm font-bold flex items-center gap-2">
+    <span>✨</span> <span id="toast-msg">Mensagem</span>
+  </div>
+
+  <!-- Main Container Glassmorphism Ultra Transparente -->
+  <main class="w-[94%] max-w-2xl my-6 sm:my-10 bg-white/20 dark:bg-black/30 backdrop-blur-md border border-white/40 dark:border-white/10 rounded-3xl p-5 sm:p-8 shadow-2xl relative z-10 transition-all duration-300">
     
-    <!-- Left Controls (Theme Toggle) -->
-    <div class="flex items-center gap-2 pointer-events-auto">
-      <button id="themeToggleBtn" onclick="toggleTheme()" class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/40 dark:bg-black/40 border border-white/60 dark:border-white/20 shadow-lg shadow-pink-500/10 backdrop-blur-md flex items-center justify-center text-pink-500 hover:scale-110 active:scale-95 transition-all duration-300">
-        <i class="fa-solid fa-moon text-base sm:text-lg dark:hidden"></i>
-        <i class="fa-solid fa-sun text-base sm:text-lg hidden dark:inline-block"></i>
+    <!-- Top Actions -->
+    <div class="absolute top-5 right-5 flex items-center gap-2 z-20">
+      <button onclick="toggleMusic(event)" id="musicBtn" class="w-10 h-10 rounded-full bg-white/30 dark:bg-white/10 border border-white/40 dark:border-white/20 flex items-center justify-center text-lg shadow-md hover:scale-110 active:scale-95 transition-all text-pink-600 dark:text-pink-300 backdrop-blur-sm" title="Alternar Som">
+        🔊
+      </button>
+      <button onclick="toggleTheme()" id="themeBtn" class="w-10 h-10 rounded-full bg-white/30 dark:bg-white/10 border border-white/40 dark:border-white/20 flex items-center justify-center text-lg shadow-md hover:scale-110 active:scale-95 transition-all text-pink-600 dark:text-pink-300 backdrop-blur-sm" title="Alternar Modo Escuro">
+        🌙
       </button>
     </div>
 
-  </header>
-
-  <!-- Main Content Container -->
-  <main class="relative z-10 pt-16 sm:pt-20 pb-8 sm:pb-12 px-3 sm:px-4 w-full max-w-4xl mx-auto flex-1 flex flex-col justify-center">
-    
-    <!-- Main App Card (Ultra Transparent Glassmorphism) -->
-    <div class="glass-panel bg-white/25 dark:bg-black/35 border border-white/50 dark:border-white/15 rounded-2xl sm:rounded-3xl shadow-2xl shadow-pink-500/10 p-4 sm:p-10 transition-all duration-500">
-      
-      <!-- Profile Header Section -->
-      <div class="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 pb-6 sm:pb-8 border-b border-pink-300/40 dark:border-pink-500/20 relative">
+    <!-- Header / Bio -->
+    <header class="flex flex-col sm:flex-row items-center gap-5 pb-6 border-b border-pink-900/10 dark:border-white/10 relative">
+      <div class="relative w-24 h-24 sm:w-28 sm:h-28 flex-shrink-0">
+        <img src="logo.png" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80'" alt="L&M Shop Logo" class="w-full h-full rounded-full object-cover border-4 border-pink-400/60 shadow-lg shadow-pink-500/20">
         
-        <!-- Profile Avatar with Animated Glow & Status -->
-        <div class="relative group flex-shrink-0">
-          <div class="absolute -inset-1 bg-gradient-to-r from-pink-400 to-rose-400 rounded-full blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-pulse-glow"></div>
-          
-          <div class="relative w-24 h-24 sm:w-32 sm:h-32 rounded-full p-1 bg-white/70 dark:bg-slate-900/70 shadow-xl overflow-hidden backdrop-blur-sm">
-            <img src="logo.png" alt="L&M Shop Logo" class="w-full h-full object-cover rounded-full transform transition duration-500 group-hover:scale-105" onerror="this.onerror=null; this.src='https://placehold.co/200x200/ff99ca/ffffff?text=L%26M+Shop';">
-          </div>
+        <!-- Status Badge Dinâmico -->
+        <div id="statusBadge" class="absolute bottom-1 right-1 px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase tracking-wider text-white shadow-md border-2 border-white dark:border-slate-900 flex items-center gap-1.5 transition-colors duration-300 bg-emerald-500">
+          <span id="statusDot" class="w-2 h-2 rounded-full bg-white animate-pulse"></span>
+          <span id="statusText">ONLINE</span>
+        </div>
+      </div>
 
-          <!-- Dynamic Status Indicator -->
-          <div id="statusBadge" class="absolute bottom-0 right-0 sm:bottom-1 sm:right-1 bg-emerald-500 border-2 border-white dark:border-slate-900 text-white text-[9px] sm:text-[10px] font-bold px-1.5 sm:px-2 py-0.5 rounded-full flex items-center gap-1 shadow-md transition-colors duration-300" title="Status da Loja">
-            <span id="statusPing" class="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-white animate-ping"></span>
-            <span id="statusText">ONLINE</span>
+      <div class="text-center sm:text-left pr-0 sm:pr-12">
+        <h1 class="font-display font-extrabold text-2xl sm:text-3xl text-slate-900 dark:text-white flex items-center justify-center sm:justify-start gap-2">
+          L&amp;M Shop <span class="text-pink-500 text-xl animate-bounce">💖</span>
+        </h1>
+        <p class="text-xs sm:text-sm text-slate-800 dark:text-pink-100/90 font-medium mt-1.5 leading-relaxed">
+          Seu inventário merece brilhar com os melhores itens! Godlys, Sets, Armas e Pets exclusivos no MM2 com total garantia, entrega ultra rápida e os preços mais imperdíveis do mercado. 🌟✨
+        </p>
+        
+        <div class="flex flex-wrap items-center justify-center sm:justify-start gap-2 mt-3">
+          <span class="text-[11px] font-semibold bg-pink-500/20 text-pink-700 dark:text-pink-200 border border-pink-400/30 px-2.5 py-0.5 rounded-full backdrop-blur-sm">⚡ Entrega Rápida</span>
+          <span class="text-[11px] font-semibold bg-pink-500/20 text-pink-700 dark:text-pink-200 border border-pink-400/30 px-2.5 py-0.5 rounded-full backdrop-blur-sm">🛡️ 100% Seguro</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Menu de Abas -->
+    <nav class="flex items-center gap-2 my-5 overflow-x-auto no-scrollbar pb-1">
+      <button onclick="switchTab('links')" class="tab-btn active px-4 py-2 rounded-full text-xs font-bold whitespace-nowrap transition-all border border-pink-400/30 bg-pink-500 text-white shadow-md shadow-pink-500/20">
+        🔗 Links Oficiais
+      </button>
+      <button onclick="switchTab('regras')" class="tab-btn px-4 py-2 rounded-full text-xs font-bold whitespace-nowrap transition-all border border-white/20 bg-white/20 dark:bg-white/10 text-slate-800 dark:text-pink-100 hover:bg-pink-500/30">
+        📜 Diretrizes &amp; Regras
+      </button>
+      <button onclick="switchTab('apoio')" class="tab-btn px-4 py-2 rounded-full text-xs font-bold whitespace-nowrap transition-all border border-white/20 bg-white/20 dark:bg-white/10 text-slate-800 dark:text-pink-100 hover:bg-pink-500/30">
+        💕 Apoiar PIX
+      </button>
+      <button onclick="switchTab('parceira')" class="tab-btn px-4 py-2 rounded-full text-xs font-bold whitespace-nowrap transition-all border border-white/20 bg-white/20 dark:bg-white/10 text-slate-800 dark:text-pink-100 hover:bg-pink-500/30">
+        🤝 Loja Parceira
+      </button>
+    </nav>
+
+    <!-- Conteúdo 1: Links Oficiais -->
+    <section id="tab-links" class="tab-content block space-y-3">
+      <a href="https://discord.gg/aGSDnmpuw" target="_blank" class="group flex items-center justify-between p-4 rounded-2xl bg-white/30 dark:bg-white/10 border border-white/30 dark:border-white/10 hover:border-pink-400/60 hover:bg-white/40 dark:hover:bg-white/20 transition-all shadow-sm hover:shadow-md hover:-translate-y-0.5">
+        <div class="flex items-center gap-3.5">
+          <div class="w-10 h-10 rounded-xl bg-indigo-500/20 text-indigo-600 dark:text-indigo-300 flex items-center justify-center text-xl font-bold group-hover:scale-110 transition-transform">
+            💬
+          </div>
+          <div>
+            <h3 class="font-bold text-sm text-slate-900 dark:text-white">Servidor no Discord</h3>
+            <p class="text-xs text-slate-700 dark:text-pink-100/80">Comunidade oficial, suporte e compras via tickets</p>
           </div>
         </div>
+        <span class="text-[10px] font-extrabold uppercase tracking-wider bg-indigo-500/20 text-indigo-700 dark:text-indigo-300 border border-indigo-400/30 px-2.5 py-1 rounded-full">OFICIAL</span>
+      </a>
 
-        <!-- Header Info Text -->
-        <div class="text-center sm:text-left flex-1 w-full">
-          <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full bg-pink-500/20 dark:bg-pink-900/40 border border-pink-300/50 dark:border-pink-700/50 text-pink-700 dark:text-pink-300 text-[10px] sm:text-xs font-bold uppercase tracking-wider mb-2 backdrop-blur-md">
-            <span>✿ Murder Mystery 2 · Roblox ✿</span>
+      <a href="https://www.tiktok.com/@lm.shopp__" target="_blank" class="group flex items-center justify-between p-4 rounded-2xl bg-white/30 dark:bg-white/10 border border-white/30 dark:border-white/10 hover:border-pink-400/60 hover:bg-white/40 dark:hover:bg-white/20 transition-all shadow-sm hover:shadow-md hover:-translate-y-0.5">
+        <div class="flex items-center gap-3.5">
+          <div class="w-10 h-10 rounded-xl bg-pink-500/20 text-pink-600 dark:text-pink-300 flex items-center justify-center text-xl font-bold group-hover:scale-110 transition-transform">
+            🎵
           </div>
-          
-          <h1 class="font-display text-2xl sm:text-4xl font-bold text-slate-900 dark:text-pink-100 tracking-tight flex items-center justify-center sm:justify-start gap-2">
-            L&amp;M Shop <span class="text-pink-500 text-xl sm:text-2xl animate-bounce">𖹭</span>
-          </h1>
-          
-          <p class="text-xs sm:text-sm text-slate-800 dark:text-pink-100/90 font-medium mt-1 max-w-lg">
-            Seu inventário merece brilhar com os melhores itens! Godlys, Sets, Armas e Pets exclusivos no MM2 com total garantia, entrega ultra rápida e os preços mais imperdíveis do mercado. 💖✨
-          </p>
-
-          <!-- Quick Stats Pills -->
-          <div class="flex flex-wrap items-center justify-center sm:justify-start gap-2 sm:gap-3 mt-3 sm:mt-4 text-[11px] sm:text-xs font-bold text-slate-800 dark:text-pink-100">
-            <span class="flex items-center gap-1 px-2.5 py-1 rounded-lg bg-white/40 dark:bg-black/30 border border-white/50 dark:border-white/10 backdrop-blur-md">
-              <i class="fa-solid fa-bolt text-amber-500"></i> Entrega Rápida
-            </span>
-            <span class="flex items-center gap-1 px-2.5 py-1 rounded-lg bg-white/40 dark:bg-black/30 border border-white/50 dark:border-white/10 backdrop-blur-md">
-              <i class="fa-solid fa-shield-halved text-emerald-500"></i> 100% Seguro
-            </span>
-            <span class="flex items-center gap-1 px-2.5 py-1 rounded-lg bg-white/40 dark:bg-black/30 border border-white/50 dark:border-white/10 backdrop-blur-md">
-              <i class="fa-solid fa-star text-pink-500"></i> +500 Avaliações
-            </span>
+          <div>
+            <h3 class="font-bold text-sm text-slate-900 dark:text-white">TikTok da Loja</h3>
+            <p class="text-xs text-slate-700 dark:text-pink-100/80">Acompanhe novidades, entregas e conteúdos de MM2</p>
           </div>
         </div>
+        <span class="text-[10px] font-extrabold uppercase tracking-wider bg-pink-500/20 text-pink-700 dark:text-pink-300 border border-pink-400/30 px-2.5 py-1 rounded-full">OFICIAL</span>
+      </a>
+    </section>
 
+    <!-- Conteúdo 2: Regras -->
+    <section id="tab-regras" class="tab-content hidden space-y-4">
+      <div class="p-4 rounded-2xl bg-white/30 dark:bg-white/10 border border-white/30 dark:border-white/10 space-y-3">
+        <h3 class="font-display font-bold text-sm text-pink-600 dark:text-pink-300 flex items-center gap-2 border-b border-pink-500/20 pb-2">
+          <span>╭୨୧</span> REGRAS DO SERVER <span>୨୧╮</span>
+        </h3>
+        <div class="text-xs space-y-2 text-slate-800 dark:text-pink-100/90 leading-relaxed">
+          <p><strong>→ Spam/Flood:</strong> Evite mensagens repetitivas para não poluir os chats.</p>
+          <p><strong>→ Pings:</strong> Mencione a equipe apenas em casos de real necessidade.</p>
+          <p><strong>→ Respeito Absoluto:</strong> Proibido qualquer tipo de preconceito, ofensa ou conteúdo +18.</p>
+          <p><strong>→ Vendas &amp; Links:</strong> Vendas paralelas e divulgação de links externos não são permitidas.</p>
+        </div>
       </div>
 
-      <!-- Navigation Tabs Header (Touch Swipable for Mobile) -->
-      <div class="flex items-center gap-2 overflow-x-auto py-4 sm:py-6 no-scrollbar border-b border-pink-300/30 dark:border-pink-500/20 touch-pan-x active:cursor-grabbing">
-        <button onclick="switchTab('links')" id="tab-btn-links" class="tab-btn flex items-center gap-1.5 sm:gap-2 px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-xl sm:rounded-2xl text-xs sm:text-sm font-bold whitespace-nowrap transition-all duration-300 bg-pink-500 text-white shadow-lg shadow-pink-500/25">
-          <i class="fa-solid fa-link"></i> Links Oficiais
-        </button>
+      <div class="p-4 rounded-2xl bg-white/30 dark:bg-white/10 border border-white/30 dark:border-white/10 space-y-3">
+        <h3 class="font-display font-bold text-sm text-pink-600 dark:text-pink-300 flex items-center gap-2 border-b border-pink-500/20 pb-2">
+          <span>୨୧・</span> REGRAS SHOP
+        </h3>
+        <div class="text-xs space-y-2 text-slate-800 dark:text-pink-100/90 leading-relaxed">
+          <p><strong>. Tickets:</strong> Abra um ticket somente se realmente tiver certeza de que vai comprar.</p>
+          <p><strong>. Pagamentos:</strong> Confirme os dados e envie o comprovante. Tentativas de fraude geram banimento imediato.</p>
+          <p><strong>. Reembolsos:</strong> Não realizamos reembolsos após o pedido ter sido entregue no jogo.</p>
+          <p><strong>. Avaliações:</strong> Após receber os itens, deixe sua avaliação para manter seu acesso liberado para futuras compras!</p>
+        </div>
+      </div>
+    </section>
 
-        <button onclick="switchTab('rules')" id="tab-btn-rules" class="tab-btn flex items-center gap-1.5 sm:gap-2 px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-xl sm:rounded-2xl text-xs sm:text-sm font-bold whitespace-nowrap transition-all duration-300 bg-white/30 dark:bg-black/30 text-slate-800 dark:text-pink-100 hover:bg-pink-500/20 backdrop-blur-md">
-          <i class="fa-solid fa-scroll text-pink-500"></i> Diretrizes &amp; Regras
-        </button>
+    <!-- Conteúdo 3: Apoiar PIX -->
+    <section id="tab-apoio" class="tab-content hidden text-center p-4 rounded-2xl bg-white/30 dark:bg-white/10 border border-white/30 dark:border-white/10 space-y-4">
+      <h3 class="font-display font-bold text-base text-slate-900 dark:text-white">Apoie a L&amp;M Shop ❤︎</h3>
+      <p class="text-xs text-slate-700 dark:text-pink-100/80 max-w-sm mx-auto">
+        Gosta da nossa loja? Você pode nos apoiar enviando qualquer valor via PIX. Agradecemos imensamente! ✿
+      </p>
 
-        <button onclick="switchTab('pix')" id="tab-btn-pix" class="tab-btn flex items-center gap-1.5 sm:gap-2 px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-xl sm:rounded-2xl text-xs sm:text-sm font-bold whitespace-nowrap transition-all duration-300 bg-white/30 dark:bg-black/30 text-slate-800 dark:text-pink-100 hover:bg-pink-500/20 backdrop-blur-md">
-          <i class="fa-solid fa-heart text-rose-500"></i> Apoiar PIX
-        </button>
-
-        <button onclick="switchTab('partner')" id="tab-btn-partner" class="tab-btn flex items-center gap-1.5 sm:gap-2 px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-xl sm:rounded-2xl text-xs sm:text-sm font-bold whitespace-nowrap transition-all duration-300 bg-white/30 dark:bg-black/30 text-slate-800 dark:text-pink-100 hover:bg-pink-500/20 backdrop-blur-md">
-          <i class="fa-solid fa-handshake text-pink-500"></i> Loja Parceira
-        </button>
+      <div class="w-36 h-36 bg-white p-2.5 rounded-2xl mx-auto shadow-md border border-pink-300/50">
+        <img src="QR CODE.webp" onerror="this.src='https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=lmshop2006@gmail.com'" alt="QR Code PIX" class="w-full h-full object-contain rounded-lg">
       </div>
 
-      <!-- Tab Content Area -->
-      <div class="pt-4 sm:pt-6">
-        
-        <!-- TAB 1: LINKS -->
-        <section id="tab-links" class="tab-content block space-y-3">
-          
-          <!-- Discord Link -->
-          <a href="https://discord.gg/aGSDnmpuw" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-between p-4 rounded-2xl bg-white/35 dark:bg-black/40 border border-white/50 dark:border-white/10 shadow-sm hover:shadow-xl hover:shadow-pink-500/10 hover:-translate-y-1 transition-all duration-300 backdrop-blur-md">
-            <div class="flex items-center gap-4">
-              <div class="w-12 h-12 rounded-xl bg-indigo-500/20 text-indigo-600 dark:text-indigo-400 flex items-center justify-center text-xl group-hover:scale-110 transition-transform">
-                <i class="fa-brands fa-discord"></i>
-              </div>
-              <div>
-                <h3 class="font-bold text-slate-900 dark:text-pink-100 text-sm sm:text-base group-hover:text-pink-500 transition-colors">Servidor no Discord</h3>
-                <p class="text-xs text-slate-700 dark:text-pink-200/70">Comunidade oficial, suporte e compras via tickets</p>
-              </div>
-            </div>
-            <span class="px-3 py-1 rounded-full bg-indigo-500/20 text-indigo-700 dark:text-indigo-300 text-[10px] font-bold uppercase tracking-wider backdrop-blur-sm">Oficial</span>
+      <div class="bg-white/50 dark:bg-black/40 border border-dashed border-pink-400/60 p-3 rounded-xl text-xs font-mono font-bold text-pink-600 dark:text-pink-300 break-all" id="pixKey">
+        lmshop2006@gmail.com
+      </div>
+
+      <button onclick="copyPixKey()" class="w-full py-3 rounded-xl bg-pink-500 hover:bg-pink-600 text-white font-bold text-xs uppercase tracking-wider shadow-md shadow-pink-500/20 active:scale-98 transition-all">
+        📋 Copiar Chave PIX
+      </button>
+    </section>
+
+    <!-- Conteúdo 4: Loja Parceira -->
+    <section id="tab-parceira" class="tab-content hidden space-y-4">
+      <div class="p-5 rounded-2xl bg-white/30 dark:bg-white/10 border border-white/30 dark:border-white/10 text-center space-y-3">
+        <div class="w-16 h-16 rounded-full bg-pink-500/20 text-pink-500 flex items-center justify-center text-3xl mx-auto border border-pink-400/40">
+          🤝
+        </div>
+        <div>
+          <h3 class="font-display font-bold text-base text-slate-900 dark:text-white">Detour Store</h3>
+          <p class="text-xs text-slate-700 dark:text-pink-100/80 mt-1">Qualidade e confiança recomendadas e garantidas pela equipe L&amp;M Shop! 𖹭.ᐟ</p>
+        </div>
+
+        <div class="pt-2 space-y-2">
+          <a href="https://detourstore.github.io/DS-/#" target="_blank" class="block w-full py-2.5 rounded-xl bg-pink-500 hover:bg-pink-600 text-white font-bold text-xs shadow-sm transition-all">
+            🌐 Acessar Site Oficial
           </a>
-
-          <!-- TikTok Link -->
-          <a href="https://www.tiktok.com/@lm.shopp__" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-between p-4 rounded-2xl bg-white/35 dark:bg-black/40 border border-white/50 dark:border-white/10 shadow-sm hover:shadow-xl hover:shadow-pink-500/10 hover:-translate-y-1 transition-all duration-300 backdrop-blur-md">
-            <div class="flex items-center gap-4">
-              <div class="w-12 h-12 rounded-xl bg-pink-500/20 text-pink-600 dark:text-pink-400 flex items-center justify-center text-xl group-hover:scale-110 transition-transform">
-                <i class="fa-brands fa-tiktok"></i>
-              </div>
-              <div>
-                <h3 class="font-bold text-slate-900 dark:text-pink-100 text-sm sm:text-base group-hover:text-pink-500 transition-colors">TikTok da Loja</h3>
-                <p class="text-xs text-slate-700 dark:text-pink-200/70">Acompanhe novidades, entregas e conteúdos de MM2</p>
-              </div>
-            </div>
-            <span class="px-3 py-1 rounded-full bg-pink-500/20 text-pink-700 dark:text-pink-300 text-[10px] font-bold uppercase tracking-wider backdrop-blur-sm">Oficial</span>
+          <a href="https://discord.gg/aGSDnmpuw" target="_blank" class="block w-full py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs shadow-sm transition-all">
+            ✉ Servidor no Discord
           </a>
-
-        </section>
-
-        <!-- TAB 2: REGRAS & DIRETRIZES -->
-        <section id="tab-rules" class="tab-content hidden space-y-4">
-          
-          <!-- Lista 1: Regras do Server -->
-          <div class="p-5 rounded-2xl bg-white/35 dark:bg-black/40 border border-white/50 dark:border-white/10 space-y-3 text-xs sm:text-sm text-slate-800 dark:text-pink-100 shadow-sm backdrop-blur-md">
-            <h3 class="font-display font-bold text-base text-pink-600 dark:text-pink-300 flex items-center gap-2 border-b border-pink-300/30 dark:border-pink-500/20 pb-2">
-              <i class="fa-solid fa-comments text-pink-500"></i> ╭୨୧ ┈┈ ꒰ REGRAS DO SERVER ꒱ ┈┈ ୨୧╮
-            </h3>
-            <p class="text-xs text-slate-700 dark:text-pink-200/80 italic">
-              As regras existem para manter o servidor organizado, seguro e agradável para todos.
-            </p>
-            
-            <ul class="space-y-2 list-none">
-              <li class="flex items-start gap-2">
-                <span class="text-pink-500 font-bold">•</span>
-                <span><strong>Spam/Flood:</strong> Evite enviar mensagens em excesso ou repetir conteúdos no chat.</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <span class="text-pink-500 font-bold">•</span>
-                <span><strong>Pings:</strong> Evite mencionar a equipe (Staff) sem necessidade.</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <span class="text-pink-500 font-bold">•</span>
-                <span><strong>Conteúdo +18:</strong> Não é permitido conteúdo +18 ou impróprio. Prezamos por um ambiente seguro.</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <span class="text-pink-500 font-bold">•</span>
-                <span><strong>Preconceito:</strong> Tolerância zero para gordofobia, racismo, transfobia, misoginia ou discriminação.</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <span class="text-pink-500 font-bold">•</span>
-                <span><strong>Privacidade &amp; Links:</strong> Não compartilhe dados pessoais nem links externos/outros servidores.</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <span class="text-pink-500 font-bold">•</span>
-                <span><strong>Vendas &amp; Divulgação:</strong> Proibido vender ou divulgar outras lojas/contas no server (sujeito a warn/ban).</span>
-              </li>
-            </ul>
-          </div>
-
-          <!-- Lista 2: Regras SHOP -->
-          <div class="p-5 rounded-2xl bg-white/35 dark:bg-black/40 border border-white/50 dark:border-white/10 space-y-3 text-xs sm:text-sm text-slate-800 dark:text-pink-100 shadow-sm backdrop-blur-md">
-            <h3 class="font-display font-bold text-base text-rose-600 dark:text-rose-400 flex items-center gap-2 border-b border-pink-300/30 dark:border-pink-500/20 pb-2">
-              <i class="fa-solid fa-store text-rose-500"></i> ୨୧・Regras SHOP
-            </h3>
-            
-            <ul class="space-y-2 list-none">
-              <li class="flex items-start gap-2">
-                <span class="text-rose-500 font-bold">•</span>
-                <span><strong>Respeito:</strong> Trate os atendentes com respeito. Ofensas não serão toleradas.</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <span class="text-rose-500 font-bold">•</span>
-                <span><strong>Compras &amp; Comprovantes:</strong> Confira o valor/nome no PIX antes de pagar. Envie o comprovante real (fraudes geram banimento).</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <span class="text-rose-500 font-bold">•</span>
-                <span><strong>Tickets:</strong> Abra ticket somente se tiver certeza da compra. Não marque a staff antes de 30min sem resposta.</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <span class="text-rose-500 font-bold">•</span>
-                <span><strong>Reembolsos:</strong> Analisados individualmente. <em>Após a entrega do pedido, não fazemos reembolso.</em></span>
-              </li>
-              <li class="flex items-start gap-2">
-                <span class="text-rose-500 font-bold">•</span>
-                <span><strong>Avaliações Mandatórias:</strong> Após receber seu pedido, avalie a compra. Clientes sem avaliação recebem a tag @avaliação pendente e ficam bloqueados para compras futuras.</span>
-              </li>
-            </ul>
-
-            <div class="pt-2 text-center text-xs font-semibold text-pink-600 dark:text-pink-300">
-              Ao realizar uma compra na L&amp;M Shop, você declara estar de acordo com nossas regras! ᧔ෆ᧓
-            </div>
-          </div>
-
-        </section>
-
-        <!-- TAB 4: PIX / APOIO -->
-        <section id="tab-pix" class="tab-content hidden">
-          <div class="p-6 rounded-2xl bg-white/35 dark:bg-black/40 border border-white/50 dark:border-white/10 text-center space-y-4 shadow-sm backdrop-blur-md">
-            <div class="w-12 h-12 rounded-full bg-rose-500/20 text-rose-500 mx-auto flex items-center justify-center text-2xl">
-              <i class="fa-solid fa-heart"></i>
-            </div>
-            
-            <div>
-              <h3 class="font-display font-bold text-lg text-slate-900 dark:text-pink-100">Apoie a L&amp;M Shop ❤︎</h3>
-              <p class="text-xs text-slate-700 dark:text-pink-200/80 max-w-sm mx-auto mt-1">
-                Gosta da nossa loja? Se quiser nos apoiar com qualquer valor via PIX, agradecemos imensamente! ✿⁠
-              </p>
-            </div>
-
-            <!-- QR Code Card -->
-            <div class="w-44 h-44 mx-auto p-2 bg-white/90 rounded-2xl border border-pink-300/50 dark:border-pink-500/30 shadow-inner flex items-center justify-center">
-              <img src="QR CODE.webp" alt="QR Code PIX L&M Shop" class="w-full h-full object-contain rounded-xl" onerror="this.onerror=null; this.src='https://placehold.co/200x200/ff99ca/ffffff?text=QR+CODE+PIX';">
-            </div>
-
-            <!-- PIX Box -->
-            <div class="max-w-xs mx-auto p-3 rounded-xl bg-pink-500/20 border border-dashed border-pink-400 font-mono text-xs text-pink-700 dark:text-pink-300 font-bold break-all select-all backdrop-blur-sm">
-              lmshop2006@gmail.com
-            </div>
-
-            <button onclick="copyPixKey()" class="w-full max-w-xs py-3 px-6 rounded-full bg-gradient-to-r from-pink-500 to-rose-500 hover:from-pink-600 hover:to-rose-600 text-white font-bold text-xs uppercase tracking-wider shadow-lg shadow-pink-500/30 hover:scale-105 active:scale-95 transition-all duration-300">
-              <i class="fa-solid fa-copy mr-2"></i> Copiar Chave PIX
-            </button>
-          </div>
-        </section>
-
-        <!-- TAB 5: LOJA PARCEIRA -->
-        <section id="tab-partner" class="tab-content hidden">
-          <div class="p-4 sm:p-6 rounded-2xl bg-white/35 dark:bg-black/40 border border-white/50 dark:border-white/10 space-y-4 sm:space-y-5 shadow-sm text-center backdrop-blur-md">
-            
-            <!-- Partner Header -->
-            <div class="flex flex-col items-center gap-2">
-              <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-pink-500/20 text-pink-500 flex items-center justify-center text-xl sm:text-2xl shadow-inner">
-                <i class="fa-solid fa-handshake"></i>
-              </div>
-              <h3 class="font-display font-bold text-lg sm:text-xl text-slate-900 dark:text-pink-100">🤝 Detour Store 🤝</h3>
-              <p class="text-xs text-slate-700 dark:text-pink-200/80 max-w-md mx-auto">
-                Conheça a nossa loja parceira oficial! Qualidade e confiança garantidas pela equipe L&amp;M Shop 𖹭.ᐟ
-              </p>
-            </div>
-
-            <!-- Presentation Card -->
-            <div class="p-3 sm:p-4 rounded-xl bg-white/30 dark:bg-black/30 border border-white/40 dark:border-white/10 text-xs text-slate-800 dark:text-pink-100 leading-relaxed text-left space-y-2 backdrop-blur-sm">
-              <p class="font-bold text-pink-600 dark:text-pink-300 flex items-center gap-1.5">
-                <i class="fa-solid fa-sparkles"></i> Sobre a Detour Store:
-              </p>
-              <p>
-                A Detour Store é nossa parceira recomendada com atendimento excelente e total segurança para suas transações. Explore o site oficial, entre no Discord ou acompanhe as novidades no TikTok abaixo!
-              </p>
-            </div>
-
-            <!-- Links Grid Mobile Optimized -->
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-3 pt-1">
-              <a href="https://detourstore.github.io/DS-/#" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-pink-500 hover:bg-pink-600 text-white font-bold text-xs shadow-md shadow-pink-500/20 active:scale-98 transition-all">
-                <i class="fa-solid fa-globe"></i> Site Oficial
-              </a>
-              
-              <a href="https://discord.gg/aGSDnmpuw" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs shadow-md shadow-indigo-600/20 active:scale-98 transition-all">
-                <i class="fa-brands fa-discord"></i> Discord Detour
-              </a>
-
-              <a href="https://www.tiktok.com/@detour_store" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-slate-900 hover:bg-black text-white font-bold text-xs shadow-md shadow-slate-900/20 active:scale-98 transition-all">
-                <i class="fa-brands fa-tiktok"></i> TikTok Detour
-              </a>
-            </div>
-
-          </div>
-        </section>
-
+          <a href="https://www.tiktok.com/@detour_store" target="_blank" class="block w-full py-2.5 rounded-xl bg-slate-900 hover:bg-black text-white font-bold text-xs shadow-sm transition-all">
+            🎵 TikTok Detour Store
+          </a>
+        </div>
       </div>
-
-    </div>
+    </section>
 
   </main>
 
-  <!-- Notification Toast Modal Mobile Friendly -->
-  <div id="toastNotification" class="fixed bottom-4 left-4 right-4 sm:left-auto sm:right-6 z-50 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none">
-    <div class="bg-slate-900/95 dark:bg-pink-900/95 text-white border border-pink-500/40 px-4 py-3 rounded-xl sm:rounded-2xl shadow-2xl backdrop-blur-md flex items-center justify-center sm:justify-start gap-3 text-center sm:text-left">
-      <div id="toastIcon" class="text-pink-400 text-lg flex-shrink-0">
-        <i class="fa-solid fa-circle-check"></i>
-      </div>
-      <p id="toastMessage" class="text-xs font-semibold">Mensagem de alerta</p>
-    </div>
-  </div>
-
-  <!-- Footer -->
-  <footer class="relative z-10 py-6 px-4 border-t border-pink-200/40 dark:border-pink-900/30 bg-white/40 dark:bg-slate-900/40 backdrop-blur-md text-center text-xs text-slate-500 dark:text-pink-300/60 flex flex-col sm:flex-row items-center justify-between max-w-5xl mx-auto w-full gap-2">
-    <span class="font-display italic text-pink-500 dark:text-pink-400 font-semibold">✦ Ay sousz</span>
-    <p>🌸 L&amp;M Shop — Roblox MM2 Experience © 2026</p>
+  <!-- Rodapé -->
+  <footer class="mb-6 text-center text-xs text-slate-800 dark:text-pink-200/80 font-medium z-10">
+    <p>✦ Design assinado por <strong class="text-slate-900 dark:text-white">Ay sousz</strong> · L&amp;M Shop 🌸</p>
   </footer>
 
-  <!-- Scripts Logic -->
   <script>
-    // Audio Player Setup Optimized for instant playback without delay
+    // --- LÓGICA DE ÁUDIO GLOBAL ---
     const audio = document.getElementById('bgMusic');
-    audio.volume = 0.25; // Volume ajustado para 25%
+    const musicBtn = document.getElementById('musicBtn');
     let hasInteracted = false;
-    let playPromise = null;
+
+    audio.volume = 0.25;
 
     function playAudio() {
-      // Zerar o tempo atual garante que a reprodução comece do instante 0 sem buffer delay
-      audio.currentTime = 0;
-      playPromise = audio.play();
-      if (playPromise !== undefined) {
-        playPromise.catch(err => {
-          console.log("Autoplay aguardando interação do usuário.");
+      if (audio.paused) {
+        audio.play().then(() => {
+          musicBtn.textContent = '🔊';
+        }).catch(() => {
+          musicBtn.textContent = '🔇';
         });
       }
     }
 
-    // Eventos imediatos ao tocar ou clicar na tela
-    ['click', 'touchstart', 'keydown'].forEach(eventType => {
-      document.addEventListener(eventType, function() {
-        if (!hasInteracted) {
-          hasInteracted = true;
-          playAudio();
-        }
-      }, { once: true });
-    });
-
-    // Theme Switcher Logic
-    function toggleTheme() {
-      const html = document.documentElement;
-      if (html.classList.contains('dark')) {
-        html.classList.remove('dark');
-        showToast("Modo Claro Ativado ☀️");
-      } else {
-        html.classList.add('dark');
-        showToast("Modo Escuro Ativado 🌙");
+    // Tocar ao clicar/tocar em QUALQUER lugar do site
+    function handleFirstInteraction() {
+      if (!hasInteracted) {
+        hasInteracted = true;
+        playAudio();
       }
     }
 
-    // System dark mode listener
-    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      document.documentElement.classList.add('dark');
+    document.addEventListener('click', handleFirstInteraction);
+    document.addEventListener('touchstart', handleFirstInteraction);
+
+    function toggleMusic(e) {
+      if (e) e.stopPropagation(); // Impede duplo disparo
+      hasInteracted = true;
+      if (audio.paused) {
+        playAudio();
+      } else {
+        audio.pause();
+        musicBtn.textContent = '🔇';
+      }
     }
 
-    // Tab Navigation Logic
-    function switchTab(tabName) {
-      // Hide all contents
-      const contents = document.querySelectorAll('.tab-content');
-      contents.forEach(el => el.classList.add('hidden'));
-
-      // Reset buttons state
-      const buttons = document.querySelectorAll('.tab-btn');
-      buttons.forEach(btn => {
-        btn.classList.remove('bg-pink-500', 'text-white', 'shadow-lg', 'shadow-pink-500/25');
-        btn.classList.add('bg-white/50', 'dark:bg-slate-800/50', 'text-slate-600', 'dark:text-pink-200');
+    // --- TROCA DE ABAS ---
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.classList.remove('active', 'bg-pink-500', 'text-white', 'shadow-md', 'shadow-pink-500/20');
+        btn.classList.add('bg-white/20', 'dark:bg-white/10', 'text-slate-800', 'dark:text-pink-100');
+      });
+      
+      document.querySelectorAll('.tab-content').forEach(content => {
+        content.classList.add('hidden');
+        content.classList.remove('block');
       });
 
-      // Show selected tab content
-      const targetContent = document.getElementById('tab-' + tabName);
-      if (targetContent) {
-        targetContent.classList.remove('hidden');
-      }
+      const activeBtn = event.currentTarget;
+      activeBtn.classList.add('active', 'bg-pink-500', 'text-white', 'shadow-md', 'shadow-pink-500/20');
+      activeBtn.classList.remove('bg-white/20', 'dark:bg-white/10', 'text-slate-800', 'dark:text-pink-100');
 
-      // Highlight active button
-      const activeBtn = document.getElementById('tab-btn-' + tabName);
-      if (activeBtn) {
-        activeBtn.classList.remove('bg-white/50', 'dark:bg-slate-800/50', 'text-slate-600', 'dark:text-pink-200');
-        activeBtn.classList.add('bg-pink-500', 'text-white', 'shadow-lg', 'shadow-pink-500/25');
-      }
+      const target = document.getElementById('tab-' + tabId);
+      target.classList.remove('hidden');
+      target.classList.add('block');
     }
 
-    // Copy PIX Key with custom Toast notification (no alert)
+    // --- MODO ESCURO ---
+    function toggleTheme() {
+      document.documentElement.classList.toggle('dark');
+      const themeBtn = document.getElementById('themeBtn');
+      const isDark = document.documentElement.classList.contains('dark');
+      themeBtn.textContent = isDark ? '☀️' : '🌙';
+    }
+
+    // --- COPIAR PIX ---
     function copyPixKey() {
-      const pixKey = "lmshop2006@gmail.com";
-      
-      // Fallback execCommand if clipboard API fails in some iframe environments
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(pixKey).then(() => {
-          showToast("Chave PIX copiada com sucesso! 𖹭.ᐟ");
-        }).catch(() => {
-          fallbackCopyText(pixKey);
-        });
-      } else {
-        fallbackCopyText(pixKey);
-      }
-    }
-
-    function fallbackCopyText(text) {
-      const textArea = document.createElement("textarea");
-      textArea.value = text;
-      document.body.appendChild(textArea);
-      textArea.select();
-      try {
-        document.execCommand('copy');
+      navigator.clipboard.writeText("lmshop2006@gmail.com").then(() => {
         showToast("Chave PIX copiada com sucesso! 𖹭.ᐟ");
-      } catch (err) {
-        showToast("Erro ao copiar a chave.");
-      }
-      document.body.removeChild(textArea);
+      });
     }
 
-    // Custom Toast Notification System
     function showToast(msg) {
-      const toast = document.getElementById('toastNotification');
-      const toastMessage = document.getElementById('toastMessage');
-      
-      toastMessage.textContent = msg;
-      toast.classList.remove('translate-y-24', 'opacity-0');
-      toast.classList.add('translate-y-0', 'opacity-100');
-
+      const toast = document.getElementById('toast');
+      document.getElementById('toast-msg').textContent = msg;
+      toast.classList.remove('translate-y-20', 'opacity-0');
       setTimeout(() => {
-        toast.classList.remove('translate-y-0', 'opacity-100');
-        toast.classList.add('translate-y-24', 'opacity-0');
+        toast.classList.add('translate-y-20', 'opacity-0');
       }, 3000);
     }
 
-    // Floating Particles System (Sakura/Sparkle effect)
-    const canvas = document.getElementById('particle-canvas');
-    const ctx = canvas.getContext('2d');
-    
-    let particles = [];
-    const numParticles = 25;
-
-    function resizeCanvas() {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    }
-    window.addEventListener('resize', resizeCanvas);
-    resizeCanvas();
-
-    class Particle {
-      constructor() {
-        this.reset();
-      }
-
-      reset() {
-        this.x = Math.random() * canvas.width;
-        this.y = Math.random() * canvas.height - canvas.height;
-        this.size = Math.random() * 4 + 2;
-        this.speedY = Math.random() * 1 + 0.5;
-        this.speedX = Math.random() * 0.6 - 0.3;
-        this.opacity = Math.random() * 0.5 + 0.3;
-        this.color = Math.random() > 0.5 ? '#ff99ca' : '#ffc6e1';
-      }
-
-      update() {
-        this.y += this.speedY;
-        this.x += this.speedX;
-
-        if (this.y > canvas.height) {
-          this.reset();
-        }
-      }
-
-      draw() {
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-        ctx.fillStyle = this.color;
-        ctx.globalAlpha = this.opacity;
-        ctx.fill();
-        ctx.globalAlpha = 1;
-      }
-    }
-
-    for (let i = 0; i < numParticles; i++) {
-      particles.push(new Particle());
-    }
-
-    function animateParticles() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      particles.forEach(p => {
-        p.update();
-        p.draw();
-      });
-      requestAnimationFrame(animateParticles);
-    }
-    animateParticles();
-
-    // Automatic Store Status Indicator (Minas Gerais / Horário de Brasília)
-    function updateStoreStatus() {
-      const statusBadge = document.getElementById('statusBadge');
-      const statusPing = document.getElementById('statusPing');
-      const statusText = document.getElementById('statusText');
-
-      // Obter hora atual no fuso horário de Minas Gerais / Brasília
+    // --- STATUS ONLINE / OFFLINE (Horário de Minas Gerais / Brasília) ---
+    function updateShopStatus() {
       const now = new Date();
-      const options = { timeZone: 'America/Sao_Paulo', hour: '2-digit', minute: '2-digit', hour12: false };
+      const options = { timeZone: 'America/Sao_Paulo', hour: 'numeric', minute: 'numeric', hour12: false };
       const timeString = new Intl.DateTimeFormat('pt-BR', options).format(now);
       const [hours, minutes] = timeString.split(':').map(Number);
-      
-      const currentMinutes = hours * 60 + minutes;
-      const openMinutes = 9 * 60 + 30; // 09:30 AM (570 minutos)
-      const closeMinutes = 24 * 60;    // 00:00 (1440 minutos)
+      const totalMinutes = hours * 60 + minutes;
 
-      const isOpen = currentMinutes >= openMinutes && currentMinutes < closeMinutes;
+      const openMinutes = 9 * 60 + 30; // 09:30 AM (570 min)
+      const closeMinutes = 24 * 60;    // 00:00 AM (1440 min)
 
-      if (isOpen) {
-        statusBadge.className = "absolute bottom-1 right-1 bg-emerald-500 border-2 border-white dark:border-slate-900 text-white text-[10px] font-bold px-2 py-0.5 rounded-full flex items-center gap-1 shadow-md transition-colors duration-300";
-        statusPing.className = "w-2 h-2 rounded-full bg-white animate-ping";
-        statusText.textContent = "ONLINE";
-        statusBadge.title = "Loja Aberta (09:30 às 00:00)";
+      const badge = document.getElementById('statusBadge');
+      const dot = document.getElementById('statusDot');
+      const text = document.getElementById('statusText');
+
+      if (totalMinutes >= openMinutes && totalMinutes < closeMinutes) {
+        badge.className = "absolute bottom-1 right-1 px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase tracking-wider text-white shadow-md border-2 border-white dark:border-slate-900 flex items-center gap-1.5 transition-colors duration-300 bg-emerald-500";
+        dot.className = "w-2 h-2 rounded-full bg-white animate-pulse";
+        text.textContent = "ONLINE";
       } else {
-        statusBadge.className = "absolute bottom-1 right-1 bg-slate-500 border-2 border-white dark:border-slate-900 text-white text-[10px] font-bold px-2 py-0.5 rounded-full flex items-center gap-1 shadow-md transition-colors duration-300";
-        statusPing.className = "w-2 h-2 rounded-full bg-slate-300";
-        statusText.textContent = "OFFLINE";
-        statusBadge.title = "Loja Fechada (Abre às 09:30)";
+        badge.className = "absolute bottom-1 right-1 px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase tracking-wider text-white shadow-md border-2 border-white dark:border-slate-900 flex items-center gap-1.5 transition-colors duration-300 bg-slate-500";
+        dot.className = "w-2 h-2 rounded-full bg-slate-300";
+        text.textContent = "OFFLINE";
       }
     }
 
-    // Atualizar status ao carregar e checar a cada 30 segundos
-    updateStoreStatus();
-    setInterval(updateStoreStatus, 30000);
+    updateShopStatus();
+    setInterval(updateShopStatus, 30000);
   </script>
 </body>
 </html>
