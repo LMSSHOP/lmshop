@@ -86,17 +86,11 @@
 
   <!-- Main Hub Container -->
   <main class="w-[94%] max-w-2xl my-6 sm:my-10 bg-white/65 dark:bg-[#0d0711]/80 backdrop-blur-2xl rounded-[3rem] p-6 sm:p-9 shadow-[0_20px_60px_-15px_rgba(236,72,153,0.24)] dark:shadow-[0_25px_70px_-15px_rgba(0,0,0,0.85)] relative z-10 transition-all duration-500 gradient-border-glow">
-    
-    <!-- Barra Superior Utilitária (Status + Controles) -->
+    <!-- Barra Superior Utilitária (MM2 Badge + Controles) -->
     <div class="flex items-center justify-between gap-2 mb-6">
-      <!-- Status Badge Dinâmico + Horário -->
-      <div class="flex items-center gap-2.5 bg-white/75 dark:bg-white/5 border border-pink-200/70 dark:border-white/10 px-4 py-1.5 rounded-full backdrop-blur-md shadow-sm">
-        <div id="statusBadge" class="flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-emerald-600 dark:text-emerald-400">
-          <span id="statusDot" class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-          <span id="statusText">ONLINE</span>
-        </div>
-        <span class="text-slate-300 dark:text-white/20 text-xs">•</span>
-        <span id="liveClock" class="text-[10px] font-medium tracking-[0.14em] text-slate-600 dark:text-pink-200/75 tabular-nums">09:30 BRT</span>
+      <!-- Selo MM2 no canto superior esquerdo -->
+      <div class="inline-flex items-center gap-1.5 bg-gradient-to-r from-pink-500 to-rose-500 text-white text-[10px] font-bold uppercase tracking-[0.16em] px-4 py-1.5 rounded-full shadow-md shadow-pink-500/25 border border-pink-300/40">
+        <span>MM2</span> <span>✦</span>
       </div>
 
       <!-- Botões de Áudio e Tema -->
@@ -115,14 +109,21 @@
       <div class="relative w-24 h-24 sm:w-28 sm:h-28 flex-shrink-0 animate-float">
         <div class="absolute -inset-1.5 rounded-full bg-gradient-to-tr from-pink-500 via-fuchsia-400 to-rose-400 opacity-75 blur-sm"></div>
         <img src="logo.png" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80'" alt="L&M Shop Logo" class="relative w-full h-full rounded-full object-cover border-[3px] border-white dark:border-slate-900 shadow-xl">
-        <div class="absolute -bottom-1 -right-1 bg-gradient-to-r from-pink-500 to-rose-500 text-white text-[10px] font-bold px-3 py-0.5 rounded-full shadow-md border-2 border-white dark:border-slate-950">
-          MM2 ✦
+        
+        <!-- Status Dinâmico + Relógio sobreposto no canto inferior direito da foto -->
+        <div id="statusWrapper" class="absolute -bottom-1.5 -right-3 sm:-right-4 flex items-center gap-1.5 bg-white/95 dark:bg-slate-950/95 border-2 border-pink-200/80 dark:border-pink-500/30 px-2.5 py-0.5 rounded-full shadow-lg backdrop-blur-md whitespace-nowrap">
+          <div id="statusBadge" class="flex items-center gap-1 text-[9px] font-bold uppercase tracking-[0.12em] text-emerald-600 dark:text-emerald-400">
+            <span id="statusDot" class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+            <span id="statusText">ONLINE</span>
+          </div>
+          <span class="text-slate-300 dark:text-white/25 text-[10px]">•</span>
+          <span id="liveClock" class="text-[9px] font-semibold tracking-[0.06em] text-slate-700 dark:text-pink-200/90 tabular-nums">09:30 BRT</span>
         </div>
       </div>
 
       <div class="text-center sm:text-left flex-1">
         <div class="inline-flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.24em] text-pink-600 dark:text-pink-400 mb-1">
-          <span>୨୧</span> <span>Roblox &amp; Murder Mystery 2</span> <span>୨୧</span>
+          <span>୨୧</span> <span>Murder Mystery</span> <span>୨୧</span>
         </div>
         <h1 class="font-display font-bold italic text-4xl sm:text-5xl tracking-normal leading-none bg-gradient-to-r from-slate-900 via-pink-700 to-rose-600 dark:from-white dark:via-pink-200 dark:to-rose-300 bg-clip-text text-transparent pb-1">
           L&amp;M Shop
@@ -138,9 +139,6 @@
           </span>
           <span class="text-[10px] font-medium tracking-[0.08em] uppercase bg-white/80 dark:bg-pink-500/15 text-pink-700 dark:text-pink-200 border border-pink-300/60 dark:border-pink-400/25 px-3.5 py-1 rounded-full shadow-xs">
             🛡️ 100% Seguro
-          </span>
-          <span class="text-[10px] font-medium tracking-[0.08em] uppercase bg-white/80 dark:bg-pink-500/15 text-pink-700 dark:text-pink-200 border border-pink-300/60 dark:border-pink-400/25 px-3.5 py-1 rounded-full shadow-xs">
-            💎 Godlys &amp; Sets
           </span>
         </div>
       </div>
@@ -493,12 +491,12 @@
       const text = document.getElementById('statusText');
 
       if (totalMinutes >= openMinutes && totalMinutes < closeMinutes) {
-        badge.className = "flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-emerald-600 dark:text-emerald-400";
-        dot.className = "w-2 h-2 rounded-full bg-emerald-500 animate-pulse";
+        badge.className = "flex items-center gap-1 text-[9px] font-bold uppercase tracking-[0.12em] text-emerald-600 dark:text-emerald-400";
+        dot.className = "w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse";
         text.textContent = "ONLINE";
       } else {
-        badge.className = "flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-500 dark:text-slate-400";
-        dot.className = "w-2 h-2 rounded-full bg-slate-400";
+        badge.className = "flex items-center gap-1 text-[9px] font-bold uppercase tracking-[0.12em] text-slate-500 dark:text-slate-400";
+        dot.className = "w-1.5 h-1.5 rounded-full bg-slate-400";
         text.textContent = "OFFLINE";
       }
     }
